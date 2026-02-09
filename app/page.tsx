@@ -1,65 +1,133 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="container">
+      <section className="card hero">
+        <div className="badgeRow">
+          <span className="badge">Web-platforma (MVP)</span>
+          <span className="badge">Z avlod</span>
+          <span className="badge">Interaktiv metodlar</span>
+          <span className="badge">Refleksiya + test</span>
+        </div>
+
+        <h1 className="heroTitle">
+          Z AVLOD VAKILLARI BILAN OLIB BORILADIGAN ZAMONAVIY TA’LIM VA TARBIYA METODLARI
+        </h1>
+
+        <p className="heroSubtitle">
+          Ushbu platforma Z avlod o‘quvchilarining raqamli muhitdagi ehtiyojlariga mos metodlarni jamlaydi:
+          shaxsga yo‘naltirilgan yondashuv, kompetensiyaviy ta’lim, loyiha va keyslar, gamifikatsiya,
+          interaktiv hamda adaptiv metodlar.
+        </p>
+
+        <div className="row" style={{ marginTop: 14 }}>
+          <Link className="btn" href="/start">Boshlash</Link>
+          <Link className="btn btnGhost" href="/methods">Metodlar katalogi</Link>
+          <Link className="btn btnGhost" href="/profile">Profil</Link>
+        </div>
+
+        <div className="heroNote">
+          Registratsiyasiz: hozircha <span className="kbd">Ism/Familiya</span> kiritish kifoya.
+          Natijalar va refleksiya shu qurilmada saqlanadi.
+        </div>
+      </section>
+
+      <section className="grid" style={{ marginTop: 14 }}>
+        <div className="card" style={{ gridColumn: "span 6" }}>
+          <div className="h2">Tadqiqot maqsadi</div>
+          <p className="muted">
+            Z avlod vakillari bilan ishlashda zamonaviy ta’lim va tarbiya metodlarini platforma ko‘rinishida
+            tizimlashtirish hamda amaliy qo‘llash mexanizmini ko‘rsatish.
           </p>
+
+          <hr className="hr" />
+
+          <div className="h2">Tadqiqot vazifalari</div>
+          <ul className="bul">
+            <li>Metodlarni toifalash va yagona katalogga jamlash.</li>
+            <li>Har bir metod uchun qadam-baqadam qo‘llash tartibini berish.</li>
+            <li>Interaktiv amaliyot: mini-quiz va refleksiya mexanizmini joriy etish.</li>
+            <li>Natijalarni kuzatish (local progress) va tahlil qilish imkonini yaratish.</li>
+          </ul>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="card" style={{ gridColumn: "span 6" }}>
+          <div className="h2">Platforma modullari</div>
+
+          <div className="moduleList">
+            <div className="module">
+              <div className="moduleTitle">1) Metodlar katalogi</div>
+              <div className="muted">
+                8 ta metod bo‘limi: shaxsga yo‘naltirilgan, kompetensiya, loyiha, keys,
+                gamifikatsiya, raqamli ta’lim, interaktiv, adaptiv.
+              </div>
+            </div>
+
+            <div className="module">
+              <div className="moduleTitle">2) Interaktiv amaliyot</div>
+              <div className="muted">Har metodga mos mini-quiz va tezkor natija.</div>
+            </div>
+
+            <div className="module">
+              <div className="moduleTitle">3) Refleksiya</div>
+              <div className="muted">Refleksiya savollari + matn saqlash (portfolio).</div>
+            </div>
+
+            <div className="module">
+              <div className="moduleTitle">4) Profil</div>
+              <div className="muted">Ism/Familiya, sinf/guruh (ixtiyoriy) va natijalar tarixi.</div>
+            </div>
+          </div>
+
+          <hr className="hr" />
+
+          <div className="row">
+            <Link className="btn" href="/methods">Metodlarni ko‘rish</Link>
+            <Link className="btn btnGhost" href="/reflections">Refleksiyalar</Link>
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section className="grid" style={{ marginTop: 14 }}>
+        <div className="card" style={{ gridColumn: "span 7" }}>
+          <div className="h2">Metodologik yondashuv</div>
+          <p className="muted">
+            Platforma metodlar katalogi, interaktiv topshiriqlar va refleksiya orqali o‘quvchi faolligini oshirish,
+            tezkor feedback berish hamda o‘z-o‘zini baholash elementlarini kuchaytirishga xizmat qiladi.
+          </p>
+
+          <div className="pillGrid">
+            <span className="pill2">Tezkor feedback</span>
+            <span className="pill2">Vizual/raqamli kontent</span>
+            <span className="pill2">Amaliy vaziyatlar (keys)</span>
+            <span className="pill2">Gamifikatsiya</span>
+            <span className="pill2">Refleksiya</span>
+            <span className="pill2">Moslashuvchan (adaptiv)</span>
+          </div>
+        </div>
+
+        <div className="card" style={{ gridColumn: "span 5" }}>
+          <div className="h2">Kutilayotgan natijalar</div>
+          <ul className="bul">
+            <li>Metodlarni amaliy qo‘llash bo‘yicha aniq yo‘riqnoma.</li>
+            <li>O‘quvchi faolligi va motivatsiyasining oshishi.</li>
+            <li>Test + refleksiya orqali o‘zlashtirishni mustahkamlash.</li>
+            <li>Pedagog uchun metod tanlashda qulay katalog.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="card" style={{ marginTop: 14 }}>
+        <div className="h2">Boshlash</div>
+        <p className="muted">
+          Avval ism-familiyangizni kiriting, so‘ng metod tanlab o‘qing, refleksiya yozing va mini-quiz yeching.
+        </p>
+        <div className="row" style={{ marginTop: 10 }}>
+          <Link className="btn" href="/start">Ism/Familiya kiritish</Link>
+          <Link className="btn btnGhost" href="/methods">Metodlar katalogi</Link>
+        </div>
+      </section>
     </div>
   );
 }

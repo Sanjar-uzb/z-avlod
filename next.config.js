@@ -1,7 +1,7 @@
 const nextConfig = {
   output: "export",
-  basePath: "/Z-avlod",
-  assetPrefix: "/Z-avlod/",
+  basePath: "/z-avlod",
+  assetPrefix: "/z-avlod/",
   images: { unoptimized: true },
 };
 

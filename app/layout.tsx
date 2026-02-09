@@ -1,7 +1,8 @@
 import "./globals.css";
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Z-avlod platformasi",
   description:
     "Z avlod vakillari bilan olib boriladigan zamonaviy ta’lim va tarbiya metodlari bo‘yicha interaktiv platforma.",
@@ -33,9 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
 
-        <main className="main">
-          {children}
-        </main>
+        <main className="main">{children}</main>
 
         <footer className="footer">
           <div className="container">
@@ -44,13 +43,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 © {new Date().getFullYear()} Z-avlod. GitHub Pages (static export) uchun tayyorlangan.
               </div>
               <div className="row">
-                <a href="https://github.com/sanjar-uzb/z-avlod" target="_blank" rel="noreferrer">
+                <a
+                  href="https://github.com/sanjar-uzb/z-avlod"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   GitHub
                 </a>
                 <span className="muted">•</span>
-                <a href="/" >
-                  Bosh sahifa
-                </a>
+                <a href="/">Bosh sahifa</a>
               </div>
             </div>
           </div>

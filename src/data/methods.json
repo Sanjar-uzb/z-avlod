@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "title": "Shaxsga yo‘naltirilgan ta’lim",
+    "category": "shaxsga-yonaltirilgan",
+    "difficulty": 1,
+    "estimatedMinutes": 25,
+    "tags": ["individual", "qiziqish", "feedback"],
+    "description": "Talabaning qiziqishi, ehtiyoji va imkoniyatiga mos yondashuv. Maqsad — o‘quvchi faolligini oshirish va shaxsiy traektoriyani qo‘llab-quvvatlash.",
+    "steps": [
+      "Boshlang‘ich diagnostika: qisqa so‘rov + 5 savollik mini-test",
+      "Maqsad qo‘yish: o‘quvchi bilan 1-2 aniq maqsad",
+      "Individual vazifa: 2 xil variant (A va B) — o‘quvchi tanlaydi",
+      "Tezkor feedback: 1 daqiqalik izoh + keyingi qadam",
+      "Refleksiya: 'Nimani bildim?' 'Nima qiyin bo‘ldi?'"
+    ],
+    "assessment": [
+      "Maqsad aniqligi",
+      "Tanlov va mustaqillik",
+      "Bajarilgan ish sifati",
+      "Refleksiya mazmuni"
+    ],
+    "reflectionPrompts": [
+      "Bugun qaysi qadam menga eng foydali bo‘ldi?",
+      "Qaysi joyda qiynaldim va nima sabab?",
+      "Keyingi darsda nimani yaxshilayman?"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Kompetensiyaviy yondashuv",
+    "category": "kompetensiya",
+    "difficulty": 1,
+    "estimatedMinutes": 30,
+    "tags": ["amaliy", "hayotiy", "natija"],
+    "description": "Bilimni real vaziyatga tatbiq qilishga yo‘naltirilgan yondashuv. Natija — hayotiy masalani hal qila olish.",
+    "steps": [
+      "Hayotiy vaziyat: 1 ta real muammo beriladi",
+      "Kerakli bilim: qisqa 'cheat-sheet'",
+      "Vazifa: muammoni 3 qadamda yechish",
+      "Javobni asoslash: 2 ta dalil keltirish",
+      "Feedback + xatolar tahlili"
+    ],
+    "assessment": [
+      "Muammo tahlili",
+      "Yechim mantiqi",
+      "Dalillar sifati",
+      "Natijaning amaliy qiymati"
+    ],
+    "reflectionPrompts": [
+      "Real vaziyatni yechishda nimani bilishim yetishmadi?",
+      "Qaysi dalil eng kuchli bo‘ldi?",
+      "Bu yondashuvni qayerda ishlataman?"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Loyiha asosida o‘qitish",
+    "category": "loyiha",
+    "difficulty": 2,
+    "estimatedMinutes": 45,
+    "tags": ["jamoa", "ijod", "mahsulot"],
+    "description": "Talaba (yoki guruh) real mahsulot/taqdimot tayyorlaydi. Z avlod uchun motivatsiya: natija ko‘rinadi.",
+    "steps": [
+      "Muammo: loyiha mavzusi tanlanadi",
+      "Reja: 3 bosqichli reja tuziladi",
+      "Ishlab chiqish: material/taqdimot/infografika",
+      "Taqdim: 2 daqiqalik pitch",
+      "Baholash: rubrik asosida"
+    ],
+    "assessment": [
+      "Rejaning aniq bo‘lishi",
+      "Mahsulot sifati",
+      "Jamoaviy hamkorlik",
+      "Taqdim qilish ko‘nikmasi"
+    ],
+    "reflectionPrompts": [
+      "Loyiha jarayonida eng muhim o‘rganilgan narsa nima?",
+      "Jamoada ishlashda nima qiyin bo‘ldi?",
+      "Keyingi loyihada nimani boshqacha qilaman?"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Keys-stadi (case) metodi",
+    "category": "keys",
+    "difficulty": 2,
+    "estimatedMinutes": 35,
+    "tags": ["tanqidiy-fikr", "qaror", "vaziyat"],
+    "description": "Real yoki realga yaqin vaziyatni tahlil qilish va yechim variantlarini asoslash.",
+    "steps": [
+      "Vaziyatni o‘qish (2-3 paragraf)",
+      "Muammoni ajratish: 2 ta asosiy sabab",
+      "3 ta yechim varianti taklif qilish",
+      "Eng maqbulini tanlash va asoslash",
+      "Natija: qisqa xulosa"
+    ],
+    "assessment": [
+      "Muammo aniqligi",
+      "Variantlar xilma-xilligi",
+      "Asoslash sifati",
+      "Xulosa"
+    ],
+    "reflectionPrompts": [
+      "Qaysi variantni tanladim va nega?",
+      "Boshqa variantning kuchli tomoni nima?",
+      "Bu vaziyat hayotda uchrasa nima qilaman?"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Gamifikatsiya",
+    "category": "gamifikatsiya",
+    "difficulty": 1,
+    "estimatedMinutes": 20,
+    "tags": ["ball", "badge", "tezkor-feedback"],
+    "description": "Ball, badge, bosqichlar orqali o‘quvchi motivatsiyasini oshirish va tezkor feedback berish.",
+    "steps": [
+      "Maqsad: 'Bugun 80%+ natija'",
+      "Topshiriq: 10 savol quiz",
+      "Feedback: har savoldan keyin izoh",
+      "Badge: 80%+ bo‘lsa 'Faol o‘quvchi'",
+      "Progress: haftalik natija"
+    ],
+    "assessment": [
+      "Natija (ball)",
+      "Doimiylik",
+      "Xatolardan o‘rganish",
+      "Refleksiya"
+    ],
+    "reflectionPrompts": [
+      "Bugun motivatsiyani nima oshirdi?",
+      "Qaysi savollar qiyin bo‘ldi?",
+      "Keyingi bosqichga qanday tayyorlanaman?"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Raqamli ta’lim texnologiyalari",
+    "category": "raqamli-talim",
+    "difficulty": 1,
+    "estimatedMinutes": 30,
+    "tags": ["multimedia", "online", "interaktiv"],
+    "description": "Multimedia, interaktiv kontent, online hamkorlik orqali ta’lim samaradorligini oshirish.",
+    "steps": [
+      "Kontent: 1 ta infografika + 1 ta qisqa video",
+      "Mini-task: videodan keyin 3 savol",
+      "Muhokama: 1 ta savolga fikr yozish",
+      "Feedback: izoh va tavsiya",
+      "Refleksiya"
+    ],
+    "assessment": [
+      "Kontentni tushunish",
+      "Fikr bildirish sifati",
+      "Amaliy topshiriq",
+      "Refleksiya"
+    ],
+    "reflectionPrompts": [
+      "Raqamli kontent menga qanday yordam berdi?",
+      "Qaysi format qulay: video yoki matn?",
+      "Keyingi safar nimani boshqacha qilaman?"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Interaktiv ta’lim usullari",
+    "category": "interaktiv",
+    "difficulty": 1,
+    "estimatedMinutes": 25,
+    "tags": ["muloqot", "hamkorlik", "faollik"],
+    "description": "Dialog, muhokama, jamoa bilan ishlash orqali faollikni oshirish.",
+    "steps": [
+      "Savol: muammoli savol beriladi",
+      "2 daqiqa: individual fikr",
+      "5 daqiqa: juftlikda muhokama",
+      "Natija: bitta umumiy xulosa",
+      "Feedback"
+    ],
+    "assessment": [
+      "Faollik",
+      "Muloqot madaniyati",
+      "Xulosa sifati",
+      "Tinglash ko‘nikmasi"
+    ],
+    "reflectionPrompts": [
+      "Muhokamada nima o‘zgardi?",
+      "Qaysi fikr meni o‘ylantirdi?",
+      "Keyingi marta qanday faolroq bo‘laman?"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Adaptiv (moslashuvchan) ta’lim",
+    "category": "adaptiv",
+    "difficulty": 2,
+    "estimatedMinutes": 35,
+    "tags": ["individual-sur’at", "moslashuv", "trajektoriya"],
+    "description": "O‘quvchi sur’ati va darajasiga mos kontent berish: oson → o‘rta → qiyin.",
+    "steps": [
+      "Daraja testi: 5 savol",
+      "Natijaga qarab: A (oson) / B (o‘rta) / C (qiyin) yo‘l",
+      "Topshiriq: 1 vazifa",
+      "Tekshiruv: 3 savol mini-quiz",
+      "Refleksiya"
+    ],
+    "assessment": [
+      "To‘g‘ri yo‘l tanlovi",
+      "Vazifa sifati",
+      "O‘sish dinamikasi",
+      "Refleksiya"
+    ],
+    "reflectionPrompts": [
+      "Qaysi daraja menga mos bo‘ldi?",
+      "Nimani bilishim kerak edi?",
+      "Keyingi safar qaysi yo‘lni tanlayman?"
+    ]
+  }
+]

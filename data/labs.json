@@ -1,0 +1,9 @@
+[
+  {
+    "fan": "fizika",
+    "lab": "ishqalanish",
+    "title": "Ishqalanish kuchi",
+    "desc": "Sirt turi va massa o‘zgarsa ishqalanish kuchi qanday o‘zgarishini 3D ko‘rinishda kuzating.",
+    "component": "physics/FrictionLab"
+  }
+]

@@ -5,6 +5,6 @@ export function generateStaticParams() {
   return labs.map((x) => ({ fan: x.fan, lab: x.lab }));
 }
 
-export default function LabPage({ params }: { params: { fan: string; lab: string } }) {
+export default function Page({ params }: { params: { fan: string; lab: string } }) {
   return <LabClient fan={params.fan} lab={params.lab} />;
 }

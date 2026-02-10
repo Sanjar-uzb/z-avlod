@@ -1,37 +1,14 @@
 [
   {
     "fan": "fizika",
-    "lab": "mexanik-harakat",
-    "title": "Mexanik harakat (ilgarilanma harakat, tezlik, tezlanish)",
-    "desc": "Sharni itaring yoki boshlang‘ich tezlik bering: v(t), a(t) va masofani real vaqtda kuzating.",
-    "component": "physics/MotionLab"
+    "lab": "raketa-orbita",
+    "title": "Raketa: orbita va qochish tezligi",
+    "desc": "Yer ustida raketa tezligini kiriting: orbita bo‘ladimi, qaytadimi yoki qochib ketadimi?"
   },
   {
     "fan": "fizika",
     "lab": "tekis-harakat",
-    "title": "Tekis harakat turlari (tekis bir xil, tekis o‘zgaruvchan)",
-    "desc": "1) Tekis (a=0) 2) Tekis o‘zgaruvchan (a=const). Parametrlarni o‘zgartirib farqni 3D tajribada ko‘ring.",
-    "component": "physics/UniformMotionLab"
-  },
-  {
-    "fan": "fizika",
-    "lab": "nyuton-qonunlari",
-    "title": "Inertlik, massa, kuch (Nyuton qonunlari asoslari)",
-    "desc": "F=ma: massa va kuch o‘zgarsa tezlanish qanday o‘zgaradi? Ishqalanish ta’sirini ham ko‘ring.",
-    "component": "physics/NewtonLab"
-  },
-  {
-    "fan": "fizika",
-    "lab": "bosim",
-    "title": "Bosim (P=F/S) — kuch va sirt",
-    "desc": "Bir xil kuchda sirt kichrayса, bosim oshadi. 3D ko‘rinishda bosim ko‘rsatkichini va “iz” chuqurligini kuzating.",
-    "component": "physics/PressureLab"
-  },
-  {
-    "fan": "fizika",
-    "lab": "arximed",
-    "title": "Arximed kuchi, zichlik va suzish",
-    "desc": "Jism zichligi va hajmiga qarab suzadi yoki cho‘kadi. Suv zichligi va hajmni o‘zgartiring.",
-    "component": "physics/BuoyancyLab"
+    "title": "Tekis / tezlanishli harakat",
+    "desc": "Tekis va tekis tezlanishli rejimlarda x(t), v(t), a(t) ni real vaqtda kuzating."
   }
 ]

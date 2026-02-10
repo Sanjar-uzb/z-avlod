@@ -1,30 +1,33 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import { Physics, RigidBody, CuboidCollider } from "@react-three/rapier";
 
-export default function MotionLab({ mass = 2, friction = 0.2, initV = 4, onTelemetry }) {
+const MotionLab = forwardRef(function MotionLab(
+  { mass = 2, friction = 0.2, initV = 4, paused = false, timeScale = 1, onTelemetry },
+  ref
+) {
   const ball = useRef(null);
 
   const reset = () => {
     const rb = ball.current;
     if (!rb) return;
     rb.setTranslation({ x: -4, y: 1.2, z: 0 }, true);
-    rb.setLinvel({ x: initV, y: 0, z: 0 }, true);
+    rb.setLinvel({ x: initV * timeScale, y: 0, z: 0 }, true);
     rb.setAngvel({ x: 0, y: 0, z: 0 }, true);
   };
 
+  useImperativeHandle(ref, () => ({ reset }));
+
   useEffect(() => {
-    // start
     setTimeout(reset, 50);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    // initV o‘zgarsa — qayta beramiz
     reset();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initV, mass, friction]);
+  }, [initV, mass, friction, timeScale]);
 
   useEffect(() => {
     let lastV = 0;
@@ -33,6 +36,7 @@ export default function MotionLab({ mass = 2, friction = 0.2, initV = 4, onTelem
 
     const tick = () => {
       raf = requestAnimationFrame(tick);
+      if (paused) return;
       const rb = ball.current;
       if (!rb) return;
 
@@ -53,11 +57,10 @@ export default function MotionLab({ mass = 2, friction = 0.2, initV = 4, onTelem
 
     tick();
     return () => cancelAnimationFrame(raf);
-  }, [onTelemetry]);
+  }, [onTelemetry, paused]);
 
   return (
-    <Physics gravity={[0, -9.81, 0]}>
-      {/* floor */}
+    <Physics gravity={[0, -9.81, 0]} paused={paused}>
       <RigidBody type="fixed" friction={friction} restitution={0.05}>
         <mesh rotation-x={-Math.PI / 2} position={[0, -0.6, 0]} receiveShadow>
           <planeGeometry args={[50, 50]} />
@@ -66,12 +69,10 @@ export default function MotionLab({ mass = 2, friction = 0.2, initV = 4, onTelem
         <CuboidCollider args={[25, 0.1, 25]} position={[0, -0.6, 0]} />
       </RigidBody>
 
-      {/* wall */}
       <RigidBody type="fixed">
         <CuboidCollider args={[0.2, 3, 6]} position={[10, 1.5, 0]} />
       </RigidBody>
 
-      {/* ball */}
       <RigidBody
         ref={ball}
         colliders="ball"
@@ -88,4 +89,6 @@ export default function MotionLab({ mass = 2, friction = 0.2, initV = 4, onTelem
       </RigidBody>
     </Physics>
   );
-}
+});
+
+export default MotionLab;

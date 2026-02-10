@@ -1,10 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Physics, RigidBody, CuboidCollider } from "@react-three/rapier";
 
-export default function NewtonLab({ mass = 2, friction = 0.2, force = 12, onTelemetry }) {
+const NewtonLab = forwardRef(function NewtonLab(
+  { mass = 2, friction = 0.2, force = 12, paused = false, timeScale = 1, onTelemetry },
+  ref
+) {
   const rbRef = useRef(null);
 
   const reset = () => {
@@ -15,31 +18,28 @@ export default function NewtonLab({ mass = 2, friction = 0.2, force = 12, onTele
     rb.setAngvel({ x: 0, y: 0, z: 0 }, true);
   };
 
+  useImperativeHandle(ref, () => ({ reset }));
+
   useEffect(() => {
     setTimeout(reset, 50);
   }, []);
 
-  // “Itarish”ni doimiy kuch bilan berib turamiz (MVP uchun oddiy)
-  // Xohlasangiz keyin “push” tugmasini ham qo‘shib beraman.
   useFrame(() => {
     const rb = rbRef.current;
-    if (!rb) return;
+    if (!rb || paused) return;
 
-    // F kuch doimiy beriladi
-    rb.addForce({ x: force, y: 0, z: 0 }, true);
+    rb.addForce({ x: force * timeScale, y: 0, z: 0 }, true);
 
     const v3 = rb.linvel();
     const v = Math.sqrt(v3.x * v3.x + v3.z * v3.z);
     const p = rb.translation();
 
-    // taxminiy a = F/m (ishqalanish realda ta'sir qiladi)
     const a = mass > 0 ? (force / mass) : 0;
-
     onTelemetry?.({ v, a, x: p.x, z: p.z });
   });
 
   return (
-    <Physics gravity={[0, -9.81, 0]}>
+    <Physics gravity={[0, -9.81, 0]} paused={paused}>
       <RigidBody type="fixed" friction={friction} restitution={0.05}>
         <mesh rotation-x={-Math.PI / 2} position={[0, -0.6, 0]} receiveShadow>
           <planeGeometry args={[50, 50]} />
@@ -68,4 +68,6 @@ export default function NewtonLab({ mass = 2, friction = 0.2, force = 12, onTele
       </RigidBody>
     </Physics>
   );
-}
+});
+
+export default NewtonLab;

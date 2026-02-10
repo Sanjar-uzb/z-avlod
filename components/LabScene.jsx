@@ -15,8 +15,8 @@ export default function LabScene({ children }) {
         background: "rgba(255,255,255,.02)",
       }}
     >
-      <Canvas camera={{ position: [6, 4, 8], fov: 45 }}>
-        <ambientLight intensity={0.8} />
+      <Canvas shadows camera={{ position: [6, 4, 8], fov: 45 }}>
+        <ambientLight intensity={0.65} />
         <directionalLight position={[6, 10, 6]} intensity={1.2} castShadow />
         <Environment preset="city" />
         {children}

@@ -2,6 +2,8 @@ import dynamic from "next/dynamic";
 
 const RocketOrbitLab = dynamic(() => import("./labs/RocketOrbitLab"), { ssr: false });
 const UniformMotionLab = dynamic(() => import("./labs/UniformMotionLab"), { ssr: false });
+const NewtonLawsLab = dynamic(() => import("./labs/NewtonLawsLab"), { ssr: false });
+const PressureLab = dynamic(() => import("./labs/PressureLab"), { ssr: false });
 
 export function getLabComponent(fan: string, lab: string) {
   const key = `${fan}/${lab}`;
@@ -11,6 +13,10 @@ export function getLabComponent(fan: string, lab: string) {
       return RocketOrbitLab;
     case "fizika/tekis-harakat":
       return UniformMotionLab;
+    case "fizika/nyuton-qonunlari":
+      return NewtonLawsLab;
+    case "fizika/bosim":
+      return PressureLab;
     default:
       return null;
   }

@@ -1,45 +1,32 @@
 import Link from "next/link";
 import labs from "@/data/labs.json";
 
-export const metadata = {
-  title: "3D laboratoriyalar — Z-avlod",
-};
+export const metadata = { title: "3D laboratoriyalar — Z-avlod" };
 
 export default function LabsIndex() {
-  const grouped = labs.reduce<Record<string, typeof labs>>((acc, it) => {
-    acc[it.fan] ||= [];
-    acc[it.fan].push(it);
-    return acc;
-  }, {});
-
   return (
     <div className="container">
       <div className="card">
-        <div className="h1">3D laboratoriyalar</div>
-        <p className="muted">
+        <div className="h2">3D laboratoriyalar</div>
+        <p className="muted" style={{ marginTop: 6 }}>
           Bu bo‘limda fanlar bo‘yicha interaktiv 3D laboratoriyalar joylashadi. Test yo‘q — faqat tajriba va kuzatish.
         </p>
       </div>
 
-      {Object.entries(grouped).map(([fan, items]) => (
-        <section key={fan} className="grid" style={{ marginTop: 14 }}>
-          <div className="card" style={{ gridColumn: "span 12" }}>
-            <div className="h2" style={{ textTransform: "capitalize" }}>{fan}</div>
-          </div>
+      <div className="grid" style={{ marginTop: 14 }}>
+        {labs.map((x) => (
+          <div key={`${x.fan}/${x.lab}`} className="card" style={{ gridColumn: "span 6" }}>
+            <div className="h2">{x.title}</div>
+            <p className="muted" style={{ marginTop: 6 }}>{x.desc}</p>
 
-          {items.map((it) => (
-            <div key={`${it.fan}/${it.lab}`} className="card" style={{ gridColumn: "span 6" }}>
-              <div className="h2">{it.title}</div>
-              <p className="muted">{it.desc}</p>
-              <div className="row" style={{ marginTop: 10 }}>
-                <Link className="btn" href={`/labs/${it.fan}/${it.lab}`}>Ochish</Link>
-                <span className="badge">Fan: {it.fan}</span>
-                <span className="badge">URL: {it.lab}</span>
-              </div>
+            <div className="row" style={{ marginTop: 12 }}>
+              <Link className="btn" href={`/labs/${x.fan}/${x.lab}`}>Ochish</Link>
+              <span className="badge">Fan: {x.fan}</span>
+              <span className="badge">URL: {x.lab}</span>
             </div>
-          ))}
-        </section>
-      ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,14 +1,14 @@
 import Link from "next/link";
 
-export default function LabNotFound({ fan, lab }: { fan: string; lab: string }) {
+export default function LabsNotFound() {
   return (
     <div className="container">
-      <div className="card">
-        <div className="h1">Laboratoriya topilmadi</div>
-        <p className="muted">
-          Siz ochgan URL ro‘yxatda yo‘q: <b>{`/labs/${fan}/${lab}`}</b>. /labs sahifasidan laboratoriyani tanlang.
+      <div className="card" style={{ maxWidth: 860, margin: "0 auto" }}>
+        <div className="h2">Laboratoriya topilmadi</div>
+        <p className="muted" style={{ marginTop: 6 }}>
+          Siz ochgan URL ro‘yxatda yo‘q. /labs sahifasidan laboratoriyani tanlang.
         </p>
-        <div className="row" style={{ marginTop: 10 }}>
+        <div className="row" style={{ marginTop: 12 }}>
           <Link className="btn" href="/labs">Barcha laboratoriyalar</Link>
           <Link className="btn btnGhost" href="/">Bosh sahifa</Link>
         </div>

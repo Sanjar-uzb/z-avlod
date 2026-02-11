@@ -10,5 +10,17 @@
     "lab": "tekis-harakat",
     "title": "Tekis / tezlanishli harakat",
     "desc": "Tekis va tekis tezlanishli rejimlarda x(t), v(t), a(t) ni real vaqtda kuzating."
+  },
+  {
+    "fan": "fizika",
+    "lab": "nyuton-qonunlari",
+    "title": "Inertlik, massa, kuch (Nyuton qonunlari)",
+    "desc": "F=ma: massa/kuch o‘zgarsa tezlanish qanday o‘zgaradi? Ishqalanishni ham kuzating."
+  },
+  {
+    "fan": "fizika",
+    "lab": "bosim",
+    "title": "Bosim (P=F/S) — kuch va sirt",
+    "desc": "Sirt kichrayganda bosim oshishini 3D ko‘rinishda kuzating."
   }
 ]

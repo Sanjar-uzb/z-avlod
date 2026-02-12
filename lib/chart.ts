@@ -11,8 +11,11 @@ function norm(v: number, min: number, max: number) {
 }
 
 export function drawSeries(canvas: HTMLCanvasElement, series: SeriesPoint[]) {
-  const ctx = canvas.getContext("2d") as CanvasRenderingContext2D | null;
-  if (!ctx) return;
+  const ctxMaybe = canvas.getContext("2d");
+  if (!ctxMaybe) return;
+
+  // ✅ TS endi ctx null emasligini 100% biladi
+  const ctx: CanvasRenderingContext2D = ctxMaybe;
 
   const w = canvas.width;
   const h = canvas.height;
@@ -73,7 +76,7 @@ export function drawSeries(canvas: HTMLCanvasElement, series: SeriesPoint[]) {
 
   // legend
   ctx.fillStyle = "rgba(255,255,255,0.75)";
-  ctx.font = "12px system-ui, -apple-system, Segoe UI, Roboto, Arial";
+  ctx.font = '12px system-ui, -apple-system, Segoe UI, Roboto, Arial';
   ctx.fillText("x(t)", 12, 16);
   ctx.fillText("v(t)", 52, 16);
   ctx.fillText("a(t)", 92, 16);

@@ -1,0 +1,14 @@
+[
+  { "key": "math", "title": "Matematika" },
+  { "key": "english", "title": "Ingliz tili" },
+  { "key": "russian", "title": "Rus tili" },
+  { "key": "biology", "title": "Biologiya" },
+  { "key": "nature", "title": "Tabiat" },
+  { "key": "chemistry", "title": "Kimyo" },
+  { "key": "physics", "title": "Fizika" },
+  { "key": "history", "title": "Tarix" },
+  { "key": "geography", "title": "Geografiya" },
+  { "key": "informatics", "title": "Informatika" },
+  { "key": "literature", "title": "Adabiyot" },
+  { "key": "uzbek", "title": "Ona tili" }
+]

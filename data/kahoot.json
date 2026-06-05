@@ -1,0 +1,131 @@
+{
+  "packs": [
+    {
+      "id": "mvp-6-9",
+      "title": "Kahoot MVP (6–9 sinf, aralash)",
+      "timePerQuestionSec": 15,
+      "questions": [
+        {
+          "id": 1,
+          "subject": "Matematika",
+          "text": "12 × 8 = ?",
+          "choices": [
+            { "id": 1, "text": "86" },
+            { "id": 2, "text": "96" },
+            { "id": 3, "text": "108" },
+            { "id": 4, "text": "88" }
+          ],
+          "answerId": 2
+        },
+        {
+          "id": 2,
+          "subject": "Informatika",
+          "text": "Kompyuter xotirasining o‘lchov birligi qaysi?",
+          "choices": [
+            { "id": 1, "text": "Volt" },
+            { "id": 2, "text": "Bayt" },
+            { "id": 3, "text": "Gerz" },
+            { "id": 4, "text": "Vatt" }
+          ],
+          "answerId": 2
+        },
+        {
+          "id": 3,
+          "subject": "Fizika",
+          "text": "Tezlik formulasi qaysi?",
+          "choices": [
+            { "id": 1, "text": "v = s / t" },
+            { "id": 2, "text": "v = t / s" },
+            { "id": 3, "text": "v = s × t" },
+            { "id": 4, "text": "v = s + t" }
+          ],
+          "answerId": 1
+        },
+        {
+          "id": 4,
+          "subject": "Kimyo",
+          "text": "H2O — bu nima?",
+          "choices": [
+            { "id": 1, "text": "Kislorod" },
+            { "id": 2, "text": "Suv" },
+            { "id": 3, "text": "Vodorod" },
+            { "id": 4, "text": "Karbonat angidrid" }
+          ],
+          "answerId": 2
+        },
+        {
+          "id": 5,
+          "subject": "Biologiya",
+          "text": "O‘simliklarda fotosintez asosan qaysi organellada kechadi?",
+          "choices": [
+            { "id": 1, "text": "Mitoxondriya" },
+            { "id": 2, "text": "Xloroplast" },
+            { "id": 3, "text": "Yadro" },
+            { "id": 4, "text": "Ribosoma" }
+          ],
+          "answerId": 2
+        },
+        {
+          "id": 6,
+          "subject": "Geografiya",
+          "text": "Eng katta okean qaysi?",
+          "choices": [
+            { "id": 1, "text": "Atlantika" },
+            { "id": 2, "text": "Hind" },
+            { "id": 3, "text": "Tinch" },
+            { "id": 4, "text": "Shimoliy Muz" }
+          ],
+          "answerId": 3
+        },
+        {
+          "id": 7,
+          "subject": "Ona tili",
+          "text": "Sinonim so‘zlar — bu…",
+          "choices": [
+            { "id": 1, "text": "Ma’nosi bir-biriga yaqin so‘zlar" },
+            { "id": 2, "text": "Ma’nosi qarama-qarshi so‘zlar" },
+            { "id": 3, "text": "Faqat otlar" },
+            { "id": 4, "text": "Faqat fe’llar" }
+          ],
+          "answerId": 1
+        },
+        {
+          "id": 8,
+          "subject": "Ingliz tili",
+          "text": "‘Book’ so‘zining tarjimasi qaysi?",
+          "choices": [
+            { "id": 1, "text": "Daftar" },
+            { "id": 2, "text": "Kitob" },
+            { "id": 3, "text": "Qalam" },
+            { "id": 4, "text": "Sumka" }
+          ],
+          "answerId": 2
+        },
+        {
+          "id": 9,
+          "subject": "Tarix",
+          "text": "O‘rta asrlar — bu qaysi davr oralig‘i (taxminan)?",
+          "choices": [
+            { "id": 1, "text": "V–XV asrlar" },
+            { "id": 2, "text": "I–IV asrlar" },
+            { "id": 3, "text": "XIX–XX asrlar" },
+            { "id": 4, "text": "XXI asr" }
+          ],
+          "answerId": 1
+        },
+        {
+          "id": 10,
+          "subject": "Tabiat",
+          "text": "Suvning qaynash harorati (normal bosimda) nechchi °C?",
+          "choices": [
+            { "id": 1, "text": "0°C" },
+            { "id": 2, "text": "50°C" },
+            { "id": 3, "text": "100°C" },
+            { "id": 4, "text": "150°C" }
+          ],
+          "answerId": 3
+        }
+      ]
+    }
+  ]
+}

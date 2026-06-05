@@ -1,0 +1,6002 @@
+[
+  {
+    "id": 2001,
+    "subject": "math",
+    "level": "medium",
+    "question": "x + 7 = 15 bo‘lsa, x = ?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "6"
+      },
+      {
+        "id": 2,
+        "text": "7"
+      },
+      {
+        "id": 3,
+        "text": "8"
+      },
+      {
+        "id": 4,
+        "text": "9"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2002,
+    "subject": "math",
+    "level": "medium",
+    "question": "2x = 18 bo‘lsa, x = ?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "7"
+      },
+      {
+        "id": 2,
+        "text": "8"
+      },
+      {
+        "id": 3,
+        "text": "9"
+      },
+      {
+        "id": 4,
+        "text": "10"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2003,
+    "subject": "math",
+    "level": "medium",
+    "question": "(-3) × 4 = ?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "-12"
+      },
+      {
+        "id": 2,
+        "text": "12"
+      },
+      {
+        "id": 3,
+        "text": "-7"
+      },
+      {
+        "id": 4,
+        "text": "7"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2004,
+    "subject": "math",
+    "level": "medium",
+    "question": "a^2 - b^2 formulasi qaysi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "(a-b)(a+b)"
+      },
+      {
+        "id": 2,
+        "text": "(a+b)^2"
+      },
+      {
+        "id": 3,
+        "text": "(a-b)^2"
+      },
+      {
+        "id": 4,
+        "text": "ab"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2005,
+    "subject": "math",
+    "level": "medium",
+    "question": "√81 = ?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "8"
+      },
+      {
+        "id": 2,
+        "text": "9"
+      },
+      {
+        "id": 3,
+        "text": "10"
+      },
+      {
+        "id": 4,
+        "text": "12"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2006,
+    "subject": "math",
+    "level": "medium",
+    "question": "3/5 = ?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "0.3"
+      },
+      {
+        "id": 2,
+        "text": "0.6"
+      },
+      {
+        "id": 3,
+        "text": "0.8"
+      },
+      {
+        "id": 4,
+        "text": "1.6"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2007,
+    "subject": "math",
+    "level": "medium",
+    "question": "Pifagor teoremasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "a+b=c"
+      },
+      {
+        "id": 2,
+        "text": "a^2+b^2=c^2"
+      },
+      {
+        "id": 3,
+        "text": "ab=c"
+      },
+      {
+        "id": 4,
+        "text": "a^2-b^2=c^2"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2008,
+    "subject": "math",
+    "level": "medium",
+    "question": "20% ning kasr ko‘rinishi qaysi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "1/5"
+      },
+      {
+        "id": 2,
+        "text": "1/4"
+      },
+      {
+        "id": 3,
+        "text": "1/3"
+      },
+      {
+        "id": 4,
+        "text": "2/5"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2009,
+    "subject": "math",
+    "level": "medium",
+    "question": "y = 2x bo‘lsa, x=4 da y=?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "6"
+      },
+      {
+        "id": 2,
+        "text": "7"
+      },
+      {
+        "id": 3,
+        "text": "8"
+      },
+      {
+        "id": 4,
+        "text": "9"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2010,
+    "subject": "math",
+    "level": "medium",
+    "question": "60° va 30° bo‘lsa, uchinchi burchak?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "60°"
+      },
+      {
+        "id": 2,
+        "text": "90°"
+      },
+      {
+        "id": 3,
+        "text": "120°"
+      },
+      {
+        "id": 4,
+        "text": "150°"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2011,
+    "subject": "math",
+    "level": "medium",
+    "question": "3x = 27 bo'lsa, x = ?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "6"
+      },
+      {
+        "id": 2,
+        "text": "7"
+      },
+      {
+        "id": 3,
+        "text": "8"
+      },
+      {
+        "id": 4,
+        "text": "9"
+      }
+    ],
+    "correctChoiceId": 4
+  },
+  {
+    "id": 2012,
+    "subject": "math",
+    "level": "medium",
+    "question": "1/4 + 1/4 = ?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "1/2"
+      },
+      {
+        "id": 2,
+        "text": "1/4"
+      },
+      {
+        "id": 3,
+        "text": "2/3"
+      },
+      {
+        "id": 4,
+        "text": "1"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2013,
+    "subject": "math",
+    "level": "medium",
+    "question": "0.75 kasr ko'rinishida?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "1/2"
+      },
+      {
+        "id": 2,
+        "text": "3/4"
+      },
+      {
+        "id": 3,
+        "text": "2/5"
+      },
+      {
+        "id": 4,
+        "text": "4/3"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2014,
+    "subject": "math",
+    "level": "medium",
+    "question": "Perimetri 20, eni 4 bo'lgan to'rtburchakning bo'yi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "5"
+      },
+      {
+        "id": 2,
+        "text": "6"
+      },
+      {
+        "id": 3,
+        "text": "7"
+      },
+      {
+        "id": 4,
+        "text": "8"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2015,
+    "subject": "math",
+    "level": "medium",
+    "question": "12^2 = ?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "124"
+      },
+      {
+        "id": 2,
+        "text": "122"
+      },
+      {
+        "id": 3,
+        "text": "144"
+      },
+      {
+        "id": 4,
+        "text": "154"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2016,
+    "subject": "math",
+    "level": "medium",
+    "question": "5 ta ketma-ket sonning o'rtachasi 14 bo'lsa, o'rtadagi son?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "12"
+      },
+      {
+        "id": 2,
+        "text": "13"
+      },
+      {
+        "id": 3,
+        "text": "14"
+      },
+      {
+        "id": 4,
+        "text": "15"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2017,
+    "subject": "math",
+    "level": "medium",
+    "question": "2(3 + 4) = ?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "10"
+      },
+      {
+        "id": 2,
+        "text": "12"
+      },
+      {
+        "id": 3,
+        "text": "14"
+      },
+      {
+        "id": 4,
+        "text": "16"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2018,
+    "subject": "math",
+    "level": "medium",
+    "question": "15% of 200 = ?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "20"
+      },
+      {
+        "id": 2,
+        "text": "25"
+      },
+      {
+        "id": 3,
+        "text": "30"
+      },
+      {
+        "id": 4,
+        "text": "35"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2019,
+    "subject": "math",
+    "level": "medium",
+    "question": "Aylananing diametri radiusdan necha marta katta?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "1"
+      },
+      {
+        "id": 2,
+        "text": "2"
+      },
+      {
+        "id": 3,
+        "text": "3"
+      },
+      {
+        "id": 4,
+        "text": "4"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2020,
+    "subject": "math",
+    "level": "medium",
+    "question": "x - 9 = 13 bo'lsa, x = ?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "20"
+      },
+      {
+        "id": 2,
+        "text": "21"
+      },
+      {
+        "id": 3,
+        "text": "22"
+      },
+      {
+        "id": 4,
+        "text": "23"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2101,
+    "subject": "english",
+    "level": "medium",
+    "question": "Present Simple’da “He/She” uchun fe’lga nima qo‘shiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "-ed"
+      },
+      {
+        "id": 2,
+        "text": "-s/-es"
+      },
+      {
+        "id": 3,
+        "text": "-ing"
+      },
+      {
+        "id": 4,
+        "text": "-er"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2102,
+    "subject": "english",
+    "level": "medium",
+    "question": "“I went to school.” qaysi zamon?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Present"
+      },
+      {
+        "id": 2,
+        "text": "Past"
+      },
+      {
+        "id": 3,
+        "text": "Future"
+      },
+      {
+        "id": 4,
+        "text": "Continuous"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2103,
+    "subject": "english",
+    "level": "medium",
+    "question": "“There is / There are” nimani bildiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Mavjudlikni"
+      },
+      {
+        "id": 2,
+        "text": "Taqiqlashni"
+      },
+      {
+        "id": 3,
+        "text": "So‘rashni"
+      },
+      {
+        "id": 4,
+        "text": "Buyurishni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2104,
+    "subject": "english",
+    "level": "medium",
+    "question": "“Bigger” bu ...",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Oddiy daraja"
+      },
+      {
+        "id": 2,
+        "text": "Qiyosiy daraja"
+      },
+      {
+        "id": 3,
+        "text": "Orttirma daraja"
+      },
+      {
+        "id": 4,
+        "text": "Fe’l"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2105,
+    "subject": "english",
+    "level": "medium",
+    "question": "“the most beautiful” bu ...",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Oddiy"
+      },
+      {
+        "id": 2,
+        "text": "Qiyosiy"
+      },
+      {
+        "id": 3,
+        "text": "Orttirma"
+      },
+      {
+        "id": 4,
+        "text": "Sifat emas"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2106,
+    "subject": "english",
+    "level": "medium",
+    "question": "“I have lived here for 2 years.” qaysi zamon?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Present Perfect"
+      },
+      {
+        "id": 2,
+        "text": "Past Simple"
+      },
+      {
+        "id": 3,
+        "text": "Future Simple"
+      },
+      {
+        "id": 4,
+        "text": "Past Perfect"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2107,
+    "subject": "english",
+    "level": "medium",
+    "question": "“must” nimani bildiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Majburiyat"
+      },
+      {
+        "id": 2,
+        "text": "O‘tmish"
+      },
+      {
+        "id": 3,
+        "text": "Joy"
+      },
+      {
+        "id": 4,
+        "text": "Rang"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2108,
+    "subject": "english",
+    "level": "medium",
+    "question": "“Could you help me?” bu qanday gap?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Buyruq"
+      },
+      {
+        "id": 2,
+        "text": "Iltimos/so‘rov"
+      },
+      {
+        "id": 3,
+        "text": "Inkоr"
+      },
+      {
+        "id": 4,
+        "text": "Shart"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2109,
+    "subject": "english",
+    "level": "medium",
+    "question": "“They ___ playing now.”",
+    "choices": [
+      {
+        "id": 1,
+        "text": "is"
+      },
+      {
+        "id": 2,
+        "text": "are"
+      },
+      {
+        "id": 3,
+        "text": "am"
+      },
+      {
+        "id": 4,
+        "text": "be"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2110,
+    "subject": "english",
+    "level": "medium",
+    "question": "“between” so‘zi qachon ishlatiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ikki narsa orasida"
+      },
+      {
+        "id": 2,
+        "text": "Ko‘p narsalar orasida"
+      },
+      {
+        "id": 3,
+        "text": "Faqat vaqt"
+      },
+      {
+        "id": 4,
+        "text": "Faqat rang"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2111,
+    "subject": "english",
+    "level": "medium",
+    "question": "'She has already finished.' qaysi zamon?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Past Simple"
+      },
+      {
+        "id": 2,
+        "text": "Present Perfect"
+      },
+      {
+        "id": 3,
+        "text": "Future Simple"
+      },
+      {
+        "id": 4,
+        "text": "Past Continuous"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2112,
+    "subject": "english",
+    "level": "medium",
+    "question": "'If it rains, we will stay home.' bu nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Shart gap"
+      },
+      {
+        "id": 2,
+        "text": "Buyruq gap"
+      },
+      {
+        "id": 3,
+        "text": "So'roq gap"
+      },
+      {
+        "id": 4,
+        "text": "Undov gap"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2113,
+    "subject": "english",
+    "level": "medium",
+    "question": "'More interesting' qaysi daraja?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Oddiy"
+      },
+      {
+        "id": 2,
+        "text": "Qiyosiy"
+      },
+      {
+        "id": 3,
+        "text": "Orttirma"
+      },
+      {
+        "id": 4,
+        "text": "Ravish"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2114,
+    "subject": "english",
+    "level": "medium",
+    "question": "'I was reading at 8 pm.' qaysi zamon?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Past Continuous"
+      },
+      {
+        "id": 2,
+        "text": "Present Continuous"
+      },
+      {
+        "id": 3,
+        "text": "Past Perfect"
+      },
+      {
+        "id": 4,
+        "text": "Future"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2115,
+    "subject": "english",
+    "level": "medium",
+    "question": "'much' qaysi otlar bilan ko'proq ishlatiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Sanaladigan ko'plik"
+      },
+      {
+        "id": 2,
+        "text": "Sanalmaydigan"
+      },
+      {
+        "id": 3,
+        "text": "Faqat ism"
+      },
+      {
+        "id": 4,
+        "text": "Faqat joy"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2116,
+    "subject": "english",
+    "level": "medium",
+    "question": "'since 2020' odatda qaysi zamon bilan keladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Present Perfect"
+      },
+      {
+        "id": 2,
+        "text": "Past Simple"
+      },
+      {
+        "id": 3,
+        "text": "Future Simple"
+      },
+      {
+        "id": 4,
+        "text": "Present Simple"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2117,
+    "subject": "english",
+    "level": "medium",
+    "question": "'He speaks English well.' gapida 'well' nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ot"
+      },
+      {
+        "id": 2,
+        "text": "Sifat"
+      },
+      {
+        "id": 3,
+        "text": "Ravish"
+      },
+      {
+        "id": 4,
+        "text": "Olmosh"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2118,
+    "subject": "english",
+    "level": "medium",
+    "question": "'The book was written in 2020.' bu nisbat?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Active"
+      },
+      {
+        "id": 2,
+        "text": "Passive"
+      },
+      {
+        "id": 3,
+        "text": "Question"
+      },
+      {
+        "id": 4,
+        "text": "Negative"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2119,
+    "subject": "english",
+    "level": "medium",
+    "question": "'Neither ... nor' nimani bog'laydi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ikki inkor variantni"
+      },
+      {
+        "id": 2,
+        "text": "Faqat joyni"
+      },
+      {
+        "id": 3,
+        "text": "Faqat sonni"
+      },
+      {
+        "id": 4,
+        "text": "Faqat zamonni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2120,
+    "subject": "english",
+    "level": "medium",
+    "question": "'had gone' qaysi zamon shakli?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Past Perfect"
+      },
+      {
+        "id": 2,
+        "text": "Present Perfect"
+      },
+      {
+        "id": 3,
+        "text": "Future Perfect"
+      },
+      {
+        "id": 4,
+        "text": "Past Simple"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2201,
+    "subject": "russian",
+    "level": "medium",
+    "question": "“Я читаю” qaysi zamon?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Hozirgi"
+      },
+      {
+        "id": 2,
+        "text": "O‘tgan"
+      },
+      {
+        "id": 3,
+        "text": "Kelasi"
+      },
+      {
+        "id": 4,
+        "text": "Shart"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2202,
+    "subject": "russian",
+    "level": "medium",
+    "question": "“Мы были” qaysi zamon?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Hozirgi"
+      },
+      {
+        "id": 2,
+        "text": "O‘tgan"
+      },
+      {
+        "id": 3,
+        "text": "Kelasi"
+      },
+      {
+        "id": 4,
+        "text": "Buyruq"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2203,
+    "subject": "russian",
+    "level": "medium",
+    "question": "“Он будет” qaysi zamon?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Hozirgi"
+      },
+      {
+        "id": 2,
+        "text": "O‘tgan"
+      },
+      {
+        "id": 3,
+        "text": "Kelasi"
+      },
+      {
+        "id": 4,
+        "text": "So‘roq"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2204,
+    "subject": "russian",
+    "level": "medium",
+    "question": "Ot so‘roqlari (rus tilida) qaysi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Кто? Что?"
+      },
+      {
+        "id": 2,
+        "text": "Где? Когда?"
+      },
+      {
+        "id": 3,
+        "text": "Как? Почему?"
+      },
+      {
+        "id": 4,
+        "text": "Сколько?"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2205,
+    "subject": "russian",
+    "level": "medium",
+    "question": "Sifat so‘roqlari?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Кто? Что?"
+      },
+      {
+        "id": 2,
+        "text": "Какой? Какая? Какое?"
+      },
+      {
+        "id": 3,
+        "text": "Где?"
+      },
+      {
+        "id": 4,
+        "text": "Когда?"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2206,
+    "subject": "russian",
+    "level": "medium",
+    "question": "“быстро” qaysi so‘z turkumi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ot"
+      },
+      {
+        "id": 2,
+        "text": "Sifat"
+      },
+      {
+        "id": 3,
+        "text": "Ravish"
+      },
+      {
+        "id": 4,
+        "text": "Son"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2207,
+    "subject": "russian",
+    "level": "medium",
+    "question": "“У меня есть книга.” tarjimasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Menda kitob bor"
+      },
+      {
+        "id": 2,
+        "text": "Men kitobman"
+      },
+      {
+        "id": 3,
+        "text": "Kitob yo‘q"
+      },
+      {
+        "id": 4,
+        "text": "Men o‘qiyman"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2208,
+    "subject": "russian",
+    "level": "medium",
+    "question": "“потому что” ma’nosi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Shuning uchun"
+      },
+      {
+        "id": 2,
+        "text": "Chunki"
+      },
+      {
+        "id": 3,
+        "text": "Agar"
+      },
+      {
+        "id": 4,
+        "text": "Lekin"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2209,
+    "subject": "russian",
+    "level": "medium",
+    "question": "“но” bog‘lovchisi ma’nosi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Va"
+      },
+      {
+        "id": 2,
+        "text": "Lekin"
+      },
+      {
+        "id": 3,
+        "text": "Chunki"
+      },
+      {
+        "id": 4,
+        "text": "Agar"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2210,
+    "subject": "russian",
+    "level": "medium",
+    "question": "“вчера” nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Bugun"
+      },
+      {
+        "id": 2,
+        "text": "Kecha"
+      },
+      {
+        "id": 3,
+        "text": "Ertaga"
+      },
+      {
+        "id": 4,
+        "text": "Hozir"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2211,
+    "subject": "russian",
+    "level": "medium",
+    "question": "'Ya budu chitat' qaysi zamon?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Hozirgi"
+      },
+      {
+        "id": 2,
+        "text": "O'tgan"
+      },
+      {
+        "id": 3,
+        "text": "Kelasi"
+      },
+      {
+        "id": 4,
+        "text": "Buyruq"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2212,
+    "subject": "russian",
+    "level": "medium",
+    "question": "'samiy bolshoy' qaysi daraja?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Oddiy"
+      },
+      {
+        "id": 2,
+        "text": "Qiyosiy"
+      },
+      {
+        "id": 3,
+        "text": "Orttirma"
+      },
+      {
+        "id": 4,
+        "text": "Ravish"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2213,
+    "subject": "russian",
+    "level": "medium",
+    "question": "'potomu chto' nimani bildiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Shuning uchun"
+      },
+      {
+        "id": 2,
+        "text": "Chunki"
+      },
+      {
+        "id": 3,
+        "text": "Lekin"
+      },
+      {
+        "id": 4,
+        "text": "Agar"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2214,
+    "subject": "russian",
+    "level": "medium",
+    "question": "'krasivaya devochka' birikmasida sifat qaysi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "devochka"
+      },
+      {
+        "id": 2,
+        "text": "krasivaya"
+      },
+      {
+        "id": 3,
+        "text": "ikkalasi"
+      },
+      {
+        "id": 4,
+        "text": "yo'q"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2215,
+    "subject": "russian",
+    "level": "medium",
+    "question": "'my chitaem' fe'li qaysi shaxs?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "1-shaxs ko'plik"
+      },
+      {
+        "id": 2,
+        "text": "2-shaxs birlik"
+      },
+      {
+        "id": 3,
+        "text": "3-shaxs ko'plik"
+      },
+      {
+        "id": 4,
+        "text": "1-shaxs birlik"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2216,
+    "subject": "russian",
+    "level": "medium",
+    "question": "'v shkole' ma'nosi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Maktabga"
+      },
+      {
+        "id": 2,
+        "text": "Maktabda"
+      },
+      {
+        "id": 3,
+        "text": "Maktabdan"
+      },
+      {
+        "id": 4,
+        "text": "Maktab uchun"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2217,
+    "subject": "russian",
+    "level": "medium",
+    "question": "'bez knigi' qaysi ma'no?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Kitob bilan"
+      },
+      {
+        "id": 2,
+        "text": "Kitobsiz"
+      },
+      {
+        "id": 3,
+        "text": "Kitobda"
+      },
+      {
+        "id": 4,
+        "text": "Kitobga"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2218,
+    "subject": "russian",
+    "level": "medium",
+    "question": "'kakoy?' savoli qaysi so'z turkumiga xos?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ot"
+      },
+      {
+        "id": 2,
+        "text": "Sifat"
+      },
+      {
+        "id": 3,
+        "text": "Fe'l"
+      },
+      {
+        "id": 4,
+        "text": "Ravish"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2219,
+    "subject": "russian",
+    "level": "medium",
+    "question": "'oni govorili' qaysi zamon?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Kelasi"
+      },
+      {
+        "id": 2,
+        "text": "Hozirgi"
+      },
+      {
+        "id": 3,
+        "text": "O'tgan"
+      },
+      {
+        "id": 4,
+        "text": "Shart"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2220,
+    "subject": "russian",
+    "level": "medium",
+    "question": "'esli' so'zi nimani bildiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Agar"
+      },
+      {
+        "id": 2,
+        "text": "Chunki"
+      },
+      {
+        "id": 3,
+        "text": "Lekin"
+      },
+      {
+        "id": 4,
+        "text": "Qachon"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2301,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Hujayra nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Tirik organizmning eng kichik birligi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat suyak"
+      },
+      {
+        "id": 3,
+        "text": "Faqat qon"
+      },
+      {
+        "id": 4,
+        "text": "Faqat barg"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2302,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Fotosintezda o‘simlik nima ishlab chiqaradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Glyukoza va kislorod"
+      },
+      {
+        "id": 2,
+        "text": "Faqat suv"
+      },
+      {
+        "id": 3,
+        "text": "Faqat tuz"
+      },
+      {
+        "id": 4,
+        "text": "Faqat azot"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2303,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Qonning asosiy vazifasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Oziqa va kislorod tashish"
+      },
+      {
+        "id": 2,
+        "text": "Faqat suzish"
+      },
+      {
+        "id": 3,
+        "text": "Faqat ovqat hazm qilish"
+      },
+      {
+        "id": 4,
+        "text": "Faqat eshitish"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2304,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Nerv tizimi vazifasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Boshqarish va aloqa"
+      },
+      {
+        "id": 2,
+        "text": "Faqat nafas"
+      },
+      {
+        "id": 3,
+        "text": "Faqat suyak"
+      },
+      {
+        "id": 4,
+        "text": "Faqat ovqat"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2305,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Irsi axborot qayerda saqlanadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "DNK"
+      },
+      {
+        "id": 2,
+        "text": "Suv"
+      },
+      {
+        "id": 3,
+        "text": "Tuz"
+      },
+      {
+        "id": 4,
+        "text": "Moy"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2306,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Odamda yurak bo‘limlari soni?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "2"
+      },
+      {
+        "id": 2,
+        "text": "3"
+      },
+      {
+        "id": 3,
+        "text": "4"
+      },
+      {
+        "id": 4,
+        "text": "5"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2307,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Baliqlar sinfi qaysi muhitga moslashgan?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Suv"
+      },
+      {
+        "id": 2,
+        "text": "Havo"
+      },
+      {
+        "id": 3,
+        "text": "Cho‘l"
+      },
+      {
+        "id": 4,
+        "text": "Kosmos"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2308,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Zamburug‘lar o‘simlikmi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ha, o‘simlik"
+      },
+      {
+        "id": 2,
+        "text": "Yo‘q, alohida guruh"
+      },
+      {
+        "id": 3,
+        "text": "Faqat hayvon"
+      },
+      {
+        "id": 4,
+        "text": "Faqat bakteriya"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2309,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Ekotizim nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Tirik va notirik tabiat tizimi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat bitta hayvon"
+      },
+      {
+        "id": 3,
+        "text": "Faqat o‘simlik"
+      },
+      {
+        "id": 4,
+        "text": "Faqat tuproq"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2310,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Oziq zanjirida “produsent” kim?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "O‘simliklar"
+      },
+      {
+        "id": 2,
+        "text": "Yirtqichlar"
+      },
+      {
+        "id": 3,
+        "text": "Parazitlar"
+      },
+      {
+        "id": 4,
+        "text": "Faqat odam"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2311,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Hujayra markazida ko'pincha nima bo'ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yadro"
+      },
+      {
+        "id": 2,
+        "text": "Suyak"
+      },
+      {
+        "id": 3,
+        "text": "Qon"
+      },
+      {
+        "id": 4,
+        "text": "Tish"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2312,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Fotosintez uchun eng zarur omillardan biri?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Quyosh nuri"
+      },
+      {
+        "id": 2,
+        "text": "Temir mix"
+      },
+      {
+        "id": 3,
+        "text": "Tuz ko'pigi"
+      },
+      {
+        "id": 4,
+        "text": "Qum"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2313,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Odam organizmida kislorod qonga qayerda o'tadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "O'pka"
+      },
+      {
+        "id": 2,
+        "text": "Jigar"
+      },
+      {
+        "id": 3,
+        "text": "Oshqozon"
+      },
+      {
+        "id": 4,
+        "text": "Buyrak"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2314,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Qonning suyuq qismi nima deyiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Plazma"
+      },
+      {
+        "id": 2,
+        "text": "DNK"
+      },
+      {
+        "id": 3,
+        "text": "Jabra"
+      },
+      {
+        "id": 4,
+        "text": "Emal"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2315,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Mushaklar nima uchun kerak?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Harakat uchun"
+      },
+      {
+        "id": 2,
+        "text": "Faqat nafas olish uchun"
+      },
+      {
+        "id": 3,
+        "text": "Faqat ko'rish uchun"
+      },
+      {
+        "id": 4,
+        "text": "Faqat eshitish uchun"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2316,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Irsiy belgilar asosan qaysi modda bilan bog'liq?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "DNK"
+      },
+      {
+        "id": 2,
+        "text": "Kraxmal"
+      },
+      {
+        "id": 3,
+        "text": "Tuz"
+      },
+      {
+        "id": 4,
+        "text": "Suv"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2317,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Yashil o'simliklarda xlorofill qayerda bo'ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Barg hujayralarida"
+      },
+      {
+        "id": 2,
+        "text": "Ildiz tashqarisida"
+      },
+      {
+        "id": 3,
+        "text": "Faqat mevada"
+      },
+      {
+        "id": 4,
+        "text": "Faqat urug'da"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2318,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Qaysi a'zo qonni butun tanaga haydaydi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yurak"
+      },
+      {
+        "id": 2,
+        "text": "Teri"
+      },
+      {
+        "id": 3,
+        "text": "Miya"
+      },
+      {
+        "id": 4,
+        "text": "Oshqozon"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2319,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Ekologiyada 'iste'molchi' kim?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Tayyor oziq bilan oziqlanuvchi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat o'simlik"
+      },
+      {
+        "id": 3,
+        "text": "Faqat quyosh"
+      },
+      {
+        "id": 4,
+        "text": "Faqat suv"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2320,
+    "subject": "biology",
+    "level": "medium",
+    "question": "Suyaklar tizimi organizmda nima vazifani bajaradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Tayanch va himoya"
+      },
+      {
+        "id": 2,
+        "text": "Faqat hazm"
+      },
+      {
+        "id": 3,
+        "text": "Faqat eshitish"
+      },
+      {
+        "id": 4,
+        "text": "Faqat ko'rish"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2401,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Atmosferadagi ozon qatlami nimadan himoya qiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "UV nurlardan"
+      },
+      {
+        "id": 2,
+        "text": "Suvdan"
+      },
+      {
+        "id": 3,
+        "text": "Tuproqdan"
+      },
+      {
+        "id": 4,
+        "text": "Shamoldan"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2402,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Suv aylanishi bosqichlaridan biri?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Bug‘lanish"
+      },
+      {
+        "id": 2,
+        "text": "Yonish"
+      },
+      {
+        "id": 3,
+        "text": "Eritish"
+      },
+      {
+        "id": 4,
+        "text": "Zanglash"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2403,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Elektr zanjiri uchun nima kerak?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Manba, sim, iste’molchi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat qog‘oz"
+      },
+      {
+        "id": 3,
+        "text": "Faqat suv"
+      },
+      {
+        "id": 4,
+        "text": "Faqat qum"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2404,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Metallarda elektr o‘tishi sababi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Erkin elektronlar"
+      },
+      {
+        "id": 2,
+        "text": "Suv"
+      },
+      {
+        "id": 3,
+        "text": "Yog‘och tolasi"
+      },
+      {
+        "id": 4,
+        "text": "Havo"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2405,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Yerning ichki tuzilishi qatlamlari?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yadro, mantiya, qobiq"
+      },
+      {
+        "id": 2,
+        "text": "Suv, havo, olov"
+      },
+      {
+        "id": 3,
+        "text": "Qor, muz, tuman"
+      },
+      {
+        "id": 4,
+        "text": "Faqat qobiq"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2406,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Toshko‘mir qaysi tur resurs?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qayta tiklanmaydigan"
+      },
+      {
+        "id": 2,
+        "text": "Qayta tiklanadigan"
+      },
+      {
+        "id": 3,
+        "text": "Suv resursi"
+      },
+      {
+        "id": 4,
+        "text": "O‘simlik resursi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2407,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Issiqxonada havo nega issiqroq bo‘ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Issiqlik ushlanib qoladi"
+      },
+      {
+        "id": 2,
+        "text": "Suv muzlaydi"
+      },
+      {
+        "id": 3,
+        "text": "Magnit tortadi"
+      },
+      {
+        "id": 4,
+        "text": "Hech narsa bo‘lmaydi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2408,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Chiqindini saralashning foydasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qayta ishlash osonlashadi"
+      },
+      {
+        "id": 2,
+        "text": "Ko‘paytiradi"
+      },
+      {
+        "id": 3,
+        "text": "Ifloslaydi"
+      },
+      {
+        "id": 4,
+        "text": "Yonishni kuchaytiradi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2409,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Kislota yomg‘iri sababi ko‘proq?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Zavod gazlari (SO2, NOx)"
+      },
+      {
+        "id": 2,
+        "text": "Qor"
+      },
+      {
+        "id": 3,
+        "text": "Daryo"
+      },
+      {
+        "id": 4,
+        "text": "Muz"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2410,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Energiya tejashga misol?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "LED lampalardan foydalanish"
+      },
+      {
+        "id": 2,
+        "text": "Chiroqni yoqib ketish"
+      },
+      {
+        "id": 3,
+        "text": "Suvni oqizib qo‘yish"
+      },
+      {
+        "id": 4,
+        "text": "Keraksiz qurilmani ishlatish"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2411,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Suv aylanishida bug'langan suv keyin nima bo'ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Bulutga aylanadi"
+      },
+      {
+        "id": 2,
+        "text": "Toshga aylanadi"
+      },
+      {
+        "id": 3,
+        "text": "Yoqoladi"
+      },
+      {
+        "id": 4,
+        "text": "Metall bo'ladi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2412,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Quyosh energiyasidan foydalanishning foydasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Tabiiy va qayta tiklanuvchi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat tunda ishlaydi"
+      },
+      {
+        "id": 3,
+        "text": "Havoni ifloslaydi"
+      },
+      {
+        "id": 4,
+        "text": "Suvni qotiradi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2413,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Zilzila ko'proq nimaga bog'liq?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yer qobig'i harakatiga"
+      },
+      {
+        "id": 2,
+        "text": "Bulutlarga"
+      },
+      {
+        "id": 3,
+        "text": "Dengiz rangiga"
+      },
+      {
+        "id": 4,
+        "text": "Oy shakliga"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2414,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Atmosfera Yer uchun nima qiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Himoya qiladi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat muzlatadi"
+      },
+      {
+        "id": 3,
+        "text": "Faqat quritadi"
+      },
+      {
+        "id": 4,
+        "text": "Hech nima"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2415,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Elektr zanjirida kalitning vazifasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Tokni ulash va uzish"
+      },
+      {
+        "id": 2,
+        "text": "Haroratni o'lchash"
+      },
+      {
+        "id": 3,
+        "text": "Suvni tashish"
+      },
+      {
+        "id": 4,
+        "text": "Rasm chizish"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2416,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Issiqxona effekti ortsa nima yuz berishi mumkin?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Harorat ko'tariladi"
+      },
+      {
+        "id": 2,
+        "text": "Yer muzlab qoladi"
+      },
+      {
+        "id": 3,
+        "text": "Quyosh so'nadi"
+      },
+      {
+        "id": 4,
+        "text": "Daryo to'xtaydi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2417,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Tabiiy gaz qaysi tur resurs?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qayta tiklanmaydigan"
+      },
+      {
+        "id": 2,
+        "text": "Qayta tiklanadigan"
+      },
+      {
+        "id": 3,
+        "text": "Biologik hujayra"
+      },
+      {
+        "id": 4,
+        "text": "Sun'iy"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2418,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Chaqmoq asosan nimaning natijasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Elektr zaryadlari"
+      },
+      {
+        "id": 2,
+        "text": "Faqat shamol"
+      },
+      {
+        "id": 3,
+        "text": "Faqat yomg'ir"
+      },
+      {
+        "id": 4,
+        "text": "Faqat qor"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2419,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Tuproq unumdorligi nimaga yordam beradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Hosil olishga"
+      },
+      {
+        "id": 2,
+        "text": "Faqat muz hosil qilishga"
+      },
+      {
+        "id": 3,
+        "text": "Faqat daryo oqizishga"
+      },
+      {
+        "id": 4,
+        "text": "Faqat qor yog'dirishga"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2420,
+    "subject": "nature",
+    "level": "medium",
+    "question": "Ozon qatlamining kamayishi nimani kuchaytiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "UV nurlar ta'sirini"
+      },
+      {
+        "id": 2,
+        "text": "Qor yog'ishini"
+      },
+      {
+        "id": 3,
+        "text": "Daryo oqimini"
+      },
+      {
+        "id": 4,
+        "text": "Tog' balandligini"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2501,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "pH 7 nimani bildiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Neytral"
+      },
+      {
+        "id": 2,
+        "text": "Kislotali"
+      },
+      {
+        "id": 3,
+        "text": "Ishqoriy"
+      },
+      {
+        "id": 4,
+        "text": "Metall"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2502,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Kislotalarga misol?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "HCl"
+      },
+      {
+        "id": 2,
+        "text": "NaCl"
+      },
+      {
+        "id": 3,
+        "text": "H2O"
+      },
+      {
+        "id": 4,
+        "text": "O2"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2503,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Ishqorlarga misol?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "NaOH"
+      },
+      {
+        "id": 2,
+        "text": "CO2"
+      },
+      {
+        "id": 3,
+        "text": "H2O"
+      },
+      {
+        "id": 4,
+        "text": "NaCl"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2504,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Kimyoviy reaksiya belgisi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Gaz ajralishi/cho‘kma/issiqlik"
+      },
+      {
+        "id": 2,
+        "text": "Faqat rang"
+      },
+      {
+        "id": 3,
+        "text": "Faqat muz"
+      },
+      {
+        "id": 4,
+        "text": "Faqat tovush"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2505,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Atom markazida nima bor?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yadro"
+      },
+      {
+        "id": 2,
+        "text": "Molekula"
+      },
+      {
+        "id": 3,
+        "text": "Suv"
+      },
+      {
+        "id": 4,
+        "text": "Tuz"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2506,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Elementlarning davriy jadvalini kim tuzgan?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Mendeleyev"
+      },
+      {
+        "id": 2,
+        "text": "Nyuton"
+      },
+      {
+        "id": 3,
+        "text": "Einshteyn"
+      },
+      {
+        "id": 4,
+        "text": "Farobiy"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2507,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "CO2 suvda erisa nima hosil bo‘ladi (soddalashtirilgan)?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Kislotali muhit"
+      },
+      {
+        "id": 2,
+        "text": "Faqat tuz"
+      },
+      {
+        "id": 3,
+        "text": "Metall"
+      },
+      {
+        "id": 4,
+        "text": "Qum"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2508,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Reaksiyada modda massasi ...",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Saqlanadi"
+      },
+      {
+        "id": 2,
+        "text": "Yo‘qoladi"
+      },
+      {
+        "id": 3,
+        "text": "Har doim oshadi"
+      },
+      {
+        "id": 4,
+        "text": "Har doim kamayadi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2509,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Metallarning umumiy xossasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Elektrni o‘tkazadi"
+      },
+      {
+        "id": 2,
+        "text": "Suvda yonadi"
+      },
+      {
+        "id": 3,
+        "text": "Hamma gaz"
+      },
+      {
+        "id": 4,
+        "text": "Ko‘rinmaydi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2510,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "NaCl qanday tur birikma?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Tuz"
+      },
+      {
+        "id": 2,
+        "text": "Kislota"
+      },
+      {
+        "id": 3,
+        "text": "Ishqor"
+      },
+      {
+        "id": 4,
+        "text": "Gaz"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2511,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Molekula nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Atomlardan tuzilgan zarracha"
+      },
+      {
+        "id": 2,
+        "text": "Faqat metall"
+      },
+      {
+        "id": 3,
+        "text": "Faqat suyuqlik"
+      },
+      {
+        "id": 4,
+        "text": "Faqat idish"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2512,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Qaynash paytida suyuqlik nima bo'ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Gazga aylanadi"
+      },
+      {
+        "id": 2,
+        "text": "Qattiqlashadi"
+      },
+      {
+        "id": 3,
+        "text": "Yo'qoladi"
+      },
+      {
+        "id": 4,
+        "text": "Metallga aylanadi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2513,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Filtrlash nima uchun ishlatiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Aralashmani ajratish uchun"
+      },
+      {
+        "id": 2,
+        "text": "Haroratni oshirish uchun"
+      },
+      {
+        "id": 3,
+        "text": "Yoritish uchun"
+      },
+      {
+        "id": 4,
+        "text": "Magnitlash uchun"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2514,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Kislorod yonishda qanday rol o'ynaydi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yonishni qo'llab-quvvatlaydi"
+      },
+      {
+        "id": 2,
+        "text": "Yonishni to'xtatadi"
+      },
+      {
+        "id": 3,
+        "text": "Suvga aylantiradi"
+      },
+      {
+        "id": 4,
+        "text": "Muzlatadi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2515,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Erish jarayonida qattiq modda nima bo'ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Suyuqlikka aylanadi"
+      },
+      {
+        "id": 2,
+        "text": "Gazga aylanadi"
+      },
+      {
+        "id": 3,
+        "text": "Yoqoladi"
+      },
+      {
+        "id": 4,
+        "text": "Qaynaydi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2516,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Laboratoriyada modda hidini tekshirish usuli qaysi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "To'g'ridan hidlash"
+      },
+      {
+        "id": 2,
+        "text": "Yelpib hidlash"
+      },
+      {
+        "id": 3,
+        "text": "Ko'z bilan qarash"
+      },
+      {
+        "id": 4,
+        "text": "Silkitib tashlash"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2517,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Suv universal ... deb ataladi.",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ko'rsatkich"
+      },
+      {
+        "id": 2,
+        "text": "Erituvchi"
+      },
+      {
+        "id": 3,
+        "text": "Metall"
+      },
+      {
+        "id": 4,
+        "text": "Yonilg'i"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2518,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Lakmus kislotada ko'pincha qaysi rangga o'tadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ko'k"
+      },
+      {
+        "id": 2,
+        "text": "Qizil"
+      },
+      {
+        "id": 3,
+        "text": "Yashil"
+      },
+      {
+        "id": 4,
+        "text": "Qora"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2519,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Gazlar idishning ... to'ldiradi.",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Faqat yarmini"
+      },
+      {
+        "id": 2,
+        "text": "Butun hajmini"
+      },
+      {
+        "id": 3,
+        "text": "Faqat tubini"
+      },
+      {
+        "id": 4,
+        "text": "Faqat qopqog'ini"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2520,
+    "subject": "chemistry",
+    "level": "medium",
+    "question": "Kimyoviy formula nimani ko'rsatadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Modda tarkibini"
+      },
+      {
+        "id": 2,
+        "text": "Faqat rangni"
+      },
+      {
+        "id": 3,
+        "text": "Faqat hidni"
+      },
+      {
+        "id": 4,
+        "text": "Faqat haroratni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2601,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Tezlik formulasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "v=s/t"
+      },
+      {
+        "id": 2,
+        "text": "v=t/s"
+      },
+      {
+        "id": 3,
+        "text": "v=s×t"
+      },
+      {
+        "id": 4,
+        "text": "v=s+t"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2602,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Kuch birligi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Nyuton (N)"
+      },
+      {
+        "id": 2,
+        "text": "Vatt (W)"
+      },
+      {
+        "id": 3,
+        "text": "Amper (A)"
+      },
+      {
+        "id": 4,
+        "text": "Volt (V)"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2603,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Ish formulasi (soddalashtirilgan)?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "A=F×s"
+      },
+      {
+        "id": 2,
+        "text": "A=F/s"
+      },
+      {
+        "id": 3,
+        "text": "A=s/t"
+      },
+      {
+        "id": 4,
+        "text": "A=F+t"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2604,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Quvvat birligi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Vatt"
+      },
+      {
+        "id": 2,
+        "text": "Nyuton"
+      },
+      {
+        "id": 3,
+        "text": "Pascal"
+      },
+      {
+        "id": 4,
+        "text": "Kelvin"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2605,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Tok kuchi birligi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Amper"
+      },
+      {
+        "id": 2,
+        "text": "Volt"
+      },
+      {
+        "id": 3,
+        "text": "Vatt"
+      },
+      {
+        "id": 4,
+        "text": "Nyuton"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2606,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Kuchlanish birligi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Volt"
+      },
+      {
+        "id": 2,
+        "text": "Amper"
+      },
+      {
+        "id": 3,
+        "text": "Vatt"
+      },
+      {
+        "id": 4,
+        "text": "Pascal"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2607,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Zichlik formulasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "ρ=m/V"
+      },
+      {
+        "id": 2,
+        "text": "ρ=V/m"
+      },
+      {
+        "id": 3,
+        "text": "ρ=m×V"
+      },
+      {
+        "id": 4,
+        "text": "ρ=m+V"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2608,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Bosim formulasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "p=F/S"
+      },
+      {
+        "id": 2,
+        "text": "p=S/F"
+      },
+      {
+        "id": 3,
+        "text": "p=F×S"
+      },
+      {
+        "id": 4,
+        "text": "p=F+S"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2609,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Ohm qonuni?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "I=U/R"
+      },
+      {
+        "id": 2,
+        "text": "U=I×t"
+      },
+      {
+        "id": 3,
+        "text": "P=U+I"
+      },
+      {
+        "id": 4,
+        "text": "R=U×I"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2610,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Yorug‘lik tezligi eng katta qayerda?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Vakuumda"
+      },
+      {
+        "id": 2,
+        "text": "Suvda"
+      },
+      {
+        "id": 3,
+        "text": "Shishada"
+      },
+      {
+        "id": 4,
+        "text": "Temirda"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2611,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Massa nimada o'lchanadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Kilogrammda"
+      },
+      {
+        "id": 2,
+        "text": "Sekundda"
+      },
+      {
+        "id": 3,
+        "text": "Voltda"
+      },
+      {
+        "id": 4,
+        "text": "Gradusda"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2612,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Jismga ta'sir etayotgan kuchlar teng bo'lsa nima bo'ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Muvozanat bo'lishi mumkin"
+      },
+      {
+        "id": 2,
+        "text": "Doim portlaydi"
+      },
+      {
+        "id": 3,
+        "text": "Yo'qoladi"
+      },
+      {
+        "id": 4,
+        "text": "Har doim qiziydi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2613,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Ko'zgu qaytargan hodisa nima deyiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Sinish"
+      },
+      {
+        "id": 2,
+        "text": "Aks etish"
+      },
+      {
+        "id": 3,
+        "text": "Bug'lanish"
+      },
+      {
+        "id": 4,
+        "text": "Diffuziya"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2614,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Elektr toki o'tishi uchun nima kerak?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yopiq zanjir"
+      },
+      {
+        "id": 2,
+        "text": "Faqat lampochka"
+      },
+      {
+        "id": 3,
+        "text": "Faqat batareya rasmi"
+      },
+      {
+        "id": 4,
+        "text": "Faqat qog'oz"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2615,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Harakatlanuvchi jismning yo'li ortsa, vaqt bir xil bo'lsa nima ortadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Tezlik"
+      },
+      {
+        "id": 2,
+        "text": "Massasi"
+      },
+      {
+        "id": 3,
+        "text": "Rangi"
+      },
+      {
+        "id": 4,
+        "text": "Har doim hajmi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2616,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Termometr nimani o'lchaydi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Haroratni"
+      },
+      {
+        "id": 2,
+        "text": "Bosimni"
+      },
+      {
+        "id": 3,
+        "text": "Kuchni"
+      },
+      {
+        "id": 4,
+        "text": "Masofani"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2617,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Pascal nimaning birligi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Bosim"
+      },
+      {
+        "id": 2,
+        "text": "Quvvat"
+      },
+      {
+        "id": 3,
+        "text": "Tezlik"
+      },
+      {
+        "id": 4,
+        "text": "Harorat"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2618,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Lampalar ketma-ket ulanganida bittasi uzilsa nima bo'ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Hammasi o'chishi mumkin"
+      },
+      {
+        "id": 2,
+        "text": "Hammasi kuchayadi"
+      },
+      {
+        "id": 3,
+        "text": "Faqat biri yonadi"
+      },
+      {
+        "id": 4,
+        "text": "Hech narsa"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2619,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Tovush balandligi ko'proq nimaga bog'liq?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Tebranish amplitudasiga"
+      },
+      {
+        "id": 2,
+        "text": "Faqat rangga"
+      },
+      {
+        "id": 3,
+        "text": "Faqat massaga"
+      },
+      {
+        "id": 4,
+        "text": "Faqat shaklga"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2620,
+    "subject": "physics",
+    "level": "medium",
+    "question": "Suyuqlikda jismga yuqoriga yo'nalgan kuch nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Arximed kuchi"
+      },
+      {
+        "id": 2,
+        "text": "Ishqalanish kuchi"
+      },
+      {
+        "id": 3,
+        "text": "Markazga intilma"
+      },
+      {
+        "id": 4,
+        "text": "Elektr kuchi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2701,
+    "subject": "history",
+    "level": "medium",
+    "question": "Tarixiy manbalarning turi: yozma, moddiy va ...",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Og‘zaki"
+      },
+      {
+        "id": 2,
+        "text": "Faqat rasm"
+      },
+      {
+        "id": 3,
+        "text": "Faqat sport"
+      },
+      {
+        "id": 4,
+        "text": "Faqat kod"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2702,
+    "subject": "history",
+    "level": "medium",
+    "question": "Buyuk Ipak yo‘li asosan nima uchun muhim bo‘lgan?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Savdo va madaniy almashinuv"
+      },
+      {
+        "id": 2,
+        "text": "Faqat urush"
+      },
+      {
+        "id": 3,
+        "text": "Faqat o‘yin"
+      },
+      {
+        "id": 4,
+        "text": "Faqat sport"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2703,
+    "subject": "history",
+    "level": "medium",
+    "question": "Davlat deganda nima tushuniladi? (soddalashtirilgan)",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Hudud, xalq, boshqaruv"
+      },
+      {
+        "id": 2,
+        "text": "Faqat bozor"
+      },
+      {
+        "id": 3,
+        "text": "Faqat daryo"
+      },
+      {
+        "id": 4,
+        "text": "Faqat tog‘"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2704,
+    "subject": "history",
+    "level": "medium",
+    "question": "Konstitutsiya nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Asosiy qonun"
+      },
+      {
+        "id": 2,
+        "text": "Qo‘shiq"
+      },
+      {
+        "id": 3,
+        "text": "Sport qoidasi"
+      },
+      {
+        "id": 4,
+        "text": "Rasm"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2705,
+    "subject": "history",
+    "level": "medium",
+    "question": "Arxeologiya nimani o‘rganadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qadimiy buyumlar va qazilmalar"
+      },
+      {
+        "id": 2,
+        "text": "Faqat matematika"
+      },
+      {
+        "id": 3,
+        "text": "Faqat tibbiyot"
+      },
+      {
+        "id": 4,
+        "text": "Faqat internet"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2706,
+    "subject": "history",
+    "level": "medium",
+    "question": "Xronologiya nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Vaqt va sanalar tartibi"
+      },
+      {
+        "id": 2,
+        "text": "Joy nomlari"
+      },
+      {
+        "id": 3,
+        "text": "Hayvonlar"
+      },
+      {
+        "id": 4,
+        "text": "Daraxtlar"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2707,
+    "subject": "history",
+    "level": "medium",
+    "question": "O‘rta asrlar deganda qaysi davr tushuniladi? (umumiy)",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qadimdan keyingi davr"
+      },
+      {
+        "id": 2,
+        "text": "Kelajak davr"
+      },
+      {
+        "id": 3,
+        "text": "Faqat bugun"
+      },
+      {
+        "id": 4,
+        "text": "Faqat kecha"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2708,
+    "subject": "history",
+    "level": "medium",
+    "question": "Madaniy meros nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "O‘tmishdan qolgan qadriyatlar"
+      },
+      {
+        "id": 2,
+        "text": "Faqat telefon"
+      },
+      {
+        "id": 3,
+        "text": "Faqat o‘yin"
+      },
+      {
+        "id": 4,
+        "text": "Faqat reklama"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2709,
+    "subject": "history",
+    "level": "medium",
+    "question": "Muzey ekspozitsiyasi nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ko‘rgazma (namoyish) qismi"
+      },
+      {
+        "id": 2,
+        "text": "Sport zal"
+      },
+      {
+        "id": 3,
+        "text": "Daryo"
+      },
+      {
+        "id": 4,
+        "text": "Kompyuter"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2710,
+    "subject": "history",
+    "level": "medium",
+    "question": "Tarixni o‘rganish nega kerak?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Xulosa chiqarish va tajriba olish"
+      },
+      {
+        "id": 2,
+        "text": "Faqat baho uchun"
+      },
+      {
+        "id": 3,
+        "text": "Faqat o‘yin uchun"
+      },
+      {
+        "id": 4,
+        "text": "Hech kerak emas"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2711,
+    "subject": "history",
+    "level": "medium",
+    "question": "Arxeologlar ko'proq nimani o'rganadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qadimiy buyum va qoldiqlarni"
+      },
+      {
+        "id": 2,
+        "text": "Faqat ob-havoni"
+      },
+      {
+        "id": 3,
+        "text": "Faqat sportni"
+      },
+      {
+        "id": 4,
+        "text": "Faqat kompyuterni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2712,
+    "subject": "history",
+    "level": "medium",
+    "question": "Xronologiya nima bilan bog'liq?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Vaqt ketma-ketligi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat xarita"
+      },
+      {
+        "id": 3,
+        "text": "Faqat she'r"
+      },
+      {
+        "id": 4,
+        "text": "Faqat formula"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2713,
+    "subject": "history",
+    "level": "medium",
+    "question": "Qadimgi shaharlar haqida ma'lumotni qayerdan olish mumkin?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Manbalardan"
+      },
+      {
+        "id": 2,
+        "text": "Faqat reklamalardan"
+      },
+      {
+        "id": 3,
+        "text": "Faqat o'yindan"
+      },
+      {
+        "id": 4,
+        "text": "Faqat taxmindan"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2714,
+    "subject": "history",
+    "level": "medium",
+    "question": "Amir Temur tarixda ko'proq nima bilan tanilgan?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Davlat arbobi va sarkarda"
+      },
+      {
+        "id": 2,
+        "text": "Faqat shoir"
+      },
+      {
+        "id": 3,
+        "text": "Faqat rassom"
+      },
+      {
+        "id": 4,
+        "text": "Faqat sportchi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2715,
+    "subject": "history",
+    "level": "medium",
+    "question": "Madaniy meros deganda nima tushuniladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ajdodlardan qolgan boylik va obidalar"
+      },
+      {
+        "id": 2,
+        "text": "Faqat yangi telefonlar"
+      },
+      {
+        "id": 3,
+        "text": "Faqat avtobuslar"
+      },
+      {
+        "id": 4,
+        "text": "Faqat ob-havo"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2716,
+    "subject": "history",
+    "level": "medium",
+    "question": "Tarixiy obidalarni asrashning sababi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ular meros hisoblanadi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat sayr uchun"
+      },
+      {
+        "id": 3,
+        "text": "Faqat bo'yash uchun"
+      },
+      {
+        "id": 4,
+        "text": "Faqat sotish uchun"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2717,
+    "subject": "history",
+    "level": "medium",
+    "question": "Mustaqil davlatning ramzlari nimani ifodalaydi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Davlatning o'zligini"
+      },
+      {
+        "id": 2,
+        "text": "Faqat ob-havo"
+      },
+      {
+        "id": 3,
+        "text": "Faqat savdo"
+      },
+      {
+        "id": 4,
+        "text": "Faqat yo'lni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2718,
+    "subject": "history",
+    "level": "medium",
+    "question": "Yozuv ixtirosi nimani osonlashtirdi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ma'lumot saqlashni"
+      },
+      {
+        "id": 2,
+        "text": "Faqat uy qurishni"
+      },
+      {
+        "id": 3,
+        "text": "Faqat yugurishni"
+      },
+      {
+        "id": 4,
+        "text": "Faqat suzishni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2719,
+    "subject": "history",
+    "level": "medium",
+    "question": "Ipak yo'li orqali nimalar almashilgan?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Tovar va madaniyat"
+      },
+      {
+        "id": 2,
+        "text": "Faqat qum"
+      },
+      {
+        "id": 3,
+        "text": "Faqat suv"
+      },
+      {
+        "id": 4,
+        "text": "Faqat qor"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2720,
+    "subject": "history",
+    "level": "medium",
+    "question": "Tarixni bilish kelajak uchun nima beradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Xulosa chiqarish imkonini"
+      },
+      {
+        "id": 2,
+        "text": "Faqat yod olishni"
+      },
+      {
+        "id": 3,
+        "text": "Faqat baho olishni"
+      },
+      {
+        "id": 4,
+        "text": "Hech narsa"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2801,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Kenglik (latitude) nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ekvatorga nisbatan masofa"
+      },
+      {
+        "id": 2,
+        "text": "Qutbga nisbatan vaqt"
+      },
+      {
+        "id": 3,
+        "text": "Faqat harorat"
+      },
+      {
+        "id": 4,
+        "text": "Faqat bosim"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2802,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Uzoqlik (longitude) nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Bosh meridianga nisbatan masofa"
+      },
+      {
+        "id": 2,
+        "text": "Faqat balandlik"
+      },
+      {
+        "id": 3,
+        "text": "Faqat shamol"
+      },
+      {
+        "id": 4,
+        "text": "Faqat bulut"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2803,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Iqlimga kuchli ta’sir qiluvchi omil?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Geografik kenglik"
+      },
+      {
+        "id": 2,
+        "text": "Kitob soni"
+      },
+      {
+        "id": 3,
+        "text": "Telefon modeli"
+      },
+      {
+        "id": 4,
+        "text": "Ranglar"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2804,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Relief deganda nima tushuniladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yer yuzasi shakllari"
+      },
+      {
+        "id": 2,
+        "text": "Faqat daryo"
+      },
+      {
+        "id": 3,
+        "text": "Faqat ko‘l"
+      },
+      {
+        "id": 4,
+        "text": "Faqat shamol"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2805,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Aholi zichligi nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "1 km² ga to‘g‘ri keladigan aholi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat shahar nomi"
+      },
+      {
+        "id": 3,
+        "text": "Faqat tog‘ balandligi"
+      },
+      {
+        "id": 4,
+        "text": "Faqat harorat"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2806,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Cho‘l zonasi uchun xos belgi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yog‘in kam"
+      },
+      {
+        "id": 2,
+        "text": "Doim qor"
+      },
+      {
+        "id": 3,
+        "text": "Ko‘p o‘rmon"
+      },
+      {
+        "id": 4,
+        "text": "Doim tuman"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2807,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Daryo havzasi nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Daryoga suv to‘planadigan hudud"
+      },
+      {
+        "id": 2,
+        "text": "Faqat ko‘l"
+      },
+      {
+        "id": 3,
+        "text": "Faqat tog‘"
+      },
+      {
+        "id": 4,
+        "text": "Faqat shahar"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2808,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Atmosfera qatlamlaridan biri?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Troposfera"
+      },
+      {
+        "id": 2,
+        "text": "Litosfera"
+      },
+      {
+        "id": 3,
+        "text": "Gidrosfera"
+      },
+      {
+        "id": 4,
+        "text": "Biosfera"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2809,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Balandlik oshsa havo harorati odatda ...",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Pasayadi"
+      },
+      {
+        "id": 2,
+        "text": "Oshadi"
+      },
+      {
+        "id": 3,
+        "text": "O‘zgarmaydi"
+      },
+      {
+        "id": 4,
+        "text": "Yonadi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2810,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Topografik xarita nimani ko‘rsatadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Relief va joy tafsilotlari"
+      },
+      {
+        "id": 2,
+        "text": "Faqat matn"
+      },
+      {
+        "id": 3,
+        "text": "Faqat jadval"
+      },
+      {
+        "id": 4,
+        "text": "Faqat qo‘shiq"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2811,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Ekvator nimani ikkiga ajratadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yer sharini shimol va janubga"
+      },
+      {
+        "id": 2,
+        "text": "Osiyoni g'arb va sharqqa"
+      },
+      {
+        "id": 3,
+        "text": "Faqat okeanni"
+      },
+      {
+        "id": 4,
+        "text": "Faqat cho'lni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2812,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Materik va qit'a tushunchalari ko'proq nimaga oid?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yer yuzasiga"
+      },
+      {
+        "id": 2,
+        "text": "Kimyoga"
+      },
+      {
+        "id": 3,
+        "text": "Adabiyotga"
+      },
+      {
+        "id": 4,
+        "text": "Musiqaga"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2813,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Iqlim deganda nima tushuniladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Uzoq muddatli ob-havo xususiyati"
+      },
+      {
+        "id": 2,
+        "text": "Bir kunlik shamol"
+      },
+      {
+        "id": 3,
+        "text": "Faqat yomg'ir"
+      },
+      {
+        "id": 4,
+        "text": "Faqat harorat"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2814,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Vulkan otilishi qaysi jarayon bilan bog'liq?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Yer ichki kuchlari"
+      },
+      {
+        "id": 2,
+        "text": "Faqat quyosh"
+      },
+      {
+        "id": 3,
+        "text": "Faqat daryo"
+      },
+      {
+        "id": 4,
+        "text": "Faqat shamol"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2815,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Dunyo tomonlari nechta asosiy?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "2"
+      },
+      {
+        "id": 2,
+        "text": "3"
+      },
+      {
+        "id": 3,
+        "text": "4"
+      },
+      {
+        "id": 4,
+        "text": "5"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 2816,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Dengiz sathidan balandlik nimada o'lchanadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Metrlarda"
+      },
+      {
+        "id": 2,
+        "text": "Litrda"
+      },
+      {
+        "id": 3,
+        "text": "Sekundda"
+      },
+      {
+        "id": 4,
+        "text": "Voltda"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2817,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Musson shamollari nimasi bilan mashhur?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Mavsumiy yo'nalish o'zgarishi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat sovuqligi"
+      },
+      {
+        "id": 3,
+        "text": "Faqat baland tovushi"
+      },
+      {
+        "id": 4,
+        "text": "Faqat sahroga xosligi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2818,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Aholi zichligi nimani bildiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Hududga nisbatan aholi soni"
+      },
+      {
+        "id": 2,
+        "text": "Faqat tug'ilish soni"
+      },
+      {
+        "id": 3,
+        "text": "Faqat uylar soni"
+      },
+      {
+        "id": 4,
+        "text": "Faqat yo'llar soni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2819,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Koordinata tizimida joylashuv nimaga ko'ra topiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Kenglik va uzunlik"
+      },
+      {
+        "id": 2,
+        "text": "Faqat rang"
+      },
+      {
+        "id": 3,
+        "text": "Faqat balandlik"
+      },
+      {
+        "id": 4,
+        "text": "Faqat shamol"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2820,
+    "subject": "geography",
+    "level": "medium",
+    "question": "Daryo manbai degani?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Daryo boshlanadigan joy"
+      },
+      {
+        "id": 2,
+        "text": "Daryo tugaydigan joy"
+      },
+      {
+        "id": 3,
+        "text": "Ko'prik osti"
+      },
+      {
+        "id": 4,
+        "text": "Faqat dengiz"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2901,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Algoritm nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Bosqichma-bosqich yechim"
+      },
+      {
+        "id": 2,
+        "text": "Faqat rasm"
+      },
+      {
+        "id": 3,
+        "text": "Faqat musiqа"
+      },
+      {
+        "id": 4,
+        "text": "Faqat o‘yin"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2902,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Kompyuter xotirasining turi: RAM nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Tezkor xotira"
+      },
+      {
+        "id": 2,
+        "text": "Doimiy disk"
+      },
+      {
+        "id": 3,
+        "text": "Monitor"
+      },
+      {
+        "id": 4,
+        "text": "Printer"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2903,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "“URL” nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Veb manzil"
+      },
+      {
+        "id": 2,
+        "text": "Rasm formati"
+      },
+      {
+        "id": 3,
+        "text": "Kalkulyator"
+      },
+      {
+        "id": 4,
+        "text": "O‘yin nomi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2904,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "“Phishing” nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Aldov orqali ma’lumot olish"
+      },
+      {
+        "id": 2,
+        "text": "Kompyuterni tozalash"
+      },
+      {
+        "id": 3,
+        "text": "O‘yin turi"
+      },
+      {
+        "id": 4,
+        "text": "Printer xatosi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2905,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "2-lik sanoq sistemasida “10” nechaga teng?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "1"
+      },
+      {
+        "id": 2,
+        "text": "2"
+      },
+      {
+        "id": 3,
+        "text": "3"
+      },
+      {
+        "id": 4,
+        "text": "10"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 2906,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Fayl kengaytmasi (extension) misoli?",
+    "choices": [
+      {
+        "id": 1,
+        "text": ".txt"
+      },
+      {
+        "id": 2,
+        "text": "folder"
+      },
+      {
+        "id": 3,
+        "text": "mouse"
+      },
+      {
+        "id": 4,
+        "text": "screen"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2907,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Elektron jadval dasturi misoli?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Excel"
+      },
+      {
+        "id": 2,
+        "text": "Paint"
+      },
+      {
+        "id": 3,
+        "text": "Calculator"
+      },
+      {
+        "id": 4,
+        "text": "Notepad"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2908,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "“if” operatori nimaga xizmat qiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Shart tekshirish"
+      },
+      {
+        "id": 2,
+        "text": "Rasm chizish"
+      },
+      {
+        "id": 3,
+        "text": "Musiqa eshitish"
+      },
+      {
+        "id": 4,
+        "text": "Printer yoqish"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2909,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Kuchli parol qanday bo‘ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Harflar+son+belgi aralash"
+      },
+      {
+        "id": 2,
+        "text": "12345"
+      },
+      {
+        "id": 3,
+        "text": "password"
+      },
+      {
+        "id": 4,
+        "text": "ism"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2910,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Zaxira nusxa (backup) nima uchun kerak?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ma’lumot yo‘qolsa tiklash"
+      },
+      {
+        "id": 2,
+        "text": "O‘yin tezligi"
+      },
+      {
+        "id": 3,
+        "text": "Monitor yorug‘ligi"
+      },
+      {
+        "id": 4,
+        "text": "Rang tanlash"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2911,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Operatsion tizim nima vazifa bajaradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qurilmalarni boshqaradi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat rasm chizadi"
+      },
+      {
+        "id": 3,
+        "text": "Faqat musiqa yozadi"
+      },
+      {
+        "id": 4,
+        "text": "Faqat internet beradi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2912,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Brauzer nima uchun ishlatiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Veb sahifalarni ochish uchun"
+      },
+      {
+        "id": 2,
+        "text": "Rasm chop etish uchun"
+      },
+      {
+        "id": 3,
+        "text": "Kompyuterni yuvish uchun"
+      },
+      {
+        "id": 4,
+        "text": "Faqat o'yin o'chirish uchun"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2913,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Ctrl + C odatda nima qiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Nusxa oladi"
+      },
+      {
+        "id": 2,
+        "text": "O'chiradi"
+      },
+      {
+        "id": 3,
+        "text": "Saqlaydi"
+      },
+      {
+        "id": 4,
+        "text": "Yopadi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2914,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Ctrl + V nima qiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Joylaydi"
+      },
+      {
+        "id": 2,
+        "text": "Kesadi"
+      },
+      {
+        "id": 3,
+        "text": "Qidiradi"
+      },
+      {
+        "id": 4,
+        "text": "Qulflaydi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2915,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Fayl kengaytmasi nimani bildiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Fayl turini"
+      },
+      {
+        "id": 2,
+        "text": "Fayl rangini"
+      },
+      {
+        "id": 3,
+        "text": "Kompyuter nomini"
+      },
+      {
+        "id": 4,
+        "text": "Parolni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2916,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Antivirus dasturi nima uchun kerak?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Zararli dasturlardan himoya"
+      },
+      {
+        "id": 2,
+        "text": "Matn tarjima qilish"
+      },
+      {
+        "id": 3,
+        "text": "Rasm chizish"
+      },
+      {
+        "id": 4,
+        "text": "Harorat o'lchash"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2917,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Algoritm nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qadam-baqadam ko'rsatma"
+      },
+      {
+        "id": 2,
+        "text": "Faqat rasm"
+      },
+      {
+        "id": 3,
+        "text": "Faqat tugma"
+      },
+      {
+        "id": 4,
+        "text": "Faqat internet"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2918,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Bulutli saqlash xizmati nimaga qulay?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Fayllarni onlayn saqlashga"
+      },
+      {
+        "id": 2,
+        "text": "Faqat printerga ulashga"
+      },
+      {
+        "id": 3,
+        "text": "Faqat klaviatura tozalashga"
+      },
+      {
+        "id": 4,
+        "text": "Faqat o'yin yuklashga"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2919,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Qaysi biri chiqish qurilmasi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Monitor"
+      },
+      {
+        "id": 2,
+        "text": "Klaviatura"
+      },
+      {
+        "id": 3,
+        "text": "Skaner"
+      },
+      {
+        "id": 4,
+        "text": "Mikrofon"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 2920,
+    "subject": "informatics",
+    "level": "medium",
+    "question": "Elektron jadval dasturida formula nimaga xizmat qiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Hisoblashga"
+      },
+      {
+        "id": 2,
+        "text": "Faqat bo'yashga"
+      },
+      {
+        "id": 3,
+        "text": "Faqat o'chirishga"
+      },
+      {
+        "id": 4,
+        "text": "Faqat qidirishga"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3001,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Janr nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Asar turi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat qofiya"
+      },
+      {
+        "id": 3,
+        "text": "Faqat ism"
+      },
+      {
+        "id": 4,
+        "text": "Faqat raqam"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3002,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Lirika nimani ifodalaydi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "His-tuyg‘u"
+      },
+      {
+        "id": 2,
+        "text": "Faqat hisob"
+      },
+      {
+        "id": 3,
+        "text": "Faqat xarita"
+      },
+      {
+        "id": 4,
+        "text": "Faqat jadval"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3003,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Epos ko‘proq nimaga tayanadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Voqealar"
+      },
+      {
+        "id": 2,
+        "text": "Faqat rang"
+      },
+      {
+        "id": 3,
+        "text": "Faqat tovush"
+      },
+      {
+        "id": 4,
+        "text": "Faqat son"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3004,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Dramada nimalar ko‘p bo‘ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Sahna va dialog"
+      },
+      {
+        "id": 2,
+        "text": "Faqat formula"
+      },
+      {
+        "id": 3,
+        "text": "Faqat jadval"
+      },
+      {
+        "id": 4,
+        "text": "Faqat rasm"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3005,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Metafora nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ko‘chma ma’no (o‘xshatishsiz)"
+      },
+      {
+        "id": 2,
+        "text": "Faqat son"
+      },
+      {
+        "id": 3,
+        "text": "Imlo xatosi"
+      },
+      {
+        "id": 4,
+        "text": "Jadval"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3006,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Tashbeh nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "O‘xshatish"
+      },
+      {
+        "id": 2,
+        "text": "Qarama-qarshi"
+      },
+      {
+        "id": 3,
+        "text": "Takror"
+      },
+      {
+        "id": 4,
+        "text": "Sanash"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3007,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Asarda konflikt nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qarama-qarshilik"
+      },
+      {
+        "id": 2,
+        "text": "Rang"
+      },
+      {
+        "id": 3,
+        "text": "O‘lchov"
+      },
+      {
+        "id": 4,
+        "text": "Harf"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3008,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Kompozitsiya nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Asarning tuzilishi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat qofiya"
+      },
+      {
+        "id": 3,
+        "text": "Faqat rasm"
+      },
+      {
+        "id": 4,
+        "text": "Faqat jadval"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3009,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Personaj nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Asardagi obraz"
+      },
+      {
+        "id": 2,
+        "text": "Faqat muallif"
+      },
+      {
+        "id": 3,
+        "text": "Faqat kitob"
+      },
+      {
+        "id": 4,
+        "text": "Faqat sahifa"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3010,
+    "subject": "literature",
+    "level": "medium",
+    "question": "G‘oya nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Asarning asosiy fikri"
+      },
+      {
+        "id": 2,
+        "text": "Faqat rasm"
+      },
+      {
+        "id": 3,
+        "text": "Faqat son"
+      },
+      {
+        "id": 4,
+        "text": "Faqat jadval"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3011,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Badiiy asarda syujet nimani bildiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Voqealar rivojini"
+      },
+      {
+        "id": 2,
+        "text": "Faqat nomini"
+      },
+      {
+        "id": 3,
+        "text": "Faqat muqovani"
+      },
+      {
+        "id": 4,
+        "text": "Faqat shriftni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3012,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Qofiya ko'proq qaysi janrda uchraydi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "She'rda"
+      },
+      {
+        "id": 2,
+        "text": "Xaritada"
+      },
+      {
+        "id": 3,
+        "text": "Formulada"
+      },
+      {
+        "id": 4,
+        "text": "Jadvalda"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3013,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Asardagi bosh g'oya nima deyiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Mavzu yoki g'oya"
+      },
+      {
+        "id": 2,
+        "text": "Faqat muqova"
+      },
+      {
+        "id": 3,
+        "text": "Faqat bet soni"
+      },
+      {
+        "id": 4,
+        "text": "Faqat janr"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3014,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Tasviriy vositalardan biri?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "O'xshatish"
+      },
+      {
+        "id": 2,
+        "text": "Kompas"
+      },
+      {
+        "id": 3,
+        "text": "Barometr"
+      },
+      {
+        "id": 4,
+        "text": "Spidometr"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3015,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Dialog nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qahramonlar suhbati"
+      },
+      {
+        "id": 2,
+        "text": "Muallif rasmi"
+      },
+      {
+        "id": 3,
+        "text": "Kitob narxi"
+      },
+      {
+        "id": 4,
+        "text": "Boblar soni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3016,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Masal janrida odatda nima bo'ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Pand-nasihat"
+      },
+      {
+        "id": 2,
+        "text": "Faqat xarita"
+      },
+      {
+        "id": 3,
+        "text": "Faqat formula"
+      },
+      {
+        "id": 4,
+        "text": "Faqat sana"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3017,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Lirik asar ko'proq nimani ifodalaydi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Hissiyot va kechinmani"
+      },
+      {
+        "id": 2,
+        "text": "Faqat jangni"
+      },
+      {
+        "id": 3,
+        "text": "Faqat xaritani"
+      },
+      {
+        "id": 4,
+        "text": "Faqat tajribani"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3018,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Muallifning bayoni va qahramon nutqi farqi nimada?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Kim gapirayotganida"
+      },
+      {
+        "id": 2,
+        "text": "Rangida"
+      },
+      {
+        "id": 3,
+        "text": "Hajmida"
+      },
+      {
+        "id": 4,
+        "text": "Qog'ozida"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3019,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Janr deganda nima tushuniladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Asarning turi"
+      },
+      {
+        "id": 2,
+        "text": "Faqat til qoidasi"
+      },
+      {
+        "id": 3,
+        "text": "Faqat shrift"
+      },
+      {
+        "id": 4,
+        "text": "Faqat bo'lim"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3020,
+    "subject": "literature",
+    "level": "medium",
+    "question": "Portret tasviri nimani ko'rsatadi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qahramon tashqi ko'rinishini"
+      },
+      {
+        "id": 2,
+        "text": "Faqat uyini"
+      },
+      {
+        "id": 3,
+        "text": "Faqat sanani"
+      },
+      {
+        "id": 4,
+        "text": "Faqat ob-havoni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3101,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Ega va kesim nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Gapning bosh bo‘laklari"
+      },
+      {
+        "id": 2,
+        "text": "Faqat undalma"
+      },
+      {
+        "id": 3,
+        "text": "Faqat qo‘shimcha"
+      },
+      {
+        "id": 4,
+        "text": "Faqat sinonim"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3102,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Qoshma gap nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ikki yoki ko‘p sodda gapdan tuzilgan"
+      },
+      {
+        "id": 2,
+        "text": "Faqat 1 so‘z"
+      },
+      {
+        "id": 3,
+        "text": "Faqat 1 gap"
+      },
+      {
+        "id": 4,
+        "text": "Faqat undov"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3103,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Ko‘makchi so‘zlar misoli?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "uchun, bilan"
+      },
+      {
+        "id": 2,
+        "text": "men, sen"
+      },
+      {
+        "id": 3,
+        "text": "qizil"
+      },
+      {
+        "id": 4,
+        "text": "yugurdi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3104,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Undalma nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Murojaat so‘zi"
+      },
+      {
+        "id": 2,
+        "text": "Kesim"
+      },
+      {
+        "id": 3,
+        "text": "Ega"
+      },
+      {
+        "id": 4,
+        "text": "Sifat"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3105,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "“Men bugun maktabga bordim.” zamoni?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "O‘tgan zamon"
+      },
+      {
+        "id": 2,
+        "text": "Hozirgi zamon"
+      },
+      {
+        "id": 3,
+        "text": "Kelasi zamon"
+      },
+      {
+        "id": 4,
+        "text": "Buyruq"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3106,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "So‘z yasovchi qo‘shimcha misoli?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "-chi (o‘quvchi)"
+      },
+      {
+        "id": 2,
+        "text": "-da (uyda)"
+      },
+      {
+        "id": 3,
+        "text": "-ning"
+      },
+      {
+        "id": 4,
+        "text": "-ga"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3107,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Sodda gap nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "1 ta grammatik asosli gap"
+      },
+      {
+        "id": 2,
+        "text": "3 ta asosli"
+      },
+      {
+        "id": 3,
+        "text": "Faqat so‘z"
+      },
+      {
+        "id": 4,
+        "text": "Faqat bog‘lovchi"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3108,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "“Tez-tez” qanday usul?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Takror"
+      },
+      {
+        "id": 2,
+        "text": "Qarama-qarshi"
+      },
+      {
+        "id": 3,
+        "text": "Sifatdosh"
+      },
+      {
+        "id": 4,
+        "text": "Son"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3109,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Imlo qoidalari nima uchun kerak?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "To‘g‘ri yozish uchun"
+      },
+      {
+        "id": 2,
+        "text": "Faqat chizish"
+      },
+      {
+        "id": 3,
+        "text": "Faqat o‘yin"
+      },
+      {
+        "id": 4,
+        "text": "Faqat sport"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3110,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Matnning asosiy fikri nima deyiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Mavzu/Asosiy g‘oya"
+      },
+      {
+        "id": 2,
+        "text": "Faqat sarlavha"
+      },
+      {
+        "id": 3,
+        "text": "Faqat vergul"
+      },
+      {
+        "id": 4,
+        "text": "Faqat harf"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3111,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Ega va kesim ishtirok etgan birlik nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "So'z birikmasi"
+      },
+      {
+        "id": 2,
+        "text": "Gap"
+      },
+      {
+        "id": 3,
+        "text": "Harf"
+      },
+      {
+        "id": 4,
+        "text": "Bo'g'in"
+      }
+    ],
+    "correctChoiceId": 2
+  },
+  {
+    "id": 3112,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Kelishik qo'shimchalari nimaga qo'shiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Otga"
+      },
+      {
+        "id": 2,
+        "text": "Faqat fe'lga"
+      },
+      {
+        "id": 3,
+        "text": "Faqat songa"
+      },
+      {
+        "id": 4,
+        "text": "Faqat ravishga"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3113,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Qaysi gap turi buyruqni bildiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Darak gap"
+      },
+      {
+        "id": 2,
+        "text": "So'roq gap"
+      },
+      {
+        "id": 3,
+        "text": "Buyruq gap"
+      },
+      {
+        "id": 4,
+        "text": "Undov gap"
+      }
+    ],
+    "correctChoiceId": 3
+  },
+  {
+    "id": 3114,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Ravish nimani bildiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Harakatning belgisini"
+      },
+      {
+        "id": 2,
+        "text": "Narsani"
+      },
+      {
+        "id": 3,
+        "text": "Shaxsni"
+      },
+      {
+        "id": 4,
+        "text": "Faqat sonni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3115,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Sinonim so'zlar qanday bo'ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Ma'nodosh"
+      },
+      {
+        "id": 2,
+        "text": "Zid ma'noli"
+      },
+      {
+        "id": 3,
+        "text": "Shakldosh"
+      },
+      {
+        "id": 4,
+        "text": "Tasodifiy"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3116,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Antonim so'zlar qanday bo'ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qarama-qarshi ma'noli"
+      },
+      {
+        "id": 2,
+        "text": "Bir xil ma'noli"
+      },
+      {
+        "id": 3,
+        "text": "Faqat sonli"
+      },
+      {
+        "id": 4,
+        "text": "Faqat fe'lli"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3117,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Undalma nima?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Murojaat bildiruvchi so'z"
+      },
+      {
+        "id": 2,
+        "text": "Faqat fe'l"
+      },
+      {
+        "id": 3,
+        "text": "Faqat kelishik"
+      },
+      {
+        "id": 4,
+        "text": "Faqat son"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3118,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Qo'shma gap nechta grammatik asosga ega bo'ladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Kamida ikkita"
+      },
+      {
+        "id": 2,
+        "text": "Faqat bitta"
+      },
+      {
+        "id": 3,
+        "text": "Hech qachon bo'lmaydi"
+      },
+      {
+        "id": 4,
+        "text": "Faqat uchta"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3119,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Otning egalik qo'shimchasi nimani bildiradi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "Qarashlilikni"
+      },
+      {
+        "id": 2,
+        "text": "Faqat ko'plikni"
+      },
+      {
+        "id": 3,
+        "text": "Faqat joyni"
+      },
+      {
+        "id": 4,
+        "text": "Faqat harakatni"
+      }
+    ],
+    "correctChoiceId": 1
+  },
+  {
+    "id": 3120,
+    "subject": "uzbek",
+    "level": "medium",
+    "question": "Imlo qoidalari nimaga xizmat qiladi?",
+    "choices": [
+      {
+        "id": 1,
+        "text": "To'g'ri yozishga"
+      },
+      {
+        "id": 2,
+        "text": "Tez yugurishga"
+      },
+      {
+        "id": 3,
+        "text": "Rasm chizishga"
+      },
+      {
+        "id": 4,
+        "text": "Musiqa tinglashga"
+      }
+    ],
+    "correctChoiceId": 1
+  }
+]

@@ -1,0 +1,505 @@
+[
+  {
+    "id": 101,
+    "methodId": 1,
+    "title": "Shaxsga yo‘naltirilgan ta’lim — mini-quiz",
+    "questions": [
+      {
+        "id": 1001,
+        "text": "Shaxsga yo‘naltirilgan yondashuvning asosiy maqsadi nima?",
+        "choices": [
+          { "id": 1, "text": "Barcha o‘quvchilarga bir xil topshiriq berish" },
+          { "id": 2, "text": "Talaba ehtiyoj va qiziqishiga mos o‘qitish" },
+          { "id": 3, "text": "Faqat nazariy ma’lumot berish" },
+          { "id": 4, "text": "Faqat baho qo‘yishga e’tibor berish" }
+        ],
+        "correctChoiceId": 2
+      },
+      {
+        "id": 1002,
+        "text": "Z avlod uchun qaysi omil motivatsiyani tez oshiradi?",
+        "choices": [
+          { "id": 1, "text": "Tezkor feedback va natija" },
+          { "id": 2, "text": "Faqat uzun ma’ruzalar" },
+          { "id": 3, "text": "Bir xil uslubda dars" },
+          { "id": 4, "text": "Muloqotsiz o‘qish" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 1003,
+        "text": "Individual traektoriya deganda nima tushuniladi?",
+        "choices": [
+          { "id": 1, "text": "O‘quvchining o‘z sur’ati va yo‘li" },
+          { "id": 2, "text": "Faqat umumiy reja" },
+          { "id": 3, "text": "Faqat qiyin topshiriqlar" },
+          { "id": 4, "text": "Faqat test yechish" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 1004,
+        "text": "Refleksiya nima uchun kerak?",
+        "choices": [
+          { "id": 1, "text": "Xatoni yashirish uchun" },
+          { "id": 2, "text": "O‘rganilgan narsani tahlil qilish uchun" },
+          { "id": 3, "text": "Faqat vaqt o‘tkazish uchun" },
+          { "id": 4, "text": "Baho qo‘yish uchun" }
+        ],
+        "correctChoiceId": 2
+      },
+      {
+        "id": 1005,
+        "text": "Shaxsga yo‘naltirilgan darsda o‘quvchi roli qanday?",
+        "choices": [
+          { "id": 1, "text": "Passiv tinglovchi" },
+          { "id": 2, "text": "Faol ishtirokchi va tanlov qiluvchi" },
+          { "id": 3, "text": "Faqat kuzatuvchi" },
+          { "id": 4, "text": "Faqat yozuvchi" }
+        ],
+        "correctChoiceId": 2
+      }
+    ]
+  },
+
+  {
+    "id": 102,
+    "methodId": 2,
+    "title": "Kompetensiyaviy yondashuv — mini-quiz",
+    "questions": [
+      {
+        "id": 2001,
+        "text": "Kompetensiya nimaga yaqin tushuncha?",
+        "choices": [
+          { "id": 1, "text": "Bilimni real vaziyatda qo‘llash" },
+          { "id": 2, "text": "Faqat yodlash" },
+          { "id": 3, "text": "Faqat diktant" },
+          { "id": 4, "text": "Faqat testni ko‘paytirish" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 2002,
+        "text": "Kompetensiyaviy vazifa qanday bo‘lishi kerak?",
+        "choices": [
+          { "id": 1, "text": "Real muammo asosida" },
+          { "id": 2, "text": "Faqat ta’rif yodlash" },
+          { "id": 3, "text": "Faqat formula yozish" },
+          { "id": 4, "text": "Faqat ko‘chirish" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 2003,
+        "text": "Yechimni asoslash uchun eng to‘g‘ri narsa nima?",
+        "choices": [
+          { "id": 1, "text": "Dalil va mantiq" },
+          { "id": 2, "text": "Tasodifiy fikr" },
+          { "id": 3, "text": "Faqat hissiyot" },
+          { "id": 4, "text": "Faqat baho" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 2004,
+        "text": "Kompetensiya natijasi qanday ko‘rinadi?",
+        "choices": [
+          { "id": 1, "text": "Amaliy natija va qaror" },
+          { "id": 2, "text": "Faqat konspekt" },
+          { "id": 3, "text": "Faqat definitsiya" },
+          { "id": 4, "text": "Faqat jadval" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 2005,
+        "text": "Eng foydali feedback turi qaysi?",
+        "choices": [
+          { "id": 1, "text": "Aniq tavsiya + keyingi qadam" },
+          { "id": 2, "text": "Faqat “yaxshi” deyish" },
+          { "id": 3, "text": "Umumiy tanqid" },
+          { "id": 4, "text": "Hech narsa demaslik" }
+        ],
+        "correctChoiceId": 1
+      }
+    ]
+  },
+
+  {
+    "id": 103,
+    "methodId": 3,
+    "title": "Loyiha asosida o‘qitish — mini-quiz",
+    "questions": [
+      {
+        "id": 3001,
+        "text": "Loyiha metodining natijasi odatda nima?",
+        "choices": [
+          { "id": 1, "text": "Mahsulot/taqdimot/yechim" },
+          { "id": 2, "text": "Faqat test" },
+          { "id": 3, "text": "Faqat ma’ruza" },
+          { "id": 4, "text": "Faqat daftar" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 3002,
+        "text": "Loyiha jarayonida eng muhim bosqichlardan biri?",
+        "choices": [
+          { "id": 1, "text": "Reja tuzish" },
+          { "id": 2, "text": "Faqat yozish" },
+          { "id": 3, "text": "Faqat o‘qish" },
+          { "id": 4, "text": "Faqat baho kutish" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 3003,
+        "text": "Jamoaviy ish nimani kuchaytiradi?",
+        "choices": [
+          { "id": 1, "text": "Hamkorlik va kommunikatsiya" },
+          { "id": 2, "text": "Passivlik" },
+          { "id": 3, "text": "Yolg‘izlik" },
+          { "id": 4, "text": "Beqarorlik" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 3004,
+        "text": "Pitch deganda nima tushuniladi?",
+        "choices": [
+          { "id": 1, "text": "Qisqa taqdimot (1–2 daqiqa)" },
+          { "id": 2, "text": "Uzun ma’ruza" },
+          { "id": 3, "text": "Diktant" },
+          { "id": 4, "text": "Nazorat ishi" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 3005,
+        "text": "Rubrik nima uchun kerak?",
+        "choices": [
+          { "id": 1, "text": "Baholash mezonlarini aniq belgilash uchun" },
+          { "id": 2, "text": "Faqat bezak uchun" },
+          { "id": 3, "text": "Vaqt o‘tkazish uchun" },
+          { "id": 4, "text": "Faqat qiyinlashtirish uchun" }
+        ],
+        "correctChoiceId": 1
+      }
+    ]
+  },
+
+  {
+    "id": 104,
+    "methodId": 4,
+    "title": "Keys-stadi — mini-quiz",
+    "questions": [
+      {
+        "id": 4001,
+        "text": "Keys-stadi nimaga asoslanadi?",
+        "choices": [
+          { "id": 1, "text": "Real vaziyat tahliliga" },
+          { "id": 2, "text": "Faqat yodlashga" },
+          { "id": 3, "text": "Faqat diktantga" },
+          { "id": 4, "text": "Faqat konspektga" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 4002,
+        "text": "Yechim variantlari nega ko‘p bo‘lishi foydali?",
+        "choices": [
+          { "id": 1, "text": "Tanqidiy fikrlashni oshiradi" },
+          { "id": 2, "text": "Chalg‘itadi" },
+          { "id": 3, "text": "Vaqtni yo‘qotadi" },
+          { "id": 4, "text": "Keraksiz" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 4003,
+        "text": "Eng maqbul variantni tanlashda nima muhim?",
+        "choices": [
+          { "id": 1, "text": "Asoslash (dalil+mantiq)" },
+          { "id": 2, "text": "Taxmin" },
+          { "id": 3, "text": "Tasodif" },
+          { "id": 4, "text": "Faqat hissiyot" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 4004,
+        "text": "Keys yakunida nima bo‘lishi kerak?",
+        "choices": [
+          { "id": 1, "text": "Qisqa xulosa va natija" },
+          { "id": 2, "text": "Hech narsa" },
+          { "id": 3, "text": "Faqat baho" },
+          { "id": 4, "text": "Faqat savol" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 4005,
+        "text": "Keys-stadi Z avlodga nima uchun mos?",
+        "choices": [
+          { "id": 1, "text": "Real hayotga yaqin va tez qaror talab qiladi" },
+          { "id": 2, "text": "Uzoq yodlashni yoqtiradi" },
+          { "id": 3, "text": "Faqat monologni yaxshi ko‘radi" },
+          { "id": 4, "text": "Muloqotni yoqtirmaydi" }
+        ],
+        "correctChoiceId": 1
+      }
+    ]
+  },
+
+  {
+    "id": 105,
+    "methodId": 5,
+    "title": "Gamifikatsiya — mini-quiz",
+    "questions": [
+      {
+        "id": 5001,
+        "text": "Gamifikatsiyaning asosiy elementi qaysi?",
+        "choices": [
+          { "id": 1, "text": "Ball va badge" },
+          { "id": 2, "text": "Faqat ma’ruza" },
+          { "id": 3, "text": "Faqat diktant" },
+          { "id": 4, "text": "Faqat imtihon" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 5002,
+        "text": "Tezkor feedback nima beradi?",
+        "choices": [
+          { "id": 1, "text": "Motivatsiya va xatoni darhol tushunish" },
+          { "id": 2, "text": "Chalg‘itish" },
+          { "id": 3, "text": "Passivlik" },
+          { "id": 4, "text": "Keraksiz" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 5003,
+        "text": "Progress nima uchun kerak?",
+        "choices": [
+          { "id": 1, "text": "O‘sishni ko‘rsatish uchun" },
+          { "id": 2, "text": "Vaqt o‘tkazish uchun" },
+          { "id": 3, "text": "Faqat bezak" },
+          { "id": 4, "text": "Chalg‘itish" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 5004,
+        "text": "Badge qachon foydali?",
+        "choices": [
+          { "id": 1, "text": "Ma’lum natija/maqsadga erishilganda" },
+          { "id": 2, "text": "Hech qachon" },
+          { "id": 3, "text": "Faqat baho uchun" },
+          { "id": 4, "text": "Faqat imtihonda" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 5005,
+        "text": "Gamifikatsiya noto‘g‘ri qo‘llansa nima bo‘lishi mumkin?",
+        "choices": [
+          { "id": 1, "text": "Faqat ballga qiziqish, mazmun pasayishi" },
+          { "id": 2, "text": "Har doim foydali" },
+          { "id": 3, "text": "Hech ta’siri yo‘q" },
+          { "id": 4, "text": "Faqat ijobiy" }
+        ],
+        "correctChoiceId": 1
+      }
+    ]
+  },
+
+  {
+    "id": 106,
+    "methodId": 6,
+    "title": "Raqamli ta’lim texnologiyalari — mini-quiz",
+    "questions": [
+      {
+        "id": 6001,
+        "text": "Raqamli ta’lim texnologiyasi misoli qaysi?",
+        "choices": [
+          { "id": 1, "text": "Video + interaktiv test" },
+          { "id": 2, "text": "Faqat diktant" },
+          { "id": 3, "text": "Faqat qog‘oz" },
+          { "id": 4, "text": "Faqat og‘zaki so‘rov" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 6002,
+        "text": "Multimedia nimani oshiradi?",
+        "choices": [
+          { "id": 1, "text": "Vizual tushunishni" },
+          { "id": 2, "text": "Chalg‘ishni" },
+          { "id": 3, "text": "Passivlikni" },
+          { "id": 4, "text": "Sukunatni" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 6003,
+        "text": "Online muhokama qanday foyda beradi?",
+        "choices": [
+          { "id": 1, "text": "Muloqot va fikr almashish" },
+          { "id": 2, "text": "Yolg‘izlik" },
+          { "id": 3, "text": "Befarqlik" },
+          { "id": 4, "text": "Keraksiz" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 6004,
+        "text": "Mini-task nima uchun kerak?",
+        "choices": [
+          { "id": 1, "text": "Kontentni mustahkamlash uchun" },
+          { "id": 2, "text": "Vaqt o‘tkazish uchun" },
+          { "id": 3, "text": "Faqat bezak" },
+          { "id": 4, "text": "Chalg‘itish" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 6005,
+        "text": "Raqamli kontentda eng muhimi?",
+        "choices": [
+          { "id": 1, "text": "Maqsad + interaktivlik + feedback" },
+          { "id": 2, "text": "Faqat uzun matn" },
+          { "id": 3, "text": "Faqat rasm" },
+          { "id": 4, "text": "Faqat baho" }
+        ],
+        "correctChoiceId": 1
+      }
+    ]
+  },
+
+  {
+    "id": 107,
+    "methodId": 7,
+    "title": "Interaktiv usullar — mini-quiz",
+    "questions": [
+      {
+        "id": 7001,
+        "text": "Interaktiv ta’limning markazida nima turadi?",
+        "choices": [
+          { "id": 1, "text": "Muloqot va hamkorlik" },
+          { "id": 2, "text": "Faqat monolog" },
+          { "id": 3, "text": "Faqat yodlash" },
+          { "id": 4, "text": "Faqat nazorat" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 7002,
+        "text": "Juftlikda muhokama nimani oshiradi?",
+        "choices": [
+          { "id": 1, "text": "Fikrni shakllantirish va tinglash" },
+          { "id": 2, "text": "Passivlik" },
+          { "id": 3, "text": "Befarqlik" },
+          { "id": 4, "text": "Keraksiz" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 7003,
+        "text": "Muammoli savolning foydasi?",
+        "choices": [
+          { "id": 1, "text": "Tanqidiy fikrlashni uyg‘otadi" },
+          { "id": 2, "text": "Faqat chalg‘itadi" },
+          { "id": 3, "text": "Hech foyda bermaydi" },
+          { "id": 4, "text": "Faqat baho uchun" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 7004,
+        "text": "Interaktiv darsda o‘qituvchi roli ko‘proq qanday?",
+        "choices": [
+          { "id": 1, "text": "Yo‘naltiruvchi va fasilitator" },
+          { "id": 2, "text": "Faqat buyruq beruvchi" },
+          { "id": 3, "text": "Faqat baholovchi" },
+          { "id": 4, "text": "Faqat tinglovchi" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 7005,
+        "text": "Muhokama yakunida nima qilish kerak?",
+        "choices": [
+          { "id": 1, "text": "Qisqa xulosa chiqarish" },
+          { "id": 2, "text": "Hech narsa" },
+          { "id": 3, "text": "Faqat baho" },
+          { "id": 4, "text": "Faqat savol" }
+        ],
+        "correctChoiceId": 1
+      }
+    ]
+  },
+
+  {
+    "id": 108,
+    "methodId": 8,
+    "title": "Adaptiv ta’lim — mini-quiz",
+    "questions": [
+      {
+        "id": 8001,
+        "text": "Adaptiv ta’lim nimaga moslashadi?",
+        "choices": [
+          { "id": 1, "text": "O‘quvchi darajasi va sur’atiga" },
+          { "id": 2, "text": "Faqat o‘qituvchiga" },
+          { "id": 3, "text": "Faqat dars jadvaliga" },
+          { "id": 4, "text": "Faqat imtihonga" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 8002,
+        "text": "Daraja testi nima uchun kerak?",
+        "choices": [
+          { "id": 1, "text": "Mos yo‘lni tanlash uchun" },
+          { "id": 2, "text": "Faqat baho uchun" },
+          { "id": 3, "text": "Chalg‘itish uchun" },
+          { "id": 4, "text": "Keraksiz" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 8003,
+        "text": "Adaptiv yondashuvda eng muhim narsa?",
+        "choices": [
+          { "id": 1, "text": "Individual traektoriya" },
+          { "id": 2, "text": "Bir xil topshiriq" },
+          { "id": 3, "text": "Faqat nazariya" },
+          { "id": 4, "text": "Faqat diktant" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 8004,
+        "text": "Oson-o‘rta-qiyin yo‘llar nimani beradi?",
+        "choices": [
+          { "id": 1, "text": "Bosqichma-bosqich o‘sish" },
+          { "id": 2, "text": "Pasayish" },
+          { "id": 3, "text": "Tartibsizlik" },
+          { "id": 4, "text": "Keraksiz" }
+        ],
+        "correctChoiceId": 1
+      },
+      {
+        "id": 8005,
+        "text": "Adaptiv tizimda progress qanday kuzatiladi?",
+        "choices": [
+          { "id": 1, "text": "Natijalar va refleksiya orqali" },
+          { "id": 2, "text": "Faqat taxmin orqali" },
+          { "id": 3, "text": "Faqat o‘qituvchi ko‘ngli orqali" },
+          { "id": 4, "text": "Kuzatilmaydi" }
+        ],
+        "correctChoiceId": 1
+      }
+    ]
+  }
+]

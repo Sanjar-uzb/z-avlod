@@ -60,7 +60,7 @@ export default function LabClient({ fan, lab }: LabClientProps) {
           <div className="card" style={{ marginTop: 18, background: "rgba(15,23,42,0.92)", border: "1px solid rgba(148,163,184,0.12)" }}>
             <div className="h3">Sarlavha bo‘limi</div>
             <p className="muted" style={{ marginTop: 8, lineHeight: 1.75 }}>
-              Bu sahifa interaktiv laboratoriya tajribasini sezilarli darajada yaxshilaydi. Boshlanishda katta header va sarlavha qismi o‘quvchini oson jalb qiladi.
+              Bu sahifa interaktiv laboratoriya tajribasini sezilarli darajada yaxshilaydi.
             </p>
           </div>
         </div>

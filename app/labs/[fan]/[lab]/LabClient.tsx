@@ -74,7 +74,7 @@ export default function LabClient({ fan, lab }: LabClientProps) {
           <div style={{ marginTop: 18 }}>
             <div className="h3">Tezkor izoh</div>
             <p className="muted" style={{ marginTop: 8, lineHeight: 1.75 }}>
-              Sahifa endi toza, zamonaviy va professional ko‘rinishda. Tashqi ko‘rinishga ham foydalanuvchi yaxshi baho beradi.
+              Sahifa zamonaviy ko‘rinishda. 
             </p>
           </div>
         </div>

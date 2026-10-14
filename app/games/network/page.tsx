@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useRef, useState } from "react";
+import { saveGenericGameResult } from "@/lib/storage";
 
 type DeviceType = "computer" | "switch" | "hub";
 type CableType = "straight" | "crossover";
@@ -363,6 +364,24 @@ export default function NetworkLabPro() {
           }))
         );
         window.setTimeout(() => setPackets([]), 500);
+        const successRate = Math.max(0, Math.round((100 - badComputerIds.size * 10)));
+        saveGenericGameResult({
+          title: "Mini Cisco Packet Tracer",
+          gameType: "network",
+          student: "Mehmon",
+          score: successRate,
+          totalScore: 100,
+          completed: true,
+          summary: {
+            status: badComputerIds.size > 0 ? "partial" : "success",
+            failedTargets: badComputerIds.size,
+          },
+          details: {
+            devices: devices.length,
+            connections: connections.length,
+            packetPaths: paths.length,
+          },
+        });
         setStatusMessage(
           badComputerIds.size > 0
             ? `Xat jo'natildi. ${badComputerIds.size} ta kompyuterga noto'g'ri kabel sababli xat yetib bormadi.`

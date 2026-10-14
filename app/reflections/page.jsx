@@ -31,6 +31,22 @@ export default function ReflectionsPage() {
 
   const latestSurvey = useMemo(() => surveyResults[0] || null, [surveyResults]);
 
+  const groupedGames = useMemo(() => {
+    const groups = {};
+
+    for (const result of gameResults) {
+      const title = result.title || result.gameType || "Noma'lum o'yin";
+      groups[title] = groups[title] || [];
+      groups[title].push(result);
+    }
+
+    return Object.entries(groups).sort((a, b) => {
+      const latestA = a[1][0]?.savedAt || 0;
+      const latestB = b[1][0]?.savedAt || 0;
+      return latestB - latestA;
+    });
+  }, [gameResults]);
+
   const formatDate = (timestamp) => {
     return new Date(timestamp).toLocaleString("uz-UZ");
   };
@@ -76,50 +92,59 @@ export default function ReflectionsPage() {
         </div>
       </div>
 
-      {/* Kahoot Game Results */}
-      {kahootResults.length > 0 && (
-        <div style={{marginTop: 14}}>
-          <div className="h3" style={{marginBottom: 10}}>Kahoot o'yini natijalari</div>
+      {/* Grouped Game Results by Game Title */}
+      {groupedGames.length > 0 && (
+        <div style={{ marginTop: 14 }}>
+          <div className="h3" style={{ marginBottom: 10 }}>O'yin nomi bo'yicha natijalar</div>
           <div className="list">
-            {kahootResults.map((result, idx) => (
-              <div className="card" key={`kahoot_${idx}`}>
-                <div className="itemTitle">{result.title}</div>
-                <div className="itemMeta">
-                  <span className="badge">O'quvchi: {result.student}</span>
-                  <span className="badge">Ballar: {result.score}</span>
-                  <span className="badge">{result.correctAnswers}/{result.totalQuestions} to'g'ri</span>
-                  <span className="badge">O'rni: {result.playerPosition}/{result.totalParticipants}</span>
-                  <span className="badge">Sana: {formatDate(result.savedAt)}</span>
-                </div>
-                {result.results && result.results.length > 0 && (
-                  <div style={{marginTop: 10, fontSize: 13, color: "#666"}}>
-                    <div style={{fontWeight: 500, marginBottom: 6}}>Ishtirokchilar sifat tizimi:</div>
-                    {result.results.slice(0, 3).map((player, i) => (
-                      <div key={i}>• {i + 1}. {player.name}: {player.score} ball</div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+            {groupedGames.map(([title, entries]) => (
+              <details key={title} className="card" style={{ marginBottom: 10 }}>
+                <summary style={{ cursor: "pointer", listStyle: "none", fontWeight: 700 }}>
+                  {title}
+                  <span className="badge" style={{ marginLeft: 8 }}>({entries.length})</span>
+                </summary>
 
-      {/* Electric Game Results */}
-      {electricResults.length > 0 && (
-        <div style={{marginTop: 14}}>
-          <div className="h3" style={{marginBottom: 10}}>Elektr zanjirlash o'yini natijalari</div>
-          <div className="list">
-            {electricResults.map((result, idx) => (
-              <div className="card" key={`electric_${idx}`}>
-                <div className="itemTitle">{result.title}</div>
-                <div className="itemMeta">
-                  <span className="badge">O'quvchi: {result.student}</span>
-                  <span className="badge">Bosqichlar: {result.levelsCompleted}/{result.totalLevels}</span>
-                  <span className="badge">Vaqt: {result.completionTime}s</span>
-                  <span className="badge">Sana: {formatDate(result.savedAt)}</span>
+                <div className="list" style={{ marginTop: 10 }}>
+                  {entries.map((result, idx) => (
+                    <div className="card" key={`${title}_${result.id || idx}`}>
+                      <div className="itemTitle">{result.title}</div>
+                      <div className="itemMeta">
+                        <span className="badge">O'quvchi: {result.student}</span>
+                        {result.gameType === "kahoot" ? (
+                          <>
+                            <span className="badge">Ballar: {result.score}</span>
+                            <span className="badge">{result.correctAnswers}/{result.totalQuestions} to'g'ri</span>
+                            <span className="badge">O'rni: {result.playerPosition}/{result.totalParticipants}</span>
+                          </>
+                        ) : result.gameType === "electric" ? (
+                          <>
+                            <span className="badge">Bosqichlar: {result.levelsCompleted}/{result.totalLevels}</span>
+                            <span className="badge">Vaqt: {result.completionTime}s</span>
+                          </>
+                        ) : (
+                          <>
+                            <span className="badge">Ball: {result.score}/{result.totalScore || 100}</span>
+                            <span className="badge">To'liq: {result.completed ? "Ha" : "Yo'q"}</span>
+                            {result.summary && Object.entries(result.summary).map(([key, value]) => (
+                              <span key={`${result.id}_${key}`} className="badge">{key}: {String(value)}</span>
+                            ))}
+                          </>
+                        )}
+                        <span className="badge">Sana: {formatDate(result.savedAt)}</span>
+                      </div>
+
+                      {result.results && result.results.length > 0 && (
+                        <div style={{ marginTop: 10, fontSize: 13, color: "#666" }}>
+                          <div style={{ fontWeight: 500, marginBottom: 6 }}>Ishtirokchilar sifat tizimi:</div>
+                          {result.results.slice(0, 3).map((player, i) => (
+                            <div key={i}>• {i + 1}. {player.name}: {player.score} ball</div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
-              </div>
+              </details>
             ))}
           </div>
         </div>

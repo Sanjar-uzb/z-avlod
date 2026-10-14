@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { saveGenericGameResult } from "@/lib/storage";
 
 const DIALOGUES = [
   { id: 1, character: "Tom", english: "Hello, my name is Tom. What is your name?", uzbek: "Assalomu alaykum, mening ismim Tom. Sizning ismingiz nima?", options: [{ text: "My name is Ali", uzbText: "Mening ismim Ali" }, { text: "Nice to meet you", uzbText: "Sizga tanishib tuyuldi" }] },
@@ -30,6 +31,22 @@ export default function EnglishRpgPlay() {
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
+  const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    if (!finished || saved) return;
+    setSaved(true);
+    saveGenericGameResult({
+      title: "English RPG",
+      gameType: "english-rpg",
+      student: "Mehmon",
+      score,
+      totalScore: DIALOGUES.length * 10,
+      completed: true,
+      summary: { completed: true },
+      details: { dialogues: DIALOGUES.length },
+    });
+  }, [finished, saved, score]);
 
   function answer(points: number) {
     setScore(score + points);

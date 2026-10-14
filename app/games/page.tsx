@@ -19,6 +19,7 @@ export default function GamesLanding() {
             marginTop: 18,
           }}
         >
+          <GameThumbnail href="/games/hayot-simulator" title="Z-AVLOD: HAYOT SIMULYATORI" subtitle="Tarbiyaviy missiyalar va qarorlar" accent="#8b5cf6" />
           <GameThumbnail href="/games/kahoot" title="Kahoot Live" subtitle="Real-time quiz" accent="#ef4444" />
           <GameThumbnail href="/games/electric" title="Electric Simulyator" subtitle="Circuit puzzles" accent="#f59e0b" />
           <GameThumbnail href="/games/network" title="Tarmoq Simulyatori" subtitle="Network challenges" accent="#06b6d4" />
@@ -28,6 +29,7 @@ export default function GamesLanding() {
 
           <GameThumbnail href="/games/coding-puzzle" title="Kod yozish" subtitle="Programming riddles" accent="#06b6d4" />
           <GameThumbnail href="/games/space-education" title="Astronomiya" subtitle="Space missions" accent="#2563eb" />
+          <GameThumbnail href="/games/matematika" title="Matematika Poygasi" subtitle="Tezkor matematik poyga" accent="#22c55e" />
           <GameThumbnail href="/games/ai-krosvord" title="AI Krosvord" subtitle="Crossword with AI" accent="#fb7185" />
         </div>
 

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { saveGenericGameResult } from "@/lib/storage";
 
 const SPACE_FACTS = [
   {
@@ -72,6 +73,22 @@ export default function SpaceEducationPlay() {
   const [selected, setSelected] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [finished, setFinished] = useState(false);
+  const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    if (!finished || saved) return;
+    setSaved(true);
+    saveGenericGameResult({
+      title: "Space Education",
+      gameType: "space-education",
+      student: "Mehmon",
+      score,
+      totalScore: SPACE_FACTS.length * 10,
+      completed: true,
+      summary: { correct: score / 10, total: SPACE_FACTS.length },
+      details: { completedAt: Date.now() },
+    });
+  }, [finished, saved, score]);
 
   function answer(option: string) {
     if (showResult) return;

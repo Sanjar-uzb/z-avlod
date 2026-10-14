@@ -26,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <nav className="nav" aria-label="Asosiy menyu">
                 <Link href="/methods">Metodlar</Link>
                 <Link href="/games">O'yinlar</Link>
+                <Link href="/games/hayot-simulator">Tarbiyaviy mashg'ulotlar</Link>
                 <Link href="/reflections">Refleksiya</Link>
                 <Link href="/profile">Profil</Link>
                 <Link href="/subjects">Test</Link>

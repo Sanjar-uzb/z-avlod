@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { saveGenericGameResult } from "@/lib/storage";
 
 function flagEmoji(code: string) {
   return code.toUpperCase().replace(/./g, (ch) => String.fromCodePoint(127397 + ch.charCodeAt(0)));
@@ -221,12 +222,28 @@ export default function GeographyPlay() {
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [options, setOptions] = useState<{ name: string; code: string }[]>([]);
+  const [saved, setSaved] = useState(false);
 
   useEffect(() => {
     if (pool.length === 0) return;
     makeOptions();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pool, index]);
+
+  useEffect(() => {
+    if (index < pool.length || saved) return;
+    setSaved(true);
+    saveGenericGameResult({
+      title: "Geography Quest",
+      gameType: "geography-quest",
+      student: "Mehmon",
+      score,
+      totalScore: pool.length,
+      completed: true,
+      summary: { correct: score, total: pool.length },
+      details: { questions: pool.length },
+    });
+  }, [index, pool.length, saved, score]);
 
   function makeOptions() {
     const correct = pool[index];

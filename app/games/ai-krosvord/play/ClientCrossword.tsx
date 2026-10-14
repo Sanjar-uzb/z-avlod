@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { saveGenericGameResult } from "@/lib/storage";
 
 interface CrosswordEntry {
   num: number;
@@ -179,16 +180,11 @@ export default function ClientCrossword() {
   const [letters, setLetters] = useState<Record<string, string>>({});
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
+  const [saved, setSaved] = useState(false);
 
   useEffect(() => {
     setSelectedFan(fan);
   }, [fan]);
-
-  useEffect(() => {
-    setLetters({});
-    setScore(0);
-    setFinished(false);
-  }, [selectedFan]);
 
   // Generate a puzzle (with intersections) from the word bank for the selected fan.
   const puzzle = useMemo(() => {
@@ -196,6 +192,28 @@ export default function ClientCrossword() {
     if (!words) return undefined;
     return generatePuzzle(FAN_LABELS[selectedFan] || selectedFan, words, 12, 12);
   }, [selectedFan]);
+
+  useEffect(() => {
+    setLetters({});
+    setScore(0);
+    setFinished(false);
+    setSaved(false);
+  }, [selectedFan]);
+
+  useEffect(() => {
+    if (!finished || saved) return;
+    setSaved(true);
+    saveGenericGameResult({
+      title: `AI Krossvord • ${FAN_LABELS[selectedFan] || selectedFan}`,
+      gameType: "ai-krosvord",
+      student: "Mehmon",
+      score,
+      totalScore: (puzzle?.entries?.length || 0) * 10,
+      completed: true,
+      summary: { solved: score, total: puzzle?.entries?.length || 0 },
+      details: { fan: selectedFan },
+    });
+  }, [finished, saved, score, selectedFan, puzzle]);
 
   // Create grid with intersections: for simplicity we honor the configured row/col
   // but ensure overlapping letters match; if conflicts detected, fall back to non-overlap.

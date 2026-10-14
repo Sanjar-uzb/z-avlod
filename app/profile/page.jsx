@@ -1,12 +1,20 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { getProfile, setProfile, getQuizResults, requireProfile } from "@/lib/storage";
+import { getProfile, setProfile, getQuizResults } from "@/lib/storage";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { regions } from "@/lib/regions";
 
 export default function ProfilePage() {
   const router = useRouter();
-  const [p, setP] = useState({ firstName: "", lastName: "", org: "" });
+  const [p, setP] = useState({
+    firstName: "",
+    lastName: "",
+    org: "",
+    region: "",
+    district: "",
+    institution: "",
+  });
 
   useEffect(() => {
     const cur = getProfile();
@@ -14,7 +22,14 @@ export default function ProfilePage() {
       router.push("/start");
       return;
     }
-    setP(cur);
+    setP({
+      firstName: cur.firstName || "",
+      lastName: cur.lastName || "",
+      org: cur.org || "",
+      region: cur.region || "",
+      district: cur.district || "",
+      institution: cur.institution || "",
+    });
   }, [router]);
 
   const results = useMemo(() => {
@@ -27,7 +42,14 @@ export default function ProfilePage() {
       alert("Ism va familiya kerak.");
       return;
     }
-    setProfile({ firstName: p.firstName.trim(), lastName: p.lastName.trim(), org: (p.org||"").trim() });
+    setProfile({
+      firstName: p.firstName.trim(),
+      lastName: p.lastName.trim(),
+      org: (p.org || "").trim(),
+      region: (p.region || "").trim(),
+      district: (p.district || "").trim(),
+      institution: (p.institution || "").trim(),
+    });
     alert("Profil saqlandi.");
   }
 
@@ -51,6 +73,31 @@ export default function ProfilePage() {
             <div style={{marginTop: 12}}>
               <label className="muted">Sinf/Guruh (ixtiyoriy)</label>
               <input className="input" value={p.org || ""} onChange={(e)=>setP({...p, org:e.target.value})} />
+            </div>
+
+            <div style={{marginTop: 12}}>
+              <label className="muted">Viloyat</label>
+              <select className="input" value={p.region} onChange={(e)=>setP({...p, region:e.target.value, district:""})}>
+                <option value="">Viloyatni tanlang</option>
+                {Object.keys(regions).map((region) => (
+                  <option key={region} value={region}>{region}</option>
+                ))}
+              </select>
+            </div>
+
+            <div style={{marginTop: 12}}>
+              <label className="muted">Tuman</label>
+              <select className="input" value={p.district} onChange={(e)=>setP({...p, district:e.target.value})} disabled={!p.region}>
+                <option value="">Tumanni tanlang</option>
+                {p.region && regions[p.region].map((district) => (
+                  <option key={district} value={district}>{district}</option>
+                ))}
+              </select>
+            </div>
+
+            <div style={{marginTop: 12}}>
+              <label className="muted">Ta'lim muassasa raqami</label>
+              <input className="input" value={p.institution || ""} onChange={(e)=>setP({...p, institution:e.target.value})} placeholder="Masalan: 12345" />
             </div>
 
             <div className="row" style={{marginTop: 12}}>

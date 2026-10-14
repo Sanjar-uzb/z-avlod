@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { saveGenericGameResult } from "@/lib/storage";
 
 const CHALLENGES = [
   {
@@ -82,6 +83,22 @@ export default function CodingPuzzlePlay() {
   const [score, setScore] = useState(0);
   const [feedback, setFeedback] = useState("");
   const [finished, setFinished] = useState(false);
+  const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    if (!finished || saved) return;
+    setSaved(true);
+    saveGenericGameResult({
+      title: "Coding Puzzle",
+      gameType: "coding-puzzle",
+      student: "Mehmon",
+      score,
+      totalScore: CHALLENGES.length * 10,
+      completed: true,
+      summary: { solved: score / 10, total: CHALLENGES.length },
+      details: { challengeCount: CHALLENGES.length },
+    });
+  }, [finished, saved, score]);
 
   function checkAnswer() {
     const challenge = CHALLENGES[index];

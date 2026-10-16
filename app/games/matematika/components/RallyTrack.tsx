@@ -3,6 +3,7 @@
 import type { CSSProperties } from "react";
 import type { RacePlayer } from "../types";
 import { getRanking } from "../lib/scoreUtils";
+import { isPlayerActive } from "../lib/mathRaceLogic";
 import RallyCar from "./RallyCar";
 
 const CAR_COLORS = [
@@ -23,9 +24,10 @@ const CAR_COLORS = [
 export interface RallyTrackProps {
   players: RacePlayer[];
   selfId: string;
+  nowMs?: number;
 }
 
-export default function RallyTrack({ players, selfId }: RallyTrackProps) {
+export default function RallyTrack({ players, selfId, nowMs }: RallyTrackProps) {
   const ranked = getRanking(players);
   const rankById = new Map(ranked.map((player, index) => [player.id, index + 1]));
   const laneCount = Math.max(1, players.length);
@@ -42,6 +44,7 @@ export default function RallyTrack({ players, selfId }: RallyTrackProps) {
                 progress={player.progress}
                 isSelf={player.id === selfId}
                 finished={player.finished}
+                connected={nowMs === undefined ? player.connected !== false : isPlayerActive(player, nowMs)}
                 rank={rankById.get(player.id)}
               />
             </div>

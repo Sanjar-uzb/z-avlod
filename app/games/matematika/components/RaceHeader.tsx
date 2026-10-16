@@ -9,14 +9,29 @@ export interface RaceHeaderProps {
   score: number;
   combo: number;
   players: number;
+  connection?: "online" | "offline" | "local";
 }
 
-export default function RaceHeader({ gradeGroup, roomId, score, combo, players }: RaceHeaderProps) {
+const CONNECTION_LABEL: Record<"online" | "offline" | "local", string> = {
+  online: "ONLINE",
+  offline: "OFFLINE",
+  local: "LOKAL",
+};
+
+export default function RaceHeader({
+  gradeGroup,
+  roomId,
+  score,
+  combo,
+  players,
+  connection = "online",
+}: RaceHeaderProps) {
   return (
     <header className="math-race-header">
       <div className="math-race-header-title">
         <span className="math-race-title">MATEMATIKA POYGASI</span>
         <span className="math-race-grade">{gradeGroup}-SINF</span>
+        <span className={`math-race-conn math-race-conn-${connection}`}>{CONNECTION_LABEL[connection]}</span>
       </div>
 
       <div className="math-race-header-meta">

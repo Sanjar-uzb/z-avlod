@@ -12,13 +12,26 @@ import {
   getAccuracy,
 } from "./lib/scoreUtils";
 import {
+  HEARTBEAT_MS,
+  STALE_CLEAN_MS,
+  createPlayerId,
+  createSelfPlayer,
+  debugLog,
+  isPlayerActive,
+  mergeRoster,
+  normalizeRoomId,
+  shouldDropPlayer,
+} from "./lib/mathRaceLogic";
+import {
+  cleanupStalePlayers,
   generateRoomId,
-  joinMathRaceRoom,
-  leaveMathRaceRoom,
-  subscribeToRoom,
-  updateMathRaceRoom,
-} from "./lib/multiplayer";
-import type { GradeGroup, MathQuestion, MathRaceRoom, RacePlayer } from "./types";
+  joinRaceRoom,
+  markPlayerLeft,
+  pushPlayerState,
+  subscribeRaceRoom,
+  type JoinErrorCode,
+} from "./lib/mathRaceRealtime";
+import type { GradeGroup, MathQuestion, RacePlayer } from "./types";
 import { saveGenericGameResult } from "@/lib/storage";
 import RaceHeader from "./components/RaceHeader";
 import RallyTrack from "./components/RallyTrack";
@@ -28,15 +41,14 @@ const QUESTION_COUNT = 20;
 const PLAYER_NAME_KEY = "zavlod_math_player_name";
 const PLAYER_ID_KEY = "zavlod_math_player_id";
 const ROOM_ID_KEY = "zavlod_math_room_id";
+const NOW_TICK_MS = 10_000;
 
 const POOLS: Record<GradeGroup, MathQuestion[]> = {
   "5-6": gradeFiveToSixQuestions,
   "7-9": gradeSevenToNineQuestions,
 };
 
-function createPlayerId() {
-  return `player-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-}
+type ConnectionState = "idle" | "connecting" | "connected" | "unavailable";
 
 export default function MatematikaGame() {
   const [selectedGrade, setSelectedGrade] = useState<GradeGroup>("5-6");
@@ -50,9 +62,17 @@ export default function MatematikaGame() {
   });
   const [playerId] = useState<string>(() => {
     if (typeof window === "undefined") return createPlayerId();
-    return window.localStorage.getItem(PLAYER_ID_KEY) || createPlayerId();
+    const existing = window.localStorage.getItem(PLAYER_ID_KEY);
+    if (existing) return existing;
+    const created = createPlayerId();
+    window.localStorage.setItem(PLAYER_ID_KEY, created);
+    return created;
   });
-  const [roomState, setRoomState] = useState<MathRaceRoom | null>(null);
+  const [players, setPlayers] = useState<RacePlayer[]>([]);
+  const [connectionState, setConnectionState] = useState<ConnectionState>("idle");
+  const [joinError, setJoinError] = useState<{ code: JoinErrorCode; message: string } | null>(null);
+  const [localOnly, setLocalOnly] = useState(false);
+  const [nowMs, setNowMs] = useState<number>(() => Date.now());
   const [questions, setQuestions] = useState<MathQuestion[]>(() =>
     getRandomQuestions(POOLS["5-6"], QUESTION_COUNT, "5-6"),
   );
@@ -65,77 +85,172 @@ export default function MatematikaGame() {
   const [finished, setFinished] = useState(false);
   const hasSavedResult = useRef(false);
   const questionStartedAt = useRef(0);
+  const sessionRef = useRef({ roomId, playerId, localOnly });
+  const joinedRef = useRef(false);
+
+  useEffect(() => {
+    sessionRef.current = { roomId, playerId, localOnly };
+  }, [roomId, playerId, localOnly]);
+
+  useEffect(() => {
+    joinedRef.current = joinedRoom;
+  }, [joinedRoom]);
 
   const localPlayer = useMemo(
-    () => roomState?.players.find((player) => player.id === playerId) ?? null,
-    [playerId, roomState],
+    () => players.find((player) => player.id === playerId) ?? null,
+    [players, playerId],
   );
 
-  const connectedPlayers = useMemo(
-    () => roomState?.players.filter((player) => player.connected) ?? [],
-    [roomState],
+  const activePlayers = useMemo(
+    () => players.filter((player) => isPlayerActive(player, nowMs)),
+    [nowMs, players],
+  );
+
+  const trackPlayers = useMemo(
+    () => players.filter((player) => !shouldDropPlayer(player, nowMs)),
+    [nowMs, players],
   );
 
   const leaderboard = useMemo(
     () =>
-      [...connectedPlayers].sort((a, b) => {
+      [...activePlayers].sort((a, b) => {
         if (b.progress !== a.progress) return b.progress - a.progress;
         if (b.score !== a.score) return b.score - a.score;
         return a.averageAnswerTime - b.averageAnswerTime;
       }),
-    [connectedPlayers],
+    [activePlayers],
   );
 
   const currentQuestion = questions[questionIndex];
 
   const joinRace = useCallback(
-    (grade: GradeGroup) => {
-      const nextRoomId = roomId.trim() || generateRoomId();
+    async (grade: GradeGroup) => {
+      const nextRoomId = normalizeRoomId(roomId) || generateRoomId();
+      const nextName = playerName.trim() || "Sanjar";
       const nextPool = getRandomQuestions(POOLS[grade], QUESTION_COUNT, grade);
-      const result = joinMathRaceRoom({
-        roomId: nextRoomId,
-        gradeGroup: grade,
-        playerName: playerName.trim() || "Sanjar",
-        playerId,
-      });
 
       if (typeof window !== "undefined") {
         window.localStorage.setItem(ROOM_ID_KEY, nextRoomId);
-        window.localStorage.setItem(PLAYER_NAME_KEY, playerName.trim() || "Sanjar");
+        window.localStorage.setItem(PLAYER_NAME_KEY, nextName);
         window.localStorage.setItem(PLAYER_ID_KEY, playerId);
       }
 
-      setSelectedGrade(grade);
+      setJoinError(null);
       setRoomId(nextRoomId);
-      setRoomState(result.room);
+      setPlayerName(nextName);
+      setSelectedGrade(grade);
       setQuestions(nextPool);
       setQuestionIndex(0);
       setAnswer("");
       setFeedback(null);
       setAwaitingNext(false);
-      setStatusMessage(`${grade} sinf uchun room qo'shildi. Barcha o'yinchilar real vaqt rejimida ko'rsatiladi.`);
-      setJoinedRoom(true);
       setFinished(false);
+      setPlayers([createSelfPlayer({ playerId, name: nextName, roomId: nextRoomId, gradeGroup: grade })]);
       hasSavedResult.current = false;
       questionStartedAt.current = typeof performance === "undefined" ? 0 : performance.now();
+
+      if (localOnly) {
+        setConnectionState("idle");
+        setStatusMessage("Lokal rejim: multiplayer ishlamayapti, faqat siz ko'ryapsiz.");
+        setJoinedRoom(true);
+        return;
+      }
+
+      setConnectionState("connecting");
+      setStatusMessage("Roomga ulanilmoqda...");
+
+      const result = await joinRaceRoom({
+        roomId: nextRoomId,
+        gradeGroup: grade,
+        playerId,
+        playerName: nextName,
+      });
+
+      if (!result.ok) {
+        setConnectionState("unavailable");
+        setJoinError({ code: result.code, message: result.message });
+        setStatusMessage(result.message);
+        setJoinedRoom(false);
+        return;
+      }
+
+      setRoomId(result.roomId);
+      setConnectionState("connected");
+      setJoinedRoom(true);
+      setStatusMessage(`${result.roomId} room qo'shildi. Barcha o'yinchilar real vaqt rejimida ko'rsatiladi.`);
     },
-    [playerId, playerName, roomId],
+    [localOnly, playerId, playerName, roomId],
   );
 
   useEffect(() => {
-    if (!roomId) return;
+    if (!joinedRoom || localOnly || !roomId || connectionState !== "connected") return;
 
-    const unsubscribe = subscribeToRoom(roomId, (nextRoom) => {
-      if (!nextRoom) return;
-      setRoomState(nextRoom);
+    let cancelled = false;
+    const unsubscribe = subscribeRaceRoom(roomId, {
+      onPlayers: (serverPlayers) => {
+        if (cancelled) return;
+        setPlayers((previous) => mergeRoster(serverPlayers, previous, playerId));
+      },
+      onError: () => {
+        if (cancelled) return;
+        setConnectionState("unavailable");
+        setStatusMessage("Realtime server bilan aloqa uzildi. O'yin lokal davom etadi.");
+      },
     });
 
-    return () => unsubscribe();
-  }, [roomId]);
+    return () => {
+      cancelled = true;
+      unsubscribe();
+    };
+  }, [connectionState, joinedRoom, localOnly, playerId, roomId]);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setNowMs(Date.now()), NOW_TICK_MS);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!joinedRoom || localOnly || connectionState !== "connected" || !roomId) return;
+
+    const timer = window.setInterval(() => {
+      pushPlayerState(roomId, playerId, { lastSeenAtMs: Date.now() }).catch(() => {
+        debugLog("PLAYER", "Heartbeat failed");
+      });
+    }, HEARTBEAT_MS);
+
+    return () => window.clearInterval(timer);
+  }, [connectionState, joinedRoom, localOnly, playerId, roomId]);
+
+  useEffect(() => {
+    if (!joinedRoom || localOnly || !roomId) return;
+
+    const timer = window.setInterval(() => {
+      cleanupStalePlayers(roomId).catch(() => {
+        debugLog("ROOM", "Stale cleanup failed");
+      });
+    }, STALE_CLEAN_MS);
+
+    return () => window.clearInterval(timer);
+  }, [joinedRoom, localOnly, roomId]);
+
+  useEffect(() => {
+    const handler = () => {
+      const { roomId: currentRoom, playerId: currentPlayer, localOnly: isLocal } = sessionRef.current;
+      if (isLocal || !joinedRef.current || !currentRoom) return;
+      markPlayerLeft(currentRoom, currentPlayer).catch(() => {});
+    };
+
+    window.addEventListener("beforeunload", handler);
+    return () => {
+      window.removeEventListener("beforeunload", handler);
+      handler();
+    };
+  }, []);
 
   const finishGame = useCallback(
     (finalScore: number, finalCorrect: number, finalWrong: number) => {
-      if (!roomState || hasSavedResult.current) return;
+      const local = localPlayer;
+      if (!local || hasSavedResult.current) return;
       hasSavedResult.current = true;
 
       const accuracy = getAccuracy(finalCorrect, finalCorrect + finalWrong);
@@ -161,62 +276,71 @@ export default function MatematikaGame() {
         },
       });
 
-      const finishedRoom: MathRaceRoom = {
-        ...roomState,
-        status: "finished",
-        finishedAt: Date.now(),
-        players: roomState.players.map((player) =>
-          player.id === playerId
-            ? { ...player, finished: true, score: Math.round(player.score), progress: Math.min(100, player.progress) }
-            : player,
-        ),
+      const finishedPatch: Partial<RacePlayer> = {
+        finished: true,
+        score: Math.round(finalScore),
+        progress: Math.min(100, local.progress),
+        lastSeenAtMs: Date.now(),
       };
 
-      setRoomState(finishedRoom);
-      updateMathRaceRoom(roomId, finishedRoom);
+      setPlayers((previous) =>
+        previous.map((player) => (player.id === playerId ? { ...player, ...finishedPatch } : player)),
+      );
+
+      if (connectionState === "connected" && !localOnly) {
+        pushPlayerState(roomId, playerId, finishedPatch).catch(() => {
+          debugLog("PLAYER", "Finish state sync failed");
+        });
+      }
+
       setStatusMessage("Poyga tugadi! Natijangiz saqlandi.");
       setFinished(true);
     },
-    [playerId, questions.length, roomId, roomState, selectedGrade],
+    [connectionState, localOnly, playerId, questions.length, roomId, localPlayer, selectedGrade],
   );
 
   const submitAnswer = useCallback(() => {
-    if (!roomState || !localPlayer || !currentQuestion || finished || awaitingNext) return;
+    const local = localPlayer;
+    if (!local || !currentQuestion || finished || awaitingNext) return;
 
     const isCorrect = answerMatches(answer, currentQuestion.answer);
     const elapsedSeconds = Math.max(0, (performance.now() - questionStartedAt.current) / 1000);
     const delta = isCorrect
-      ? calculateScoreDelta(true, currentQuestion.difficulty, elapsedSeconds, localPlayer.combo)
+      ? calculateScoreDelta(true, currentQuestion.difficulty, elapsedSeconds, local.combo)
       : -20;
-    const nextScore = Math.max(0, Math.round(localPlayer.score + delta));
+    const nextScore = Math.max(0, Math.round(local.score + delta));
     const gainedProgress = isCorrect ? calculateProgressGain(currentQuestion.difficulty, elapsedSeconds) : 0;
-    const nextProgress = Math.min(100, localPlayer.progress + gainedProgress);
-    const nextCorrect = isCorrect ? localPlayer.correctAnswers + 1 : localPlayer.correctAnswers;
-    const nextWrong = isCorrect ? localPlayer.wrongAnswers : localPlayer.wrongAnswers + 1;
-    const nextCombo = isCorrect ? localPlayer.combo + 1 : 0;
+    const nextProgress = Math.min(100, local.progress + gainedProgress);
+    const nextCorrect = isCorrect ? local.correctAnswers + 1 : local.correctAnswers;
+    const nextWrong = isCorrect ? local.wrongAnswers : local.wrongAnswers + 1;
+    const nextCombo = isCorrect ? local.combo + 1 : 0;
     const nextPlayer: RacePlayer = {
-      ...localPlayer,
+      ...local,
       progress: Math.round(nextProgress),
       score: nextScore,
       correctAnswers: nextCorrect,
       wrongAnswers: nextWrong,
       combo: nextCombo,
-      maxCombo: Math.max(localPlayer.maxCombo, nextCombo),
+      maxCombo: Math.max(local.maxCombo, nextCombo),
       currentQuestion: questionIndex + 1,
-      totalAnswerTime: localPlayer.totalAnswerTime + elapsedSeconds,
-      averageAnswerTime: Math.round((localPlayer.totalAnswerTime + elapsedSeconds) / Math.max(1, nextCorrect + nextWrong)),
+      totalAnswerTime: local.totalAnswerTime + elapsedSeconds,
+      averageAnswerTime: Math.round(
+        (local.totalAnswerTime + elapsedSeconds) / Math.max(1, nextCorrect + nextWrong),
+      ),
       finished: nextProgress >= 100,
       connected: true,
+      lastSeenAtMs: Date.now(),
     };
 
-    const nextRoom: MathRaceRoom = {
-      ...roomState,
-      status: "racing",
-      players: roomState.players.map((player) => (player.id === playerId ? nextPlayer : player)),
-    };
+    setPlayers((previous) => previous.map((player) => (player.id === playerId ? nextPlayer : player)));
+    debugLog("RACE", `Progress update: ${nextPlayer.name} -> ${nextPlayer.progress}%`);
 
-    setRoomState(nextRoom);
-    updateMathRaceRoom(roomId, nextRoom);
+    if (connectionState === "connected" && !localOnly) {
+      pushPlayerState(roomId, playerId, nextPlayer).catch(() => {
+        setStatusMessage("Serverga yuborib bo'lmadi. Internetni tekshirib qayta urinib ko'ring.");
+      });
+    }
+
     setFeedback(
       isCorrect
         ? {
@@ -231,13 +355,25 @@ export default function MatematikaGame() {
           },
     );
     setAwaitingNext(true);
-  }, [answer, awaitingNext, currentQuestion, finished, localPlayer, playerId, questionIndex, roomId, roomState]);
+  }, [
+    answer,
+    awaitingNext,
+    connectionState,
+    currentQuestion,
+    finished,
+    localOnly,
+    localPlayer,
+    playerId,
+    questionIndex,
+    roomId,
+  ]);
 
   const handleNext = useCallback(() => {
-    if (!roomState || !localPlayer) return;
+    const local = localPlayer;
+    if (!local) return;
 
     if (questionIndex >= questions.length - 1) {
-      finishGame(Math.round(localPlayer.score), localPlayer.correctAnswers, localPlayer.wrongAnswers);
+      finishGame(Math.round(local.score), local.correctAnswers, local.wrongAnswers);
       return;
     }
 
@@ -246,15 +382,7 @@ export default function MatematikaGame() {
     setAnswer("");
     setQuestionIndex((previous) => previous + 1);
     questionStartedAt.current = typeof performance === "undefined" ? 0 : performance.now();
-  }, [finishGame, localPlayer, questionIndex, questions.length, roomState]);
-
-  useEffect(() => {
-    return () => {
-      if (roomId) {
-        leaveMathRaceRoom(roomId, playerId);
-      }
-    };
-  }, [playerId, roomId]);
+  }, [finishGame, localPlayer, questionIndex, questions.length]);
 
   if (!joinedRoom) {
     return (
@@ -300,20 +428,55 @@ export default function MatematikaGame() {
               </label>
             </div>
 
+            {joinError ? (
+              <div className="math-race-error" role="alert">
+                <strong>
+                  {joinError.code === "grade-mismatch"
+                    ? "Sinf mos emas"
+                    : joinError.code === "invalid-room"
+                      ? "Room ID noto‘g‘ri"
+                      : "Multiplayer ulanmadi"}
+                </strong>
+                <p>{joinError.message}</p>
+                {joinError.code === "permission" || joinError.code === "unavailable" || joinError.code === "unknown" ? (
+                  <div className="math-race-error-actions">
+                    <button type="button" onClick={() => joinRace(selectedGrade)} style={secondaryButtonStyle}>
+                      Qayta urinish
+                    </button>
+                    <button type="button" onClick={() => setLocalOnly(true)} style={secondaryButtonStyle}>
+                      Lokal rejimda davom etish
+                    </button>
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+
+            {localOnly ? (
+              <div className="math-race-error math-race-error-info" role="status">
+                <strong>Lokal rejim yoqilgan</strong>
+                <p>Multiplayer ishlamayapti: faqat siz o‘z mashinangizni ko‘ryapsiz.</p>
+                <button type="button" onClick={() => setLocalOnly(false)} style={secondaryButtonStyle}>
+                  Multiplayerni yoqish
+                </button>
+              </div>
+            ) : null}
+
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
               {(["5-6", "7-9"] as GradeGroup[]).map((grade) => (
                 <button
                   key={grade}
                   type="button"
                   onClick={() => joinRace(grade)}
+                  disabled={connectionState === "connecting"}
                   style={{
                     background: "linear-gradient(135deg, rgba(14,165,233,0.25), rgba(168,85,247,0.2))",
                     border: "1px solid rgba(125,211,252,0.7)",
                     borderRadius: 18,
                     padding: 22,
                     textAlign: "left",
-                    cursor: "pointer",
+                    cursor: connectionState === "connecting" ? "wait" : "pointer",
                     color: "#f8fafc",
+                    opacity: connectionState === "connecting" ? 0.6 : 1,
                   }}
                 >
                   <div style={{ fontSize: 14, color: "#bae6fd", marginBottom: 8 }}>Sinf</div>
@@ -377,9 +540,10 @@ export default function MatematikaGame() {
         score={localPlayer?.score ?? 0}
         combo={localPlayer?.combo ?? 0}
         players={leaderboard.length}
+        connection={connectionState === "connected" ? "online" : localOnly ? "local" : "offline"}
       />
 
-      <RallyTrack players={connectedPlayers} selfId={playerId} />
+      <RallyTrack players={trackPlayers} selfId={playerId} nowMs={nowMs} />
 
       <QuestionCard
         question={currentQuestion}
@@ -456,4 +620,5 @@ const secondaryButtonStyle: React.CSSProperties = {
   padding: "12px 18px",
   color: "#e2e8f0",
   textDecoration: "none",
+  cursor: "pointer",
 };

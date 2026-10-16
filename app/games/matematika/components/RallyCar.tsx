@@ -8,6 +8,7 @@ export interface RallyCarProps {
   progress: number;
   isSelf?: boolean;
   finished?: boolean;
+  connected?: boolean;
   rank?: number;
 }
 
@@ -22,14 +23,16 @@ export default function RallyCar({
   progress,
   isSelf = false,
   finished = false,
+  connected = true,
   rank,
 }: RallyCarProps) {
   const safeProgress = clampProgress(progress);
   const ratio = safeProgress / 100;
+  const offline = !connected;
 
   return (
     <div
-      className={`math-race-car${isSelf ? " is-self" : ""}${finished ? " is-finished" : ""}`}
+      className={`math-race-car${isSelf ? " is-self" : ""}${finished ? " is-finished" : ""}${offline ? " is-offline" : ""}`}
       style={{ "--progress": ratio } as CSSProperties}
     >
       <div className="math-race-car-art">

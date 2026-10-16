@@ -15,7 +15,8 @@ export interface MathQuestion {
 export interface RacePlayer {
   id: string;
   name: string;
-  carId: string;
+  roomId?: string;
+  gradeGroup?: GradeGroup;
   progress: number;
   score: number;
   correctAnswers: number;
@@ -27,18 +28,17 @@ export interface RacePlayer {
   averageAnswerTime: number;
   finished: boolean;
   connected: boolean;
+  joinedAtMs?: number;
+  lastSeenAtMs?: number;
   rank?: number;
 }
 
-export interface MathRaceRoom {
+export interface RaceRoomDoc {
   roomId: string;
-  status: RaceStatus;
   gradeGroup: GradeGroup;
   totalQuestions: number;
-  players: RacePlayer[];
-  startedAt?: number;
-  finishedAt?: number;
   hostId?: string;
+  createdAtMs?: number;
 }
 
 export interface LeaderboardEntry {
@@ -49,22 +49,4 @@ export interface LeaderboardEntry {
   grade: GradeGroup;
   savedAt: number;
   gamesPlayed: number;
-}
-
-export interface RaceEvent {
-  type:
-    | "PLAYER_JOINED"
-    | "PLAYER_LEFT"
-    | "RACE_READY"
-    | "RACE_STARTED"
-    | "ANSWER_SUBMIT"
-    | "PLAYER_PROGRESS"
-    | "PLAYER_FINISHED"
-    | "RACE_FINISHED";
-  payload?: Record<string, unknown>;
-}
-
-export interface AnswerFeedback {
-  type: "success" | "error" | "timeout" | "info";
-  text: string;
 }

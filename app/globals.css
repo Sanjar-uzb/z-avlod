@@ -1295,6 +1295,9 @@ input[type="text"] {
   color:#eaf1ff;background:rgba(30,58,138,.88);border-color:rgba(122,167,255,.6);
 }
 .math-race-car-flag{position:absolute;top:-8px;right:-8px;font-size:14px}
+.math-race-car.is-offline{opacity:.5;filter:grayscale(.6)}
+.math-race-car.is-offline .math-race-car-name{color:#fca5a5;border-color:rgba(248,113,113,.45)}
+.math-race-car.is-offline .math-race-car-name::after{content:" • Uzildi"}
 
 /* Question card */
 .math-race-question{
@@ -1354,6 +1357,23 @@ input[type="text"] {
 .math-race-feedback.is-wrong{color:#fca5a5}
 .math-race-feedback small{color:#a9b6d6;font-weight:600;font-size:12px}
 .math-race-status{margin:0;color:#a9b6d6;font-size:12px;text-align:center}
+.math-race-conn{
+  padding:3px 9px;border-radius:999px;font-size:9px;font-weight:900;letter-spacing:.12em;
+  border:1px solid var(--line);
+}
+.math-race-conn-online{color:#6ee7b7;border-color:rgba(52,211,153,.45);background:rgba(52,211,153,.12)}
+.math-race-conn-offline{color:#fca5a5;border-color:rgba(248,113,113,.45);background:rgba(239,68,68,.14)}
+.math-race-conn-local{color:#fcd34d;border-color:rgba(251,191,36,.45);background:rgba(251,191,36,.12)}
+.math-race-error{
+  display:flex;flex-direction:column;gap:8px;align-items:flex-start;
+  margin:0 0 18px;padding:14px 16px;border-radius:14px;
+  color:#fecaca;background:rgba(127,29,29,.28);border:1px solid rgba(248,113,113,.45);
+}
+.math-race-error strong{font-size:15px;letter-spacing:.02em}
+.math-race-error p{margin:0;color:#fca5a5;font-size:13px;line-height:1.5}
+.math-race-error-info{color:#fde68a;background:rgba(120,53,15,.28);border-color:rgba(251,191,36,.45)}
+.math-race-error-info p{color:#fcd34d}
+.math-race-error-actions{display:flex;gap:8px;flex-wrap:wrap}
 
 @media (max-width: 900px) {
   .math-race-road{margin:0 8px;padding:4px 20px}

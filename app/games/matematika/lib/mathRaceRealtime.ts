@@ -79,6 +79,15 @@ function classifyError(error: unknown, fallbackMessage: string): JoinResult {
         "Serverga ulanib bo'lmadi: `mathRaceRooms` kolleksiyasi uchun Firestore ruxsatlari sozlanmagan. Hujjatlarga qarang.",
     };
   }
+  if (code === "not-found" || code === "failed-precondition") {
+    return {
+      ok: false,
+      code: "not-configured",
+      message:
+        `Matematika loyihasida (${MATH_FIREBASE_PROJECT_ID}) Firestore bazasi hali yaratilmagan. ` +
+        "Firebase Console -> Firestore Database -> Create database (Native mode) qiling va rules qo'shing.",
+    };
+  }
   if (code === "unavailable" || code === "deadline-exceeded") {
     return {
       ok: false,

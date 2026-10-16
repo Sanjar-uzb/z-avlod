@@ -52,7 +52,12 @@ Ishlash tartibi:
 5. 10 daqiqadan eski o'yinchilar tozalanadi.
 6. Sahifa yopilsa `beforeunload` da `connected: false` (best-effort).
 
-## Sozlash (3 qadam)
+## Sozlash
+
+Web app allaqachon yaratilgan (project number `459877199236`), config kodda. **Qolgan yagona
+qo'lda qadam — Firestore bazasini yaratish va rules qo'shish (1- va 2-qadam).** Bularni
+service account huquqi yetmagani uchun avtomatik qilish imkoni bo'lmadi — Firebase Console'da
+qiling. Shu ikki qadamdan keyin multiplayer ishlaydi.
 
 ### 1. Firestore'ni yoqish
 
@@ -114,22 +119,21 @@ service cloud.firestore {
 }
 ```
 
-### 3. Web app config kiritish
+### 3. Web app config
 
-Firebase Console → **matematik-26d6f** → Project settings (⚙️) → General →
-**Your apps** → Web app (`</>`) → "SDK setup and configuration" → **Config**.
-U yerdagi qiymatlarni `.env.local` faylga yozing:
+Web app allaqachon yaratilgan va config koddagi default qiymat sifatida turibdi
+(`lib/firebaseMath.ts`), shuning uchun bu qadam **ixtiyoriy**. Boshqa loyihaga o'tish
+uchun Firebase Console → Project settings (⚙️) → General → Your apps → Web app (`</>`)
+→ SDK setup and configuration → **Config** dan olib `.env.local` ga yozing:
 
 ```
-NEXT_PUBLIC_MATH_FB_API_KEY=<apiKey>
+NEXT_PUBLIC_MATH_FB_API_KEY=AIzaSyBbpGRSOuf4EwQ1W6Me96xVkvizgql-sbs
 NEXT_PUBLIC_MATH_FB_AUTH_DOMAIN=matematik-26d6f.firebaseapp.com
 NEXT_PUBLIC_MATH_FB_PROJECT_ID=matematik-26d6f
 NEXT_PUBLIC_MATH_FB_STORAGE_BUCKET=matematik-26d6f.firebasestorage.app
-NEXT_PUBLIC_MATH_FB_SENDER_ID=<messagingSenderId>
-NEXT_PUBLIC_MATH_FB_APP_ID=<appId>
+NEXT_PUBLIC_MATH_FB_SENDER_ID=459877199236
+NEXT_PUBLIC_MATH_FB_APP_ID=1:459877199236:web:1b2de919d6b7ce845441d1
 ```
-
-Web app hali yo'q bo'lsa: **Add app** → **Web** → nom bering → Register.
 
 GitHub Pages uchun: repo **Settings → Secrets and variables → Actions → Variables**
 bo'limiga xuddi shu nomdagi o'zgaruvchilarni qo'ying; `deploy.yml` ularni build'ga uzatadi.

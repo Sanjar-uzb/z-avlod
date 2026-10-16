@@ -1,4 +1,4 @@
-import type { Difficulty, GradeGroup, MathQuestion } from "../types";
+import type { GradeGroup, MathQuestion } from "../types";
 
 export function shuffle<T>(items: T[]): T[] {
   const copy = [...items];
@@ -52,12 +52,6 @@ export function answerMatches(submitted: string, expected: string): boolean {
   }
 
   return input === normalizeAnswer(expected);
-}
-
-export function getTimeLimitByDifficulty(difficulty: Difficulty): number {
-  if (difficulty === "easy") return 15;
-  if (difficulty === "medium") return 20;
-  return 30;
 }
 
 export function getRandomQuestions(

@@ -409,6 +409,21 @@ a{color:inherit;text-decoration:none}
 .life-game-footer{display:flex;justify-content:space-between;gap:12px;padding:11px 16px;color:#a9b6d6;font-size:11px}
 .life-game-privacy{margin:10px 0 0;color:#a9b6d6;font-size:11px;text-align:center}
 .life-game-mobile-controls{display:none}
+.life-game-npc-head{display:flex;align-items:center;gap:12px;margin:14px 0 4px;padding:10px 12px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.04)}
+.life-game-npc-avatar{flex:0 0 46px;width:46px;height:46px;display:grid;place-items:center;border-radius:14px;font-size:24px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.22)}
+.life-game-npc-meta{flex:1;min-width:0}
+.life-game-npc-meta strong,.life-game-npc-meta small{display:block}
+.life-game-npc-meta strong{font-size:16px}
+.life-game-npc-meta small{margin-top:3px;color:#a9b6d6;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.life-game-npc-progress{flex:0 0 auto;padding:5px 10px;border-radius:999px;background:rgba(96,165,250,.15);color:#cfe4ff;font-size:12px;font-weight:800}
+.life-game-npc-line{padding:13px 15px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.035);color:#e4ecfb;line-height:1.7}
+.life-game-npc-response{border-color:rgba(139,92,246,.35);background:rgba(139,92,246,.1)}
+.life-game-npc-note{color:#c5b889;font-size:12px}
+.life-game-question{margin:12px 0 16px;font-size:20px;line-height:1.5}
+.life-game-progress-list{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end}
+.life-game-progress-list b{padding:3px 8px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.04);color:#c3cee4;font-size:10px;font-weight:700}
+.life-game-progress-list b.active{border-color:rgba(251,191,36,.4);color:#fcd34d}
+.life-game-progress-list b.done{border-color:rgba(52,211,153,.45);color:#6ee7b7}
 
 @media (max-width: 760px){
   .life-game-page{padding-left:8px;padding-right:8px}
@@ -445,7 +460,10 @@ a{color:inherit;text-decoration:none}
   .life-game-touch-action small{font-size:9px;font-weight:700}
   .life-game-nearby{bottom:140px;min-width:0;width:calc(100% - 24px);padding:8px}
   .life-game-nearby strong{font-size:12px}
-  .life-game-footer{padding:9px 10px;font-size:9px}
+  .life-game-footer{padding:9px 10px;font-size:9px;flex-direction:column;gap:7px}
+  .life-game-progress-list{justify-content:flex-start}
+  .life-game-npc-avatar{flex-basis:40px;width:40px;height:40px;font-size:21px}
+  .life-game-question{font-size:17px}
 }
 @media (max-width: 480px){
   .life-game-objective{max-width:34vw}
@@ -1172,4 +1190,189 @@ input[type="text"] {
   .statsGrid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===== MATEMATIKA POYGASI (ralli) ===== */
+.math-race-page{
+  max-width:1440px;margin:0 auto;padding:10px 24px 8px;
+  display:flex;flex-direction:column;gap:10px;
+}
+
+/* Header */
+.math-race-header{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 16px;border:1px solid var(--line);border-radius:16px;
+  background:linear-gradient(180deg,rgba(16,27,51,.94),rgba(11,18,32,.94));
+  box-shadow:var(--shadow);
+}
+.math-race-header-title{display:flex;align-items:center;gap:10px;min-width:0}
+.math-race-title{font-weight:900;letter-spacing:.12em;font-size:14px;white-space:nowrap}
+.math-race-grade{
+  padding:3px 10px;border-radius:999px;font-size:11px;font-weight:800;color:#cfe0ff;
+  background:rgba(122,167,255,.16);border:1px solid rgba(122,167,255,.35);white-space:nowrap;
+}
+.math-race-header-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.math-race-room{color:#a9b6d6;font-size:12px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.math-race-pills{display:flex;gap:8px;flex-wrap:wrap}
+.math-race-pill{
+  min-width:64px;padding:4px 10px;border-radius:12px;text-align:center;
+  background:rgba(255,255,255,.04);border:1px solid var(--line);
+}
+.math-race-pill small{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#a9b6d6}
+.math-race-pill strong{font-size:16px}
+
+/* Track */
+.math-race-track{
+  position:relative;border-radius:18px;padding:10px 0;
+  border:1px solid var(--line);box-shadow:var(--shadow);
+  background:
+    radial-gradient(120% 150% at 50% -20%, rgba(89,209,143,.16), transparent 60%),
+    linear-gradient(180deg,#15231b,#0b1310);
+}
+.math-race-road{
+  position:relative;margin:0 14px;border-radius:12px;overflow:hidden;
+  padding:4px 24px;
+  background:
+    repeating-linear-gradient(90deg,#e2e8f0 0 12px,#dc2626 12px 24px) top left/100% 6px no-repeat,
+    repeating-linear-gradient(90deg,#e2e8f0 0 12px,#dc2626 12px 24px) bottom left/100% 6px no-repeat,
+    repeating-linear-gradient(115deg,rgba(255,255,255,.03) 0 2px,transparent 2px 28px),
+    linear-gradient(180deg,#434952,#2c3038 46%,#23272d);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),inset 0 26px 38px rgba(0,0,0,.35);
+}
+.math-race-lanes{
+  --lane-h:46px;--car-w:56px;
+  position:relative;z-index:3;display:flex;flex-direction:column;
+  min-height:130px;max-height:270px;overflow-y:auto;overflow-x:hidden;
+}
+.math-race-lane{
+  position:relative;flex:0 0 auto;height:var(--lane-h);
+  border-bottom:2px dashed rgba(255,255,255,.18);
+}
+.math-race-lane:last-child{border-bottom:none}
+
+/* Lane marker lines */
+.math-race-marker{
+  position:absolute;top:0;bottom:0;width:24px;z-index:2;
+  display:flex;align-items:center;justify-content:center;pointer-events:none;
+}
+.math-race-marker span{transform:rotate(90deg);font-size:9px;font-weight:900;letter-spacing:.14em;white-space:nowrap}
+.math-race-marker-start{
+  left:0;
+  background:repeating-linear-gradient(0deg,rgba(248,250,252,.85) 0 10px,transparent 10px 20px);
+}
+.math-race-marker-start span{color:#e2e8f0}
+.math-race-marker-finish{
+  right:0;
+  background:repeating-conic-gradient(#0b0f1a 0% 25%, #f8fafc 0% 50%) 0 0/14px 14px;
+}
+
+/* Cars */
+.math-race-car{
+  position:absolute;top:0;left:0;height:100%;
+  width:calc(100% - var(--car-w,64px));
+  transform:translateX(calc(var(--progress,0) * 100%));
+  transition:transform .62s cubic-bezier(.22,.61,.36,1);
+  will-change:transform;
+}
+.math-race-car-art{
+  position:absolute;top:50%;left:0;width:var(--car-w,64px);
+  transform:translateY(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:1px;
+}
+.math-race-car-svg{
+  display:block;width:100%;height:auto;
+  filter:drop-shadow(0 6px 6px rgba(0,0,0,.45));
+}
+.math-race-car.is-self .math-race-car-svg{
+  filter:drop-shadow(0 0 7px rgba(122,167,255,.9)) drop-shadow(0 6px 6px rgba(0,0,0,.45));
+}
+.math-race-car-name{
+  max-width:112px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  padding:1px 6px;border-radius:999px;font-size:9px;font-weight:700;
+  color:#dbeafe;background:rgba(11,18,32,.82);border:1px solid var(--line);
+}
+.math-race-car.is-self .math-race-car-name{
+  color:#eaf1ff;background:rgba(30,58,138,.88);border-color:rgba(122,167,255,.6);
+}
+.math-race-car-flag{position:absolute;top:-8px;right:-8px;font-size:14px}
+
+/* Question card */
+.math-race-question{
+  border:1px solid var(--line);border-radius:16px;padding:12px 16px;
+  background:linear-gradient(180deg,rgba(16,27,51,.94),rgba(11,18,32,.94));
+  box-shadow:var(--shadow);
+}
+.math-race-question-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
+.math-race-question-index{color:#a9b6d6;font-size:11px;font-weight:800;letter-spacing:.14em}
+.math-race-difficulty{
+  padding:3px 10px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.1em;
+  border:1px solid var(--line);
+}
+.math-race-difficulty.difficulty-easy{color:#6ee7b7;border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.1)}
+.math-race-difficulty.difficulty-medium{color:#fcd34d;border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.1)}
+.math-race-difficulty.difficulty-hard{color:#fca5a5;border-color:rgba(248,113,113,.4);background:rgba(248,113,113,.1)}
+.math-race-question-text{
+  margin:5px 0 10px;font-weight:800;letter-spacing:-.01em;line-height:1.2;
+  font-size:clamp(1.35rem,2.1vw,1.9rem);
+}
+.math-race-answer{display:flex;gap:10px;align-items:stretch;flex-wrap:nowrap}
+.math-race-answer-input{
+  flex:1;min-width:0;padding:12px 15px;border-radius:12px;font-size:18px;
+  color:#f8fafc;outline:none;
+  background:rgba(15,23,42,.92);border:1px solid rgba(148,163,184,.4);
+  transition:border-color .16s ease,box-shadow .16s ease;
+}
+.math-race-answer-input::placeholder{color:#7f8db0}
+.math-race-answer-input:focus{border-color:rgba(56,189,248,.6);box-shadow:0 0 0 4px rgba(56,189,248,.12)}
+.math-race-answer-input:disabled{opacity:.6}
+.math-race-answer-btn{
+  padding:12px 20px;border:none;border-radius:12px;cursor:pointer;white-space:nowrap;
+  background:linear-gradient(135deg,#06b6d4,#8b5cf6);color:#fff;font-weight:800;letter-spacing:.04em;
+}
+.math-race-answer-btn:hover:not(:disabled){filter:brightness(1.08)}
+.math-race-answer-btn:disabled{opacity:.5;cursor:not-allowed}
+.math-race-next{
+  width:100%;padding:13px;border-radius:12px;cursor:pointer;letter-spacing:.08em;
+  font-weight:800;color:#eaf1ff;
+  background:rgba(122,167,255,.16);border:1px solid rgba(122,167,255,.5);
+}
+.math-race-next:hover{background:rgba(122,167,255,.24)}
+.math-race-question-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;margin-top:10px;
+}
+.math-race-stats{display:flex;gap:8px;flex-wrap:wrap}
+.math-race-stat{
+  padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;
+  border:1px solid var(--line);background:rgba(255,255,255,.04);
+}
+.math-race-stat.stat-correct{color:#7dd3fc;border-color:rgba(96,165,250,.35);background:rgba(59,130,246,.14)}
+.math-race-stat.stat-wrong{color:#fca5a5;border-color:rgba(248,113,113,.35);background:rgba(239,68,68,.14)}
+.math-race-stat.stat-accuracy{color:#86efac;border-color:rgba(74,222,128,.35);background:rgba(34,197,94,.14)}
+.math-race-feedback{margin:0;display:flex;flex-direction:column;gap:2px;font-weight:800;font-size:14px}
+.math-race-feedback.is-correct{color:#6ee7b7}
+.math-race-feedback.is-wrong{color:#fca5a5}
+.math-race-feedback small{color:#a9b6d6;font-weight:600;font-size:12px}
+.math-race-status{margin:0;color:#a9b6d6;font-size:12px;text-align:center}
+
+@media (max-width: 900px) {
+  .math-race-road{margin:0 8px;padding:4px 20px}
+  .math-race-lanes{--lane-h:44px;--car-w:52px;min-height:116px;max-height:250px}
+  .math-race-pill{min-width:56px}
+}
+
+@media (max-width: 620px) {
+  .math-race-page{padding:8px 12px 8px;gap:9px}
+  .math-race-header{padding:9px 12px}
+  .math-race-title{font-size:12px}
+  .math-race-room{font-size:11px}
+  .math-race-road{padding:4px 16px}
+  .math-race-lanes{--lane-h:42px;--car-w:46px;min-height:104px;max-height:232px}
+  .math-race-car-name{max-width:84px;font-size:8px}
+  .math-race-question{padding:11px 13px}
+  .math-race-question-text{font-size:clamp(1.2rem,6vw,1.55rem)}
+  .math-race-answer{flex-wrap:wrap}
+  .math-race-answer-input{font-size:16px;padding:12px 13px;flex:1 1 100%}
+  .math-race-answer-btn{flex:1 1 100%}
+  .math-race-question-foot{flex-direction:column;align-items:flex-start}
 }

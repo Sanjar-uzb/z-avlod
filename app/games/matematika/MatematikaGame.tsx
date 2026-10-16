@@ -3,16 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { gradeFiveToSixQuestions } from "./data/grade5-6";
 import { gradeSevenToNineQuestions } from "./data/grade7-9";
-import {
-  answerMatches,
-  getRandomQuestions,
-  getTimeLimitByDifficulty,
-} from "./lib/questionUtils";
+import { answerMatches, getRandomQuestions } from "./lib/questionUtils";
 import {
   calculateProgressGain,
   calculateScoreDelta,
   formatAccuracy,
-  formatProgress,
   formatScore,
   getAccuracy,
 } from "./lib/scoreUtils";
@@ -25,6 +20,9 @@ import {
 } from "./lib/multiplayer";
 import type { GradeGroup, MathQuestion, MathRaceRoom, RacePlayer } from "./types";
 import { saveGenericGameResult } from "@/lib/storage";
+import RaceHeader from "./components/RaceHeader";
+import RallyTrack from "./components/RallyTrack";
+import QuestionCard, { type QuestionFeedback } from "./components/QuestionCard";
 
 const QUESTION_COUNT = 20;
 const PLAYER_NAME_KEY = "zavlod_math_player_name";
@@ -50,7 +48,7 @@ export default function MatematikaGame() {
     if (typeof window === "undefined") return generateRoomId();
     return window.localStorage.getItem(ROOM_ID_KEY) || generateRoomId();
   });
-  const [playerId, setPlayerId] = useState<string>(() => {
+  const [playerId] = useState<string>(() => {
     if (typeof window === "undefined") return createPlayerId();
     return window.localStorage.getItem(PLAYER_ID_KEY) || createPlayerId();
   });
@@ -60,27 +58,35 @@ export default function MatematikaGame() {
   );
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answer, setAnswer] = useState("");
-  const [timeLeft, setTimeLeft] = useState(15);
+  const [feedback, setFeedback] = useState<QuestionFeedback | null>(null);
+  const [awaitingNext, setAwaitingNext] = useState(false);
   const [statusMessage, setStatusMessage] = useState("Poyga uchun roomga qo'shiling.");
   const [joinedRoom, setJoinedRoom] = useState(false);
   const [finished, setFinished] = useState(false);
   const hasSavedResult = useRef(false);
+  const questionStartedAt = useRef(0);
 
   const localPlayer = useMemo(
     () => roomState?.players.find((player) => player.id === playerId) ?? null,
     [playerId, roomState],
   );
 
-  const currentQuestion = questions[questionIndex];
+  const connectedPlayers = useMemo(
+    () => roomState?.players.filter((player) => player.connected) ?? [],
+    [roomState],
+  );
+
   const leaderboard = useMemo(
     () =>
-      [...(roomState?.players.filter((player) => player.connected) ?? [])].sort((a, b) => {
+      [...connectedPlayers].sort((a, b) => {
         if (b.progress !== a.progress) return b.progress - a.progress;
         if (b.score !== a.score) return b.score - a.score;
         return a.averageAnswerTime - b.averageAnswerTime;
       }),
-    [roomState],
+    [connectedPlayers],
   );
+
+  const currentQuestion = questions[questionIndex];
 
   const joinRace = useCallback(
     (grade: GradeGroup) => {
@@ -105,11 +111,13 @@ export default function MatematikaGame() {
       setQuestions(nextPool);
       setQuestionIndex(0);
       setAnswer("");
-      setTimeLeft(getTimeLimitByDifficulty(nextPool[0]?.difficulty ?? "easy"));
+      setFeedback(null);
+      setAwaitingNext(false);
       setStatusMessage(`${grade} sinf uchun room qo'shildi. Barcha o'yinchilar real vaqt rejimida ko'rsatiladi.`);
       setJoinedRoom(true);
       setFinished(false);
       hasSavedResult.current = false;
+      questionStartedAt.current = typeof performance === "undefined" ? 0 : performance.now();
     },
     [playerId, playerName, roomId],
   );
@@ -172,80 +180,73 @@ export default function MatematikaGame() {
     [playerId, questions.length, roomId, roomState, selectedGrade],
   );
 
-  const submitAnswer = useCallback(
-    (manualTimeout = false) => {
-      if (!roomState || !localPlayer || !currentQuestion || finished) return;
+  const submitAnswer = useCallback(() => {
+    if (!roomState || !localPlayer || !currentQuestion || finished || awaitingNext) return;
 
-      const isCorrect = manualTimeout ? false : answerMatches(answer, currentQuestion.answer);
-      const elapsedSeconds = Math.max(0, getTimeLimitByDifficulty(currentQuestion.difficulty) - timeLeft);
-      const delta = isCorrect ? calculateScoreDelta(true, currentQuestion.difficulty, elapsedSeconds, localPlayer.combo) : -20;
-      const nextScore = Math.max(0, Math.round(localPlayer.score + delta));
-      const gainedProgress = isCorrect ? calculateProgressGain(currentQuestion.difficulty, elapsedSeconds) : 0;
-      const nextProgress = Math.min(100, localPlayer.progress + gainedProgress);
-      const nextCorrect = isCorrect ? localPlayer.correctAnswers + 1 : localPlayer.correctAnswers;
-      const nextWrong = isCorrect ? localPlayer.wrongAnswers : localPlayer.wrongAnswers + 1;
-      const nextCombo = isCorrect ? localPlayer.combo + 1 : 0;
-      const nextPlayer: RacePlayer = {
-        ...localPlayer,
-        progress: Math.round(nextProgress),
-        score: nextScore,
-        correctAnswers: nextCorrect,
-        wrongAnswers: nextWrong,
-        combo: nextCombo,
-        maxCombo: Math.max(localPlayer.maxCombo, nextCombo),
-        currentQuestion: questionIndex + 1,
-        totalAnswerTime: localPlayer.totalAnswerTime + elapsedSeconds,
-        averageAnswerTime: Math.round((localPlayer.totalAnswerTime + elapsedSeconds) / Math.max(1, nextCorrect + nextWrong)),
-        finished: nextProgress >= 100,
-        connected: true,
-      };
+    const isCorrect = answerMatches(answer, currentQuestion.answer);
+    const elapsedSeconds = Math.max(0, (performance.now() - questionStartedAt.current) / 1000);
+    const delta = isCorrect
+      ? calculateScoreDelta(true, currentQuestion.difficulty, elapsedSeconds, localPlayer.combo)
+      : -20;
+    const nextScore = Math.max(0, Math.round(localPlayer.score + delta));
+    const gainedProgress = isCorrect ? calculateProgressGain(currentQuestion.difficulty, elapsedSeconds) : 0;
+    const nextProgress = Math.min(100, localPlayer.progress + gainedProgress);
+    const nextCorrect = isCorrect ? localPlayer.correctAnswers + 1 : localPlayer.correctAnswers;
+    const nextWrong = isCorrect ? localPlayer.wrongAnswers : localPlayer.wrongAnswers + 1;
+    const nextCombo = isCorrect ? localPlayer.combo + 1 : 0;
+    const nextPlayer: RacePlayer = {
+      ...localPlayer,
+      progress: Math.round(nextProgress),
+      score: nextScore,
+      correctAnswers: nextCorrect,
+      wrongAnswers: nextWrong,
+      combo: nextCombo,
+      maxCombo: Math.max(localPlayer.maxCombo, nextCombo),
+      currentQuestion: questionIndex + 1,
+      totalAnswerTime: localPlayer.totalAnswerTime + elapsedSeconds,
+      averageAnswerTime: Math.round((localPlayer.totalAnswerTime + elapsedSeconds) / Math.max(1, nextCorrect + nextWrong)),
+      finished: nextProgress >= 100,
+      connected: true,
+    };
 
-      const nextRoom: MathRaceRoom = {
-        ...roomState,
-        status: "racing",
-        players: roomState.players.map((player) => (player.id === playerId ? nextPlayer : player)),
-      };
+    const nextRoom: MathRaceRoom = {
+      ...roomState,
+      status: "racing",
+      players: roomState.players.map((player) => (player.id === playerId ? nextPlayer : player)),
+    };
 
-      setRoomState(nextRoom);
-      updateMathRaceRoom(roomId, nextRoom);
-      setStatusMessage(
-        isCorrect
-          ? `To'g'ri! +${Math.round(Math.abs(delta))} ball.`
-          : manualTimeout
-            ? `Vaqt tugadi. To'g'ri javob: ${currentQuestion.answer}`
-            : `Noto'g'ri javob. To'g'ri javob: ${currentQuestion.answer}`,
-      );
+    setRoomState(nextRoom);
+    updateMathRaceRoom(roomId, nextRoom);
+    setFeedback(
+      isCorrect
+        ? {
+            status: "correct",
+            text: `To'g'ri! +${Math.round(Math.abs(delta))} ball`,
+            detail: `Avtomobil +${gainLabel(gainedProgress)} oldinga siljidi.`,
+          }
+        : {
+            status: "wrong",
+            text: `Noto'g'ri. To'g'ri javob: ${currentQuestion.answer}`,
+            detail: currentQuestion.explanation,
+          },
+    );
+    setAwaitingNext(true);
+  }, [answer, awaitingNext, currentQuestion, finished, localPlayer, playerId, questionIndex, roomId, roomState]);
 
-      if (questionIndex >= questions.length - 1) {
-        setQuestionIndex(questions.length);
-        setTimeout(() => finishGame(nextScore, nextCorrect, nextWrong), 150);
-        return;
-      }
+  const handleNext = useCallback(() => {
+    if (!roomState || !localPlayer) return;
 
-      setAnswer("");
-      setQuestionIndex((prev) => prev + 1);
-      setTimeLeft(
-        getTimeLimitByDifficulty(questions[questionIndex + 1]?.difficulty ?? currentQuestion.difficulty),
-      );
-    },
-    [answer, currentQuestion, finished, localPlayer, playerId, questionIndex, questions, roomId, roomState, timeLeft],
-  );
+    if (questionIndex >= questions.length - 1) {
+      finishGame(Math.round(localPlayer.score), localPlayer.correctAnswers, localPlayer.wrongAnswers);
+      return;
+    }
 
-  useEffect(() => {
-    if (!joinedRoom || finished || !currentQuestion) return;
-
-    const interval = window.setInterval(() => {
-      setTimeLeft((previous) => {
-        if (previous <= 1) {
-          window.setTimeout(() => submitAnswer(true), 0);
-          return 0;
-        }
-        return previous - 1;
-      });
-    }, 1000);
-
-    return () => window.clearInterval(interval);
-  }, [currentQuestion, finished, joinedRoom, submitAnswer]);
+    setFeedback(null);
+    setAwaitingNext(false);
+    setAnswer("");
+    setQuestionIndex((previous) => previous + 1);
+    questionStartedAt.current = typeof performance === "undefined" ? 0 : performance.now();
+  }, [finishGame, localPlayer, questionIndex, questions.length, roomState]);
 
   useEffect(() => {
     return () => {
@@ -254,8 +255,6 @@ export default function MatematikaGame() {
       }
     };
   }, [playerId, roomId]);
-
-  const activeQuestionNumber = Math.min(questionIndex + 1, questions.length);
 
   if (!joinedRoom) {
     return (
@@ -332,11 +331,6 @@ export default function MatematikaGame() {
   }
 
   if (finished) {
-    const finalAccuracy = getAccuracy(
-      localPlayer?.correctAnswers ?? 0,
-      Math.max(1, (localPlayer?.correctAnswers ?? 0) + (localPlayer?.wrongAnswers ?? 0)),
-    );
-
     return (
       <div className="container" style={{ padding: "32px 16px 60px" }}>
         <div
@@ -355,14 +349,20 @@ export default function MatematikaGame() {
             <StatBox label="Ball" value={formatScore(localPlayer?.score ?? 0)} />
             <StatBox label="To'g'ri" value={String(localPlayer?.correctAnswers ?? 0)} />
             <StatBox label="Noto'g'ri" value={String(localPlayer?.wrongAnswers ?? 0)} />
-            <StatBox label="Aniqlik" value={formatAccuracy(localPlayer?.correctAnswers ?? 0, Math.max(1, (localPlayer?.correctAnswers ?? 0) + (localPlayer?.wrongAnswers ?? 0)))} />
+            <StatBox
+              label="Aniqlik"
+              value={formatAccuracy(
+                localPlayer?.correctAnswers ?? 0,
+                Math.max(1, (localPlayer?.correctAnswers ?? 0) + (localPlayer?.wrongAnswers ?? 0)),
+              )}
+            />
           </div>
 
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <button type="button" onClick={() => joinRace(selectedGrade)} style={primaryButtonStyle}>
               Qayta boshlash
             </button>
-            <a href="/games" style={secondaryButtonStyle}>Boshqa o'yinlar</a>
+            <a href="/games" style={secondaryButtonStyle}>Boshqa o&apos;yinlar</a>
           </div>
         </div>
       </div>
@@ -370,201 +370,45 @@ export default function MatematikaGame() {
   }
 
   return (
-    <div className="container" style={{ padding: "32px 16px 60px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            gap: 12,
-            alignItems: "center",
-            marginBottom: 18,
-            flexWrap: "wrap",
-          }}
-        >
-          <div>
-            <p style={{ margin: 0, color: "#a5f3fc", textTransform: "uppercase", letterSpacing: 2, fontSize: 12 }}>
-              Matematika Poygasi
-            </p>
-            <h1 style={{ margin: "6px 0 0", fontSize: "clamp(2rem, 4vw, 2.8rem)" }}>Sinf {selectedGrade}</h1>
-            <p style={{ color: "#cbd5e1", margin: "8px 0 0" }}>Room: {roomId}</p>
-          </div>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <Pill label="Ball" value={formatScore(localPlayer?.score ?? 0)} />
-            <Pill label="Combo" value={String(localPlayer?.combo ?? 0)} />
-            <Pill label="Vaqt" value={`${timeLeft}s`} />
-            <Pill label="Players" value={String(leaderboard.length)} />
-          </div>
-        </div>
+    <div className="container math-race-page">
+      <RaceHeader
+        gradeGroup={selectedGrade}
+        roomId={roomId}
+        score={localPlayer?.score ?? 0}
+        combo={localPlayer?.combo ?? 0}
+        players={leaderboard.length}
+      />
 
-        <div style={{ display: "grid", gridTemplateColumns: "1.35fr 0.65fr", gap: 20 }}>
-          <div
-            style={{
-              background: "rgba(15,23,42,0.82)",
-              border: "1px solid rgba(148,163,184,0.3)",
-              borderRadius: 22,
-              padding: 24,
-            }}
-          >
-            <div style={{ marginBottom: 18 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10, color: "#cbd5e1", fontSize: 14 }}>
-                <span>
-                  Savol {activeQuestionNumber}/{questions.length}
-                </span>
-                <span>{currentQuestion?.difficulty.toUpperCase()}</span>
-              </div>
-              <div style={{ height: 10, background: "rgba(148,163,184,0.2)", borderRadius: 999 }}>
-                <div
-                  style={{
-                    width: `${(activeQuestionNumber / questions.length) * 100}%`,
-                    height: "100%",
-                    background: "linear-gradient(90deg, #22d3ee, #8b5cf6)",
-                    borderRadius: 999,
-                  }}
-                />
-              </div>
-            </div>
+      <RallyTrack players={connectedPlayers} selfId={playerId} />
 
-            <div
-              style={{
-                background: "rgba(15,118,110,0.14)",
-                border: "1px solid rgba(94,234,212,0.35)",
-                borderRadius: 18,
-                padding: 18,
-                marginBottom: 18,
-              }}
-            >
-              <p style={{ margin: 0, fontSize: 12, color: "#a7f3d0", textTransform: "uppercase", letterSpacing: 1.5 }}>
-                Mavzu: {currentQuestion?.category}
-              </p>
-              <h2 style={{ margin: "12px 0 0", fontSize: "clamp(1.7rem, 3vw, 2.5rem)", lineHeight: 1.3 }}>
-                {currentQuestion?.question}
-              </h2>
-            </div>
+      <QuestionCard
+        question={currentQuestion}
+        index={questionIndex}
+        total={questions.length}
+        answer={answer}
+        onAnswerChange={setAnswer}
+        onSubmit={submitAnswer}
+        onNext={handleNext}
+        awaitingNext={awaitingNext}
+        isLast={questionIndex >= questions.length - 1}
+        disabled={!localPlayer}
+        feedback={feedback}
+        correct={localPlayer?.correctAnswers ?? 0}
+        wrong={localPlayer?.wrongAnswers ?? 0}
+        accuracy={formatAccuracy(
+          localPlayer?.correctAnswers ?? 0,
+          Math.max(1, (localPlayer?.correctAnswers ?? 0) + (localPlayer?.wrongAnswers ?? 0)),
+        )}
+      />
 
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 18 }}>
-              <input
-                value={answer}
-                onChange={(event) => setAnswer(event.target.value)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    submitAnswer(false);
-                  }
-                }}
-                placeholder="Javobni yozing"
-                style={{
-                  flex: 1,
-                  minWidth: 220,
-                  background: "rgba(15,23,42,0.9)",
-                  border: "1px solid rgba(148,163,184,0.4)",
-                  borderRadius: 12,
-                  padding: "14px 16px",
-                  color: "#f8fafc",
-                  fontSize: 18,
-                }}
-              />
-              <button type="button" onClick={() => submitAnswer(false)} style={primaryButtonStyle}>
-                Javob berish
-              </button>
-            </div>
-
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", color: "#dbeafe" }}>
-              <div
-                style={{
-                  background: "rgba(59,130,246,0.15)",
-                  border: "1px solid rgba(96,165,250,0.35)",
-                  borderRadius: 999,
-                  padding: "8px 12px",
-                }}
-              >
-                To'g'ri: {localPlayer?.correctAnswers ?? 0}
-              </div>
-              <div
-                style={{
-                  background: "rgba(239,68,68,0.14)",
-                  border: "1px solid rgba(248,113,113,0.35)",
-                  borderRadius: 999,
-                  padding: "8px 12px",
-                }}
-              >
-                Noto'g'ri: {localPlayer?.wrongAnswers ?? 0}
-              </div>
-              <div
-                style={{
-                  background: "rgba(34,197,94,0.14)",
-                  border: "1px solid rgba(74,222,128,0.35)",
-                  borderRadius: 999,
-                  padding: "8px 12px",
-                }}
-              >
-                Aniqlik: {formatAccuracy(localPlayer?.correctAnswers ?? 0, Math.max(1, (localPlayer?.correctAnswers ?? 0) + (localPlayer?.wrongAnswers ?? 0)))}
-              </div>
-            </div>
-
-            <p style={{ margin: "18px 0 0", color: "#dbeafe" }}>{statusMessage}</p>
-          </div>
-
-          <div
-            style={{
-              background: "rgba(15,23,42,0.82)",
-              border: "1px solid rgba(148,163,184,0.3)",
-              borderRadius: 22,
-              padding: 20,
-            }}
-          >
-            <h3 style={{ marginTop: 0, marginBottom: 14 }}>Poyga jadvali</h3>
-            <div style={{ display: "grid", gap: 10 }}>
-              {leaderboard.map((player, index) => (
-                <div
-                  key={player.id}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    gap: 8,
-                    background:
-                      player.id === playerId
-                        ? "rgba(59,130,246,0.18)"
-                        : "rgba(148,163,184,0.08)",
-                    border: "1px solid rgba(148,163,184,0.2)",
-                    borderRadius: 12,
-                    padding: "10px 12px",
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <span style={{ fontWeight: 700, color: "#f8fafc" }}>{index + 1}.</span>
-                    <span style={{ fontSize: 20 }}>{player.carId}</span>
-                    <span style={{ color: "#f8fafc" }}>{player.name}</span>
-                  </div>
-                  <div style={{ textAlign: "right", color: "#dbeafe" }}>
-                    <div>{formatProgress(player.progress)}</div>
-                    <small>{formatScore(player.score)} ball</small>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <p className="math-race-status">{statusMessage}</p>
     </div>
   );
 }
 
-function Pill({ label, value }: { label: string; value: string }) {
-  return (
-    <div
-      style={{
-        background: "rgba(15,23,42,0.82)",
-        border: "1px solid rgba(148,163,184,0.3)",
-        borderRadius: 999,
-        padding: "10px 14px",
-        minWidth: 80,
-      }}
-    >
-      <div style={{ fontSize: 11, color: "#cbd5e1", textTransform: "uppercase", letterSpacing: 1.2 }}>{label}</div>
-      <strong style={{ fontSize: 20 }}>{value}</strong>
-    </div>
-  );
+function gainLabel(progress: number): string {
+  const rounded = Math.round(Math.max(0, progress));
+  return `${rounded}%`;
 }
 
 function StatBox({ label, value }: { label: string; value: string }) {

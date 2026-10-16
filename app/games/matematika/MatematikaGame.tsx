@@ -438,7 +438,10 @@ export default function MatematikaGame() {
                       : "Multiplayer ulanmadi"}
                 </strong>
                 <p>{joinError.message}</p>
-                {joinError.code === "permission" || joinError.code === "unavailable" || joinError.code === "unknown" ? (
+                {joinError.code === "permission" ||
+                joinError.code === "unavailable" ||
+                joinError.code === "unknown" ||
+                joinError.code === "not-configured" ? (
                   <div className="math-race-error-actions">
                     <button type="button" onClick={() => joinRace(selectedGrade)} style={secondaryButtonStyle}>
                       Qayta urinish

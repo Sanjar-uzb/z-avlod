@@ -1,4 +1,4 @@
-import { db } from "@/lib/firebase";
+import { MATH_FIREBASE_PROJECT_ID, dbMath } from "@/lib/firebaseMath";
 import {
   collection,
   doc,
@@ -10,6 +10,7 @@ import {
   updateDoc,
   where,
   writeBatch,
+  type Firestore,
 } from "firebase/firestore";
 import type { GradeGroup, RacePlayer, RaceRoomDoc } from "../types";
 import {
@@ -26,6 +27,7 @@ const ROOMS_COLLECTION = "mathRaceRooms";
 export type JoinErrorCode =
   | "invalid-room"
   | "grade-mismatch"
+  | "not-configured"
   | "permission"
   | "unavailable"
   | "unknown";
@@ -38,6 +40,10 @@ export type SubscribeHandlers = {
   onPlayers: (players: RacePlayer[]) => void;
   onError?: (error: unknown) => void;
 };
+
+const NOT_CONFIGURED_MESSAGE =
+  `Matematika uchun Firebase (loyiha: ${MATH_FIREBASE_PROJECT_ID}) sozlanmagan. ` +
+  "NEXT_PUBLIC_MATH_FB_* qiymatlarini kiriting (.env.local.example / GitHub Actions variables ga qarang).";
 
 class GradeMismatchError extends Error {
   constructor(public readonly gradeGroup: GradeGroup) {
@@ -99,12 +105,17 @@ export async function joinRaceRoom(input: {
     };
   }
 
+  const database = dbMath;
+  if (!database) {
+    return { ok: false, code: "not-configured", message: NOT_CONFIGURED_MESSAGE };
+  }
+
   const name = input.playerName.trim() || "O'yinchi";
-  const roomRef = doc(db, ROOMS_COLLECTION, id);
-  const playerRef = doc(db, ROOMS_COLLECTION, id, "players", input.playerId);
+  const roomRef = doc(database, ROOMS_COLLECTION, id);
+  const playerRef = doc(database, ROOMS_COLLECTION, id, "players", input.playerId);
 
   try {
-    await runTransaction(db, async (transaction) => {
+    await runTransaction(database, async (transaction) => {
       const nowMs = Date.now();
       const roomSnapshot = await transaction.get(roomRef);
 
@@ -163,7 +174,14 @@ export async function joinRaceRoom(input: {
 
 export function subscribeRaceRoom(roomId: string, handlers: SubscribeHandlers): () => void {
   const id = normalizeRoomId(roomId);
-  const playersRef = collection(db, ROOMS_COLLECTION, id, "players");
+  const database: Firestore | null = dbMath;
+
+  if (!database) {
+    handlers.onError?.(new Error(NOT_CONFIGURED_MESSAGE));
+    return () => {};
+  }
+
+  const playersRef = collection(database, ROOMS_COLLECTION, id, "players");
   debugLog("ROOM", `Subscribing to room: ${id}`);
 
   return onSnapshot(
@@ -187,27 +205,33 @@ export async function pushPlayerState(
   playerId: string,
   patch: Partial<RacePlayer>,
 ): Promise<void> {
+  const database = dbMath;
+  if (!database) return;
   const id = normalizeRoomId(roomId);
-  const playerRef = doc(db, ROOMS_COLLECTION, id, "players", playerId);
+  const playerRef = doc(database, ROOMS_COLLECTION, id, "players", playerId);
   await setDoc(playerRef, { ...patch, lastSeenAtMs: Date.now() }, { merge: true });
 }
 
 export async function markPlayerLeft(roomId: string, playerId: string): Promise<void> {
+  const database = dbMath;
+  if (!database) return;
   const id = normalizeRoomId(roomId);
   const nowMs = Date.now();
-  const playerRef = doc(db, ROOMS_COLLECTION, id, "players", playerId);
+  const playerRef = doc(database, ROOMS_COLLECTION, id, "players", playerId);
   await updateDoc(playerRef, { connected: false, lastSeenAtMs: nowMs, leftAtMs: nowMs });
   debugLog("PLAYER", `Left: ${playerId}`);
 }
 
 export async function cleanupStalePlayers(roomId: string): Promise<void> {
+  const database = dbMath;
+  if (!database) return;
   const id = normalizeRoomId(roomId);
-  const playersRef = collection(db, ROOMS_COLLECTION, id, "players");
+  const playersRef = collection(database, ROOMS_COLLECTION, id, "players");
   const cutoff = Date.now() - STALE_CLEAN_MS;
   const snapshot = await getDocs(query(playersRef, where("lastSeenAtMs", "<", cutoff)));
   if (snapshot.empty) return;
 
-  const batch = writeBatch(db);
+  const batch = writeBatch(database);
   snapshot.docs.forEach((document) => batch.delete(document.ref));
   await batch.commit();
   debugLog("ROOM", `Cleaned up ${snapshot.size} stale player(s)`);

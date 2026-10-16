@@ -1,4 +1,19 @@
-# Matematika Poygasi — Multiplayer (Firebase Firestore)
+# Matematika Poygasi — Multiplayer (alohida Firebase loyihasi)
+
+> **Muhim:** Matematika o'yini o'zining alohida Firebase loyihasidan foydalanadi:
+> **`matematik-26d6f`**. Kahoot Live esa boshqa loyihada (`kahoot-5fa99`).
+> Ikkalasi bir-biriga bog'lanmagan — matematika ma'lumotlari kahootga tushmaydi.
+
+## ⚠️ Maxfiy kalit haqida ogohlantirish
+
+Firebase "service account" faylidagi `private_key` — bu **maxfiy** kalit. U:
+- chatda/gitda oshkor bo'lsa, uni **darhol** Firebase Console → Project settings →
+  Service accounts → "Manage service account permissions" orqali **o'chirib (rotate)**
+  yangilash kerak;
+- **hech qachon** frontendga (brauzer kodiga, `.env` ichidagi `NEXT_PUBLIC_*` ga) qo'yilmaydi.
+
+Brauzerdagi o'yin uchun service account emas, balki **Web app config** (public) kerak —
+quyida ko'rsatilgan.
 
 ## Muammo (sabab)
 
@@ -9,10 +24,11 @@ boshqa qurilmalarning mashinalari ko'rinmas edi.
 
 ## Yangi arxitektura
 
-Realtime Firestore orqali:
+Realtime Firestore orqali (project `matematik-26d6f`, default app'dan alohida "matematika" nomli app):
 
 | Narsa | Joy |
 |---|---|
+| Firebase init | `lib/firebaseMath.ts` (`dbMath`, `mathApp`, project `matematik-26d6f`) |
 | Room | `mathRaceRooms/{ROOM_ID}` (`ROOM_ID` = `trim().toUpperCase()`, masalan `MATH-60`) |
 | O'yinchilar | `mathRaceRooms/{ROOM_ID}/players/{PLAYER_ID}` |
 | Room maydonlari | `roomId`, `gradeGroup` (`5-6`/`7-9`), `totalQuestions`, `hostId`, `createdAtMs` |
@@ -20,38 +36,37 @@ Realtime Firestore orqali:
 
 Fayllar:
 
-- `lib/firebase.ts` — Firestore ulanishi (kahoot bilan umumiy, `NEXT_PUBLIC_*` env yoki kod ichidagi fallback).
-- `lib/mathRaceLogic.ts` — sof (server'siz) yordamchilar: `normalizeRoomId`, dedup, staleness, heartbeat intervalidi.
+- `lib/firebaseMath.ts` — matematika uchun **alohida** Firestore ulanishi (`NEXT_PUBLIC_MATH_FB_*`).
+- `lib/mathRaceLogic.ts` — sof yordamchilar: `normalizeRoomId`, dedup, staleness, heartbeat intervalidi.
 - `lib/mathRaceRealtime.ts` — Firestore I/O: `joinRaceRoom` (transaction), `subscribeRaceRoom` (`onSnapshot`),
   `pushPlayerState`, `markPlayerLeft`, `cleanupStalePlayers`, `generateRoomId`.
-- `MatematikaGame.tsx` — butun poyga **roomdagi ro'yxatdan** (roster) quriladi: trassadagi mashinalar,
-  reyting va o'yinchilar soni serverdan keladi.
+- `MatematikaGame.tsx` — butun poyga **roomdagi ro'yxatdan** (roster) quriladi.
 
 Ishlash tartibi:
 
 1. `joinRaceRoom` transaksiyasi: room yo'q bo'lsa yaratadi, sinf (`gradeGroup`) bir xilligini tekshiradi,
-   o'yinchini `connected: true` bilan yozadi (room allaqachon boshqa sinfda ochilgan bo'lsa — aniq xato).
+   o'yinchini `connected: true` bilan yozadi (room boshqa sinfda ochilgan bo'lsa — aniq xato).
 2. `subscribeRaceRoom` (`onSnapshot`) roomdagi barcha `players` hujjatlarini real vaqt tinglaydi.
-   Har bir qurilma shu ro'yxatni ko'radi → barcha mashinalar ko'rinadi.
-3. Har 20 soniyada **heartbeat** (`lastSeenAtMs` yangilanadi).
-4. 45 soniya heartbeat bo'lmasa o'yinchi "uzilgan" (mashina kulrang + "Uzildi") deb ko'rsatiladi.
-5. 10 daqiqadan eski o'yinchilar `cleanupStalePlayers` tomonidan o'chiriladi (disk tozalanadi).
-6. Sahifa yopilsa `beforeunload` da `connected: false` yoziladi (best-effort; browser o'ldirsa staleness qutqaradi).
+3. Har 20 soniyada **heartbeat** (`lastSeenAtMs`).
+4. 45 soniya heartbeat bo'lmasa — "uzilgan" (mashina kulrang + "Uzildi").
+5. 10 daqiqadan eski o'yinchilar tozalanadi.
+6. Sahifa yopilsa `beforeunload` da `connected: false` (best-effort).
 
-## Kerakli qadam: Firestore rules
+## Sozlash (3 qadam)
 
-`mathRaceRooms` kolleksiyasi hozircha **yopiq** (`PERMISSION_DENIED`). Kod tayyor, lekin
-multiplayer ishlashi uchun quyidagi qoidalarni Firebase Console'da qo'shish shart:
+### 1. Firestore'ni yoqish
 
-**Firebase Console → Firestore Database → Rules** bo'limiga quyidagi qoidani qo'shing
-(mavjud `kahootRooms` qoidangiz saqlanadi):
+Firebase Console → **matematik-26d6f** → Firestore Database → **Create database** →
+**Native mode** → joy tanlang. (Hali yoqilmagan bo'lishi mumkin.)
+
+### 2. Rules qo'shish
+
+**Firebase Console → matematik-26d6f → Firestore Database → Rules** bo'limiga:
 
 ```
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-
-    // ... sizning mavjud kahootRooms qoidalaringiz shu yerda qoladi ...
 
     match /mathRaceRooms/{roomId} {
       allow read: if true;
@@ -99,33 +114,38 @@ service cloud.firestore {
 }
 ```
 
-Rules joylashtirilgandan so'ng sahifani yangilang — xato yo'qoladi va bir xil Room ID'ga
-kirgan qurilmalar bir birining mashinalarini ko'radi.
+### 3. Web app config kiritish
 
-## Muhit o'zgaruvchilari (ixtiyoriy)
+Firebase Console → **matematik-26d6f** → Project settings (⚙️) → General →
+**Your apps** → Web app (`</>`) → "SDK setup and configuration" → **Config**.
+U yerdagi qiymatlarni `.env.local` faylga yozing:
 
-Kod allaqachon `kahoot-5fa99` loyihasi bilan ishlaydi (koddagi fallback orqali).
-Boshqa loyihaga o'tish uchun `.env.local.example` ni nusxalab `.env.local` qiling
-(`.env.local` git'ga tushmaydi). GitHub Pages uchun: repo **Settings → Secrets and
-variables → Actions → Variables** bo'limiga shu nomlardagi o'zgaruvchilarni qo'ying
-(`NEXT_PUBLIC_FB_API_KEY`, `NEXT_PUBLIC_FB_AUTH_DOMAIN`, `NEXT_PUBLIC_FB_PROJECT_ID`,
-`NEXT_PUBLIC_FB_STORAGE_BUCKET`, `NEXT_PUBLIC_FB_SENDER_ID`, `NEXT_PUBLIC_FB_APP_ID`,
-`NEXT_PUBLIC_FB_MEASUREMENT_ID`). `deploy.yml` ularni build'ga uzatadi.
+```
+NEXT_PUBLIC_MATH_FB_API_KEY=<apiKey>
+NEXT_PUBLIC_MATH_FB_AUTH_DOMAIN=matematik-26d6f.firebaseapp.com
+NEXT_PUBLIC_MATH_FB_PROJECT_ID=matematik-26d6f
+NEXT_PUBLIC_MATH_FB_STORAGE_BUCKET=matematik-26d6f.firebasestorage.app
+NEXT_PUBLIC_MATH_FB_SENDER_ID=<messagingSenderId>
+NEXT_PUBLIC_MATH_FB_APP_ID=<appId>
+```
 
-Eslatma: `NEXT_PUBLIC_*` qiymatlar brauzerda ochiq ko'rinadi — bu Firebase web config'i
-uchun normal holat. Xavfsizlikni **Firestore rules** ta'minlaydi; frontendda maxfiy kalit
-(service_account / private key) yo'q va bo'lishi shart emas.
+Web app hali yo'q bo'lsa: **Add app** → **Web** → nom bering → Register.
+
+GitHub Pages uchun: repo **Settings → Secrets and variables → Actions → Variables**
+bo'limiga xuddi shu nomdagi o'zgaruvchilarni qo'ying; `deploy.yml` ularni build'ga uzatadi.
+
+`NEXT_PUBLIC_MATH_FB_API_KEY` va `appId` bo'lmasa, o'yin "Matematika uchun Firebase
+sozlanmagan" deb aniq xato ko'rsatadi va yakka (lokal) rejimda davom etadi —
+multiplayer ishlayapti deb ko'rsatilmaydi.
 
 ## Test qilish
 
-1. Lokal: `npm run dev` → `/games/matematika` → Room ID yozing (masalan `MATH-TEST1`) → sinfni tanlang.
-2. Ikkita-qurilma testi: boshqa telefonda/parda (yoki Chrome'da boshqa profil) shu Room ID bilan kiring.
-3. Ikkalangiz ham boshqa mashinani ko'rishingiz, javob yozgan sari uning mashinasi siljishi kerak.
-4. Bir qurilmani yoping → 45 soniyadan keyin mashina "Uzildi" bo'ladi; 10 daqiqadan keyin o'chadi.
-5. Boshqa sinf bilan xuddi shu room'ga kirishga urinib ko'ring → aniq xato chiqishi kerak
-   (`Bu room boshqa sinf (5-6) uchun ochilgan`).
-6. Rules qo'shilmagan bo'lsa → lobbyda xato kartasi chiqadi va "Lokal rejimda davom etish"
-   tugmasi bilan o'yin yakka rejimda davom etadi (multiplayer **ishlayapti** deb ko'rsatilmaydi).
+1. `.env.local` to'ldirilgan bo'lsin, so'ng `npm run dev` → `/games/matematika`.
+2. Room ID yozing (masalan `MATH-TEST1`) → sinf tanlang.
+3. Boshqa telefon/parda (yoki Chrome boshqa profil) xuddi shu Room ID bilan kiring.
+4. Ikkalangiz ham boshqa mashinani ko'rish va javob berganda uning siljishini ko'rishingiz kerak.
+5. Bir qurilmani yoping → 45 soniyadan keyin mashina "Uzildi"; 10 daqiqadan keyin o'chadi.
+6. Boshqa sinf bilan xuddi shu room'ga kirish → aniq xato (`Bu room boshqa sinf (5-6) uchun ochilgan`).
 
 ## Dostup (dev) loglari
 
@@ -141,10 +161,9 @@ Production'da o'chiriladi (`NODE_ENV=development` da faqat):
 
 ## Hozir cheklovlar (halol izoh)
 
-- Javoblar **clientda** hisoblanadi (to'g'ri/noto'g'ri, ball, progress). Firestore ularni
-  saqlaydi va qoidalar orqali `progress` 0..100 oralig'ida, faqat oshuvchi bo'lishini
-  majburlaydi, ammo javobning o'zini server baholamaydi. To'liq himoya (server-side
-  answer verification) uchun Firebase Cloud Functions yozish kerak — hozircha yo'q.
+- Javoblar **clientda** hisoblanadi. Firestore ularni saqlaydi va qoidalar orqali
+  `progress` 0..100 va faqat oshuvchi bo'lishini majburlaydi, ammo javobning o'zini
+  server baholamaydi. To'liq himoya uchun Cloud Functions kerak — hozircha yo'q.
 - Room o'chirilmaydi (faqat eski o'yinchilar tozalanadi).
-- `matematika` o'yini boshqa o'yinlarga tegmadi: `kahootLive.ts`, `kahootRooms` va
-  boshqa g'eymlar o'z holicha ishlaydi.
+- Kahoot Live (`lib/firebase.ts`, `kahootRooms`, project `kahoot-5fa99`) o'z holicha
+  ishlaydi va matematikaga bog'lanmagan.

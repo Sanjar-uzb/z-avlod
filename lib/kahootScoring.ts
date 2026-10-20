@@ -4,15 +4,26 @@ export type KahootScoreInput = {
   totalTimeSec: number;  // per question
 };
 
+export const KAHOOT_BASE_POINTS = 50;
+export const KAHOOT_MAX_BONUS = 50;
+export const KAHOOT_MAX_POINTS = KAHOOT_BASE_POINTS + KAHOOT_MAX_BONUS;
+
+/**
+ * 0..100 points per question.
+ * Correct answer: 50 base + up to 50 speed bonus (linear in remaining time).
+ * Wrong / timed-out: 0.
+ */
 export function scoreKahoot({ isCorrect, timeLeftSec, totalTimeSec }: KahootScoreInput) {
   if (!isCorrect) return { gained: 0, base: 0, bonus: 0 };
 
-  const base = 1000;
-  const tl = Math.max(0, Math.min(timeLeftSec, totalTimeSec));
-  const ratio = totalTimeSec > 0 ? tl / totalTimeSec : 0;
-  const bonus = Math.floor(1000 * ratio);
+  const total = Number.isFinite(totalTimeSec) ? totalTimeSec : 0;
+  const left = Number.isFinite(timeLeftSec) ? timeLeftSec : 0;
 
-  return { gained: base + bonus, base, bonus };
+  const tl = Math.max(0, Math.min(left, total));
+  const ratio = total > 0 ? tl / total : 0;
+  const bonus = Math.floor(KAHOOT_MAX_BONUS * ratio);
+
+  return { gained: KAHOOT_BASE_POINTS + bonus, base: KAHOOT_BASE_POINTS, bonus };
 }
 
 export function formatMs(ms: number) {
